@@ -78,8 +78,8 @@ and [custom domains](https://developers.cloudflare.com/workers/configuration/rou
 - `src/styles/global.css`: T3-inspired tokens and shared styles.
 
 mdoc has **no public releases** as checked on 2026-10-09. The empty manifest
-produces “Downloads coming soon.” Source builds currently require access to the
-private pinned `lawkitt/anydoc` dependency. Neither build targets nor maturity
+produces “Downloads coming soon.” Since 2026-10-10 the pinned `lawkitt/anydoc`
+dependency is public, so source builds need no private access. Neither build targets nor maturity
 indicate installer availability.
 
 Before adding a release: verify it on the public mdoc repository, confirm every

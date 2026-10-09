@@ -21,6 +21,5 @@ Artcraft (https://getartcraft.com/apps) informed the catalog and product-page
 organization. No Artcraft source, copy or assets are included.
 
 The website's code license is MIT. mdoc's application license is separately
-GPL-3.0-or-later, with dependency notices in its repository. Its current private
-conversion dependency limits independent source builds; the website states that
-requirement and does not advertise unverified installers.
+GPL-3.0-or-later, with dependency notices in its repository. Its dependencies
+are public; the website does not advertise unverified installers.
