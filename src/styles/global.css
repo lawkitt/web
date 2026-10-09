@@ -217,6 +217,14 @@ main:focus {
   align-items: center;
   gap: 7px;
 }
+.nav-links a.nav-cta {
+  color: var(--bg);
+  padding: 8px 14px;
+  font-size: 13px;
+}
+.nav-links a.nav-cta:hover {
+  color: var(--bg);
+}
 .footer {
   border-top: 1px solid var(--border);
   padding: 44px 0;
@@ -318,8 +326,13 @@ main:focus {
   .nav-links a {
     font-size: 12px;
   }
-  .nav-github svg {
+  .nav-github svg,
+  .nav-links a[href="/tools/mdoc/download/"]:not(.nav-cta) {
     display: none;
+  }
+  .nav-links a.nav-cta {
+    padding: 7px 12px;
+    font-size: 12px;
   }
   .section {
     padding: 64px 0;
