@@ -76,12 +76,6 @@ const preview =
         </a>
         <nav class="nav-links" aria-label="Main navigation">
           <a
-            href="/#tools"
-            aria-current={Astro.url.pathname === "/" ? "page" : undefined}
-          >
-            Tools
-          </a>
-          <a
             href="/tools/mdoc/"
             aria-current={
               Astro.url.pathname === "/tools/mdoc/" ? "page" : undefined
@@ -89,8 +83,21 @@ const preview =
           >
             mdoc
           </a>
+          <a
+            href="/tools/mdoc/download/"
+            aria-current={
+              Astro.url.pathname === "/tools/mdoc/download/"
+                ? "page"
+                : undefined
+            }
+          >
+            Download
+          </a>
           <a class="nav-github" href={SITE.github}>
             GitHub <Arrow diagonal />
+          </a>
+          <a class="btn btn-primary nav-cta" href="/tools/mdoc/download/">
+            Get mdoc
           </a>
         </nav>
       </div>
@@ -113,7 +120,8 @@ const preview =
           <p>Small tools. Useful work.</p>
         </div>
         <nav aria-label="Footer navigation">
-          <a href="/#tools">Tools</a>
+          <a href="/tools/mdoc/">mdoc</a>
+          <a href="/tools/mdoc/download/">Download</a>
           <a href={SITE.github}>GitHub</a>
           <a href="https://github.com/lawkitt/mdoc/issues">
             Support & contributions

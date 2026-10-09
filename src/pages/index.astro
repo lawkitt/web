@@ -2,7 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Arrow from "../components/Arrow.astro";
 import ToolCard from "../components/ToolCard.astro";
+import Pillars from "../components/Pillars.astro";
+import Workflow from "../components/Workflow.astro";
 import { tools } from "../lib/catalog";
+import { latestMdocRelease } from "../lib/releases";
 import { SITE } from "../lib/site";
 ---
 
@@ -10,39 +13,38 @@ import { SITE } from "../lib/site";
   <section class="hero home-hero">
     <div class="container">
       <div class="hero-label" data-rise>
-        <span class="status-dot"></span> Made for the work between the big
-        decisions
+        <span class="status-dot"></span> Free & open source · Runs on your
+        computer
       </div>
       <h1 data-rise style="--d:.07s">
         Practical tools for
         <br class="desktop-break" /> everyday legal work.
       </h1>
       <p class="hero-subtitle" data-rise style="--d:.14s">
-        Free, open-source utilities from Lawkitt.
+        Our first tool, <strong>mdoc</strong>, gets your PDFs, scans and Word
+        files ready for ChatGPT or Claude, with client names replaced before
+        anything leaves your computer.
       </p>
       <div class="actions" data-rise style="--d:.21s">
-        <a class="btn btn-primary" href="/tools/mdoc/">
-          Explore mdoc <Arrow />
+        <a class="btn btn-primary" href="/tools/mdoc/download/">
+          Get mdoc <Arrow />
         </a>
-        <a class="btn btn-ghost" href={SITE.github}>
-          Browse on GitHub <Arrow diagonal />
+        <a class="btn btn-ghost" href="#how-it-works">
+          See how it works <span aria-hidden="true">↓</span>
         </a>
       </div>
-      <a class="catalog-cue" href="#tools">
-        Meet the tools <span aria-hidden="true">↓</span>
-      </a>
     </div>
   </section>
   <section class="section catalog" id="tools" aria-labelledby="catalog-title">
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">01 / The collection</p>
-          <h2 id="catalog-title">One task. A better tool.</h2>
+          <p class="eyebrow">01 / Our first tool</p>
+          <h2 id="catalog-title">Prepare legal documents for AI. Privately.</h2>
         </div>
         <p>
-          Focused software we build for everyday legal workflows. Starting with
-          documents.
+          Lawkitt builds focused, free utilities for the everyday work of
+          lawyers. We start with documents.
         </p>
       </div>
       {tools.map((tool, index) => (
@@ -50,11 +52,42 @@ import { SITE } from "../lib/site";
       ))}
     </div>
   </section>
+  <section
+    class="section"
+    id="how-it-works"
+    aria-labelledby="how-it-works-title"
+  >
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / How it works</p>
+          <h2 id="how-it-works-title">Open. Pseudonymize. Copy.</h2>
+        </div>
+        <p>Three steps. Your judgment stays in charge of each one.</p>
+      </div>
+      <Workflow />
+    </div>
+  </section>
+  <section class="section" aria-labelledby="pillars-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">03 / Why mdoc</p>
+          <h2 id="pillars-title">Built for confidential work.</h2>
+        </div>
+        <p>
+          Nothing leaves your computer until you copy it. Not your documents,
+          not your clients’ names.
+        </p>
+      </div>
+      <Pillars />
+    </div>
+  </section>
   <section class="section principles" aria-labelledby="principles-title">
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">02 / What we build for</p>
+          <p class="eyebrow">04 / What we build for</p>
           <h2 id="principles-title">Useful by design.</h2>
         </div>
         <p>
@@ -67,24 +100,24 @@ import { SITE } from "../lib/site";
           <span class="principle-num">01</span>
           <h3>A clear job to do</h3>
           <p>
-            Prepare a document. Check the result. Move on with your work. Each
-            utility starts with a specific task.
+            Each tool does one task well, so you can pick it up between meetings
+            without a manual.
           </p>
         </article>
         <article>
           <span class="principle-num">02</span>
-          <h3>Your work, under your control</h3>
+          <h3>Your work stays yours</h3>
           <p>
-            mdoc processes documents locally. You decide what to edit, save and
-            share with another tool.
+            Our tools run on your computer. You decide what is shared, and with
+            whom.
           </p>
         </article>
         <article>
           <span class="principle-num">03</span>
           <h3>Free. Open. Inspectable.</h3>
           <p>
-            Our software is free and its code is public. Follow development,
-            report an issue or help make it better.
+            Free to use, with public code anyone can check. Report an issue or
+            help make it better on GitHub.
           </p>
         </article>
       </div>
@@ -94,20 +127,26 @@ import { SITE } from "../lib/site";
     <div class="container">
       <div class="community-panel">
         <div>
-          <p class="eyebrow">03 / Build with us</p>
+          <p class="eyebrow">05 / Get started</p>
           <h2 id="community-title">
-            Good tools grow
+            Ready for your
             <br />
-            with real work.
+            next document.
           </h2>
           <p>
-            Bring a reproducible bug, a practical use case or a contribution.
-            Development happens on GitHub.
+            {latestMdocRelease
+              ? "Download mdoc for your Mac or Windows PC. Free, with no account."
+              : "mdoc’s first public release is on its way. Watch the repository on GitHub to hear when it lands."}
           </p>
         </div>
-        <a class="btn btn-ghost" href={SITE.github}>
-          Find us on GitHub <Arrow diagonal />
-        </a>
+        <div class="actions">
+          <a class="btn btn-primary" href="/tools/mdoc/download/">
+            Get mdoc <Arrow />
+          </a>
+          <a class="btn btn-ghost" href={SITE.github}>
+            Lawkitt on GitHub <Arrow diagonal />
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -139,21 +178,17 @@ import { SITE } from "../lib/site";
   .hero-subtitle {
     color: var(--muted);
     font-size: 19px;
-    margin-top: 28px;
+    line-height: 1.6;
+    max-width: 640px;
+    margin: 28px auto 0;
+  }
+  .hero-subtitle strong {
+    color: var(--fg);
+    font-weight: 600;
   }
   .home-hero .actions {
     justify-content: center;
     margin-top: 32px;
-  }
-  .catalog-cue {
-    display: inline-flex;
-    gap: 12px;
-    margin-top: 66px;
-    color: var(--dim);
-    font: 10px var(--mono);
-  }
-  .catalog-cue:hover {
-    color: var(--fg);
   }
   .principles-grid {
     display: grid;
@@ -178,6 +213,9 @@ import { SITE } from "../lib/site";
   }
   .community {
     padding: 0 0 100px;
+  }
+  .community-panel .actions {
+    flex-shrink: 0;
   }
   .community-panel {
     padding: 48px;
@@ -221,7 +259,6 @@ import { SITE } from "../lib/site";
     }
     .hero-subtitle {
       font-size: 16px;
-      max-width: 280px;
       margin: 24px auto 0;
     }
     .home-hero .actions {
@@ -230,9 +267,6 @@ import { SITE } from "../lib/site";
     .home-hero .btn {
       padding: 12px 16px;
       font-size: 12px;
-    }
-    .catalog-cue {
-      margin-top: 42px;
     }
     .principles-grid {
       display: block;
@@ -250,7 +284,7 @@ import { SITE } from "../lib/site";
     .community h2 {
       font-size: 32px;
     }
-    .community .btn {
+    .community .actions {
       margin-top: 28px;
     }
   }

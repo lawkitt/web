@@ -1,98 +1,75 @@
-## Documents, ready for your next step
-
-A contract in PDF or Word format is useful to read. Editable Markdown makes its
-text easier to review, revise and pass to an external AI tool. mdoc brings those
-steps into one local workspace.
-
-### PDF and Word to Markdown
-
-Open a PDF or DOCX to convert its text and structure into editable Markdown.
-Compare the result with the original preview and make corrections before handoff.
-Your original file stays unchanged. Conversion does not preserve embedded images.
-
-### Edit with the source beside you
-
-Headings, lists and tables render as you edit. Keep the original PDF or DOCX in
-view to check wording and structure. DOCX previews can render equations, charts,
-SmartArt, embedded fonts and alternate content incompletely.
-
-### Local recognition for scanned PDFs
-
-On Apple Silicon macOS and Windows x64, explicitly choose OCR for pages that need
-recognition. A one-time model and runtime download is required; recognition then
-runs locally and offline. Windows x64 also needs the Microsoft Visual C++
-Redistributable. Intel macOS, Windows ARM64 and Linux currently support native-text
-import only. Image-only DOCX content has no app OCR path. Handwriting and complex
-table reconstruction are not qualified.
-
-<div class="review-note">
-<strong>Always check the result.</strong> Conversion and OCR can omit or misread
-content. Review the prepared Markdown against the source before using it.
-</div>
-
-## Prepare thoughtfully. Share deliberately.
-
-mdoc processes documents locally. Opening a document does not send it to an AI
-service. **Copy Markdown** copies your current Markdown source; you choose where
-to paste it. Any external service you use has its own data-handling terms.
-
-### Experimental pseudonymization
-
-An optional local scan proposes replacements for identifying text. Review the
-proposals, correct or add aliases, explicitly apply them, then check the remaining
-text before copying. Copying does not apply pending proposals.
-
-Automatic scanning is experimental on Apple Silicon macOS and Windows x64.
-Manual review is available on every platform. Detection has known misses,
-including identifying text in English, Russian and hidden Markdown source.
-Dates, amounts and contextual clues may still identify the parties.
-
-<div class="review-note experimental">
-<strong>Review assistance, not guaranteed anonymization.</strong> Replacing names
-does not establish that a document is safe to share. Originals, filenames,
-attachments and undo history remain locally. Only prepared Markdown is copied;
-alias mappings are not included.
-</div>
-
-## A few practical questions
+## Questions lawyers ask
 
 <details>
 <summary>Can I download mdoc today?</summary>
-<p>Check the <a href="/tools/mdoc/download/">availability page</a> for verified
-downloads and current status. The source and all of its dependencies are public,
-so you can also build mdoc yourself.</p>
+<p>The first public release is being prepared. The <a href="/tools/mdoc/download/">download page</a>
+always shows what is available. Until installers are published, you can watch the
+repository on GitHub for the release, or build mdoc yourself from its public source.</p>
 </details>
 
 <details>
-<summary>Does mdoc connect to an AI provider?</summary>
-<p>The workflow prepares Markdown for another tool. You review it and copy it
-there yourself. mdoc does not automatically submit your documents to an AI service.</p>
+<summary>Does mdoc send my documents anywhere?</summary>
+<p>No. Opening, reading, recognizing scans and pseudonymizing all happen on your
+computer. mdoc connects to the internet only when you approve the one-time download of
+its recognition and pseudonymization models, from GitHub and Hugging Face.
+After that it works offline. Text reaches an AI tool only when you copy it and paste
+it there yourself, and that tool’s own data terms then apply.</p>
 </details>
 
 <details>
-<summary>Which platforms and features are supported?</summary>
-<p>mdoc targets macOS, Windows and Linux. Native-text import works across build
-targets. Local OCR and automatic experimental pseudonymization are currently
-limited to Apple Silicon macOS and Windows x64. Platform features and installer
-availability are separate; see the availability page for the current status.</p>
+<summary>How reliable is pseudonymization?</summary>
+<p>It catches most names and identifiers, but not all of them. In our tests on
+synthetic English legal documents it found about 84% of identifying details;
+Russian text is detected less reliably. That is why mdoc only <em>proposes</em>
+replacements: you review each one, add anything it missed, and approve before
+copying. Dates, amounts and other context are not replaced automatically and
+may still identify the parties. Pseudonymization helps you prepare a document;
+it does not guarantee that the result is anonymous.</p>
 </details>
 
 <details>
-<summary>Will the conversion match my original document?</summary>
-<p>Conversion preserves text and structure rather than the original page layout.
-Embedded images are not retained. Scans, complicated tables and DOCX preview
-features need particular care. Keep the source in view and review the result.</p>
+<summary>Which documents can I open?</summary>
+<p>PDF (including scanned PDFs), Word (DOC and DOCX), Excel (XLS and XLSX),
+PowerPoint (PPT and PPTX), OpenDocument (ODT, ODS and ODP), RTF, EPUB and CSV,
+as well as Markdown and plain text. The side-by-side view of the original is available
+for PDF and Word files. Your original file is never changed.</p>
 </details>
 
 <details>
-<summary>Is it free and open source?</summary>
-<p>mdoc is free software under GPL-3.0-or-later. Its source and development are
-public on GitHub, including its document-conversion library
-<code>lawkitt/anydoc</code>.</p>
+<summary>Will the result match my original document?</summary>
+<p>mdoc keeps the text and its structure, such as headings, lists and tables,
+rather than the page layout. Embedded images are not carried over, and complex
+tables or unusual Word features may need a quick correction. Keep the original in
+view and check the result before you rely on it.</p>
 </details>
 
 <details>
-<summary>Where do I report an issue or contribute?</summary>
+<summary>How well does it read scanned documents?</summary>
+<p>Scanned PDF pages are recognized locally in English, or in English and
+Russian. Clean, printed scans work best. Handwriting is not supported, and
+recognition can misread characters, so check figures and names against the
+original. Recognition applies to PDFs; images inside Word files are not read.</p>
+</details>
+
+<details>
+<summary>Which computers does it run on?</summary>
+<p>mdoc is made for Macs with Apple silicon (M1 or later) and Windows PCs (x64).
+On Windows, scanned-page recognition also needs the free Microsoft Visual C++
+Redistributable. Developers can build mdoc for Intel Macs, Windows on ARM and Linux;
+there it reads documents with built-in text, but scan recognition and automatic
+pseudonymization are not available.</p>
+</details>
+
+<details>
+<summary>Is it really free?</summary>
+<p>Yes. mdoc is free and open-source software under the GPL-3.0-or-later license.
+Its code, including the <code>lawkitt/anydoc</code> conversion library it uses,
+is public on GitHub. There is no account and no subscription.</p>
+</details>
+
+<details>
+<summary>Where do I report a problem or suggest an improvement?</summary>
 <p>Use the <a href="https://github.com/lawkitt/mdoc/issues">mdoc issue tracker</a>.
-Include the platform, steps to reproduce and a synthetic example where possible.</p>
+Please describe your computer, the steps that led to the problem, and, if possible,
+a made-up example document rather than a real client file.</p>
 </details>

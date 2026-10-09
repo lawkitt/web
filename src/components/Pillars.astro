@@ -1,0 +1,101 @@
+---
+import { mdocMetrics, mdocMetricsNote, mdocPillars } from "../lib/catalog";
+---
+
+<div class="pillars">
+  {mdocPillars.map((pillar, index) => (
+    <article>
+      <span class="pillar-num">{String(index + 1).padStart(2, "0")}</span>
+      <h3>{pillar.title}</h3>
+      <p>{pillar.body}</p>
+      {index === 2 && mdocMetrics.length > 0 && (
+        <>
+          <dl class="metrics">
+            {mdocMetrics.map((metric) => (
+              <div>
+                <dt>{metric.label}</dt>
+                <dd>{metric.value}</dd>
+              </div>
+            ))}
+          </dl>
+          <p class="metrics-note">{mdocMetricsNote}</p>
+        </>
+      )}
+    </article>
+  ))}
+</div>
+<style>
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  article {
+    background: var(--bg-elev);
+    padding: 40px;
+  }
+  .pillar-num {
+    display: block;
+    color: var(--accent);
+    font: 11px var(--mono);
+    margin-bottom: 22px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  article > p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+    margin-top: 16px;
+    max-width: 480px;
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    margin: 28px 0 0;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+  }
+  .metrics div {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 6px;
+  }
+  dd {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  dt {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .metrics-note {
+    color: var(--dim);
+    font-size: 11px;
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+  @media (max-width: 800px) {
+    .pillars {
+      grid-template-columns: 1fr;
+    }
+    article {
+      padding: 28px 24px;
+    }
+    h3 {
+      font-size: 21px;
+    }
+    article > p {
+      font-size: 14px;
+    }
+  }
+</style>
