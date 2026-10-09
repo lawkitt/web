@@ -91,3 +91,14 @@ post-launch review. Nothing here is confirmed until marked SETTLED.
 Frontier: empty pending confirmation of shared understanding.
 
 
+
+## Delivery
+
+2026-10-10: user confirmed shared understanding ("yes, implement"), reviewed
+PRs #1–#2 and said "deploy". #2 had merged into its stacked base, so #3 landed
+the identical content on `main`. Deployed from `main` (348974a) with
+`npm run deploy`: Worker version `cae2688f-a97a-4d1e-a244-aabfb4b38fb8`.
+Live check: `/`, `/tools/mdoc/` and `/tools/mdoc/download/` return 200 with the
+new headings; unknown paths return 404.
+Open follow-ups: new app screenshots (pseudonymization, OCR), and the
+pseudonymization timing (the harness run was killed by the OS).
