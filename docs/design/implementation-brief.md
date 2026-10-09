@@ -1,7 +1,7 @@
 # Lawkitt website implementation brief
 
 Date: 2026-10-09
-Status: Confirmed by user; Stage 1 complete and awaiting visual review
+Status: Full agreed implementation complete locally; deployment prepared
 
 Decision record: `marketing-site.md` and `../adr/0001-*` through `0003-*`.
 
@@ -92,6 +92,16 @@ Deliver deployment-ready code; do not deploy or change DNS/account configuration
 
 ## Confirmation boundary
 
-All design questions are answered. The user confirmed shared understanding with
-“implement” on 2026-10-09. Stage 1 is authorized and begins now. Stage 2 awaits
-the already-agreed clone visual review.
+All design questions are answered. After the preserved Stage 1 review checkpoint,
+the user explicitly requested “Continue. Implement Stage 2” on 2026-10-09.
+Stage 2 is authorized. Deployment remains outside the confirmed scope.
+
+## Final implementation completion
+
+2026-10-09: Following the user’s “Continue and complete full implementation”,
+closed release validation and state-consistency gaps, separated preview and
+production output, extracted reusable catalog cards, formatted source and added
+functional release/build checks and a non-deploying CI workflow. Full local
+verification and captures: `../evidence/completion/verification.md`. No remaining
+implementation items in the agreed brief. Public mdoc installers and production
+deployment remain separately scoped external work.

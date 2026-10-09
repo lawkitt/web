@@ -1,0 +1,1265 @@
+[
+  {
+    "page": "home",
+    "viewport": 1440,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "Lawkitt \u2014 Practical tools for everyday legal work",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 48,
+      "incomplete": 1,
+      "passes": 41,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 11,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<div class=\"hero-label\" data-rise=\"\" data-astro-cid-lcdefpme=\"\"><span class=\"status-dot\" data-astro-cid-lcdefpme=\"\"></span> Made for the work between the big decisions</div>",
+            "target": [
+              ".hero-label"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-rise=\"\" style=\"--d:.07s\" data-astro-cid-lcdefpme=\"\">Practical tools for<br class=\"desktop-break\" data-astro-cid-lcdefpme=\"\"> everyday legal work.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"hero-subtitle\" data-rise=\"\" style=\"--d:.14s\" data-astro-cid-lcdefpme=\"\">Free, open-source utilities from Lawkitt.</p>",
+            "target": [
+              ".hero-subtitle"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/tools/mdoc/\" data-astro-cid-lcdefpme=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions > .btn-primary.btn[href$=\"mdoc/\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"https://github.com/lawkitt\" data-astro-cid-lcdefpme=\"\">Browse on GitHub <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions > .btn-ghost.btn[href$=\"lawkitt\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"catalog-cue\" href=\"#tools\" data-astro-cid-lcdefpme=\"\">Meet the tools <span aria-hidden=\"true\" data-astro-cid-lcdefpme=\"\">\u2193</span></a>",
+            "target": [
+              ".catalog-cue"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-lcdefpme=\"\">\u2193</span>",
+            "target": [
+              ".catalog-cue > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p class=\"eyebrow\" data-astro-cid-lcdefpme=\"\">03 / Build with us</p>",
+            "target": [
+              ".community-panel > div > .eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<h2 id=\"community-title\" data-astro-cid-lcdefpme=\"\">Good tools grow<br data-astro-cid-lcdefpme=\"\">with real work.</h2>",
+            "target": [
+              "#community-title"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p data-astro-cid-lcdefpme=\"\">Bring a reproducible bug, a practical use case or a contribution. Development happens on GitHub.</p>",
+            "target": [
+              ".community-panel > div > p:nth-child(3)"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "mdoc",
+    "viewport": 1440,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "mdoc \u2014 Legal documents to editable Markdown | Lawkitt",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/tools/mdoc/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 47,
+      "incomplete": 1,
+      "passes": 42,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 18,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"back-link\" href=\"/#tools\" data-astro-cid-566q7bpd=\"\"><span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u2190</span> All tools</a>",
+            "target": [
+              ".back-link"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u2190</span>",
+            "target": [
+              ".back-link > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span data-astro-cid-566q7bpd=\"\">mdoc</span>",
+            "target": [
+              ".product-heading > span:nth-child(2)"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"tag tag-accent\" data-astro-cid-566q7bpd=\"\">In development</span>",
+            "target": [
+              ".tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-rise=\"\" style=\"--d:.07s\" data-astro-cid-566q7bpd=\"\">Turn legal documents into editable Markdown for AI tools.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"product-intro\" data-rise=\"\" style=\"--d:.14s\" data-astro-cid-566q7bpd=\"\">Open your document. Keep the original in view.<br class=\"desktop-break\" data-astro-cid-566q7bpd=\"\"> Prepare the text for the tool you use next.</p>",
+            "target": [
+              ".product-intro"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/tools/mdoc/download/\" data-astro-cid-566q7bpd=\"\">Check availability <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions[data-rise=\"\"] > .btn-primary.btn[href$=\"download/\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"https://github.com/lawkitt/mdoc\" data-astro-cid-566q7bpd=\"\">View source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions[data-rise=\"\"] > .btn-ghost.btn"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"availability-note\" data-astro-cid-566q7bpd=\"\">Downloads coming soon <span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u00b7</span> Free software under GPL-3.0-or-later</p>",
+            "target": [
+              ".availability-note"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u00b7</span>",
+            "target": [
+              ".availability-note > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "download",
+    "viewport": 1440,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "mdoc downloads & availability | Lawkitt",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/tools/mdoc/download/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 51,
+      "incomplete": 1,
+      "passes": 38,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 36,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"back-link\" href=\"/tools/mdoc/\" data-astro-cid-hu6orqan=\"\"><span aria-hidden=\"true\" data-astro-cid-hu6orqan=\"\">\u2190</span> Back to mdoc</a>",
+            "target": [
+              ".back-link"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-hu6orqan=\"\">\u2190</span>",
+            "target": [
+              ".back-link > span"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span data-astro-cid-hu6orqan=\"\">mdoc</span>",
+            "target": [
+              ".app-label > span"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"eyebrow\" data-astro-cid-hu6orqan=\"\">Availability</p>",
+            "target": [
+              ".eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-astro-cid-hu6orqan=\"\">Downloads coming soon.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"download-intro\" data-astro-cid-hu6orqan=\"\">We\u2019re preparing public installers. There isn\u2019t a verified download available yet. You can explore the app and follow development on GitHub.</p>",
+            "target": [
+              ".download-intro"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"https://github.com/lawkitt/mdoc\" data-astro-cid-hu6orqan=\"\">View source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-primary"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"/tools/mdoc/\" data-astro-cid-hu6orqan=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-ghost"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"tag tag-accent\" data-astro-cid-hu6orqan=\"\">In development</span>",
+            "target": [
+              ".tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h2 data-astro-cid-hu6orqan=\"\">A note about source builds</h2>",
+            "target": [
+              ".source-note > h2"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "404",
+    "viewport": 1440,
+    "httpStatus": 404,
+    "metrics": {
+      "title": "Page not found | Lawkitt",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": null,
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 57,
+      "incomplete": 1,
+      "passes": 32,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 5,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"eyebrow\" data-astro-cid-ibpinaeu=\"\">404 / Page not found</p>",
+            "target": [
+              ".eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-astro-cid-ibpinaeu=\"\">A loose end.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p data-astro-cid-ibpinaeu=\"\">This page isn\u2019t here. The tools are a good place to start.</p>",
+            "target": [
+              ".narrow > p:nth-child(3)"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/\" data-astro-cid-ibpinaeu=\"\">Back to Lawkitt <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-primary"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"/tools/mdoc/\" data-astro-cid-ibpinaeu=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-ghost"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "viewport": 1024,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "Lawkitt \u2014 Practical tools for everyday legal work",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 48,
+      "incomplete": 1,
+      "passes": 41,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 11,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<div class=\"hero-label\" data-rise=\"\" data-astro-cid-lcdefpme=\"\"><span class=\"status-dot\" data-astro-cid-lcdefpme=\"\"></span> Made for the work between the big decisions</div>",
+            "target": [
+              ".hero-label"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-rise=\"\" style=\"--d:.07s\" data-astro-cid-lcdefpme=\"\">Practical tools for<br class=\"desktop-break\" data-astro-cid-lcdefpme=\"\"> everyday legal work.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"hero-subtitle\" data-rise=\"\" style=\"--d:.14s\" data-astro-cid-lcdefpme=\"\">Free, open-source utilities from Lawkitt.</p>",
+            "target": [
+              ".hero-subtitle"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/tools/mdoc/\" data-astro-cid-lcdefpme=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions > .btn-primary.btn[href$=\"mdoc/\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"https://github.com/lawkitt\" data-astro-cid-lcdefpme=\"\">Browse on GitHub <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions > .btn-ghost.btn[href$=\"lawkitt\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"catalog-cue\" href=\"#tools\" data-astro-cid-lcdefpme=\"\">Meet the tools <span aria-hidden=\"true\" data-astro-cid-lcdefpme=\"\">\u2193</span></a>",
+            "target": [
+              ".catalog-cue"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-lcdefpme=\"\">\u2193</span>",
+            "target": [
+              ".catalog-cue > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p class=\"eyebrow\" data-astro-cid-lcdefpme=\"\">03 / Build with us</p>",
+            "target": [
+              ".community-panel > div > .eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<h2 id=\"community-title\" data-astro-cid-lcdefpme=\"\">Good tools grow<br data-astro-cid-lcdefpme=\"\">with real work.</h2>",
+            "target": [
+              "#community-title"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p data-astro-cid-lcdefpme=\"\">Bring a reproducible bug, a practical use case or a contribution. Development happens on GitHub.</p>",
+            "target": [
+              ".community-panel > div > p:nth-child(3)"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "mdoc",
+    "viewport": 1024,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "mdoc \u2014 Legal documents to editable Markdown | Lawkitt",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/tools/mdoc/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 47,
+      "incomplete": 1,
+      "passes": 42,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 18,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"back-link\" href=\"/#tools\" data-astro-cid-566q7bpd=\"\"><span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u2190</span> All tools</a>",
+            "target": [
+              ".back-link"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u2190</span>",
+            "target": [
+              ".back-link > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span data-astro-cid-566q7bpd=\"\">mdoc</span>",
+            "target": [
+              ".product-heading > span:nth-child(2)"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"tag tag-accent\" data-astro-cid-566q7bpd=\"\">In development</span>",
+            "target": [
+              ".tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-rise=\"\" style=\"--d:.07s\" data-astro-cid-566q7bpd=\"\">Turn legal documents into editable Markdown for AI tools.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"product-intro\" data-rise=\"\" style=\"--d:.14s\" data-astro-cid-566q7bpd=\"\">Open your document. Keep the original in view.<br class=\"desktop-break\" data-astro-cid-566q7bpd=\"\"> Prepare the text for the tool you use next.</p>",
+            "target": [
+              ".product-intro"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/tools/mdoc/download/\" data-astro-cid-566q7bpd=\"\">Check availability <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions[data-rise=\"\"] > .btn-primary.btn[href$=\"download/\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"https://github.com/lawkitt/mdoc\" data-astro-cid-566q7bpd=\"\">View source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions[data-rise=\"\"] > .btn-ghost.btn"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"availability-note\" data-astro-cid-566q7bpd=\"\">Downloads coming soon <span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u00b7</span> Free software under GPL-3.0-or-later</p>",
+            "target": [
+              ".availability-note"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u00b7</span>",
+            "target": [
+              ".availability-note > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "download",
+    "viewport": 1024,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "mdoc downloads & availability | Lawkitt",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/tools/mdoc/download/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 51,
+      "incomplete": 1,
+      "passes": 38,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 36,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"back-link\" href=\"/tools/mdoc/\" data-astro-cid-hu6orqan=\"\"><span aria-hidden=\"true\" data-astro-cid-hu6orqan=\"\">\u2190</span> Back to mdoc</a>",
+            "target": [
+              ".back-link"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-hu6orqan=\"\">\u2190</span>",
+            "target": [
+              ".back-link > span"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span data-astro-cid-hu6orqan=\"\">mdoc</span>",
+            "target": [
+              ".app-label > span"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"eyebrow\" data-astro-cid-hu6orqan=\"\">Availability</p>",
+            "target": [
+              ".eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-astro-cid-hu6orqan=\"\">Downloads coming soon.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"download-intro\" data-astro-cid-hu6orqan=\"\">We\u2019re preparing public installers. There isn\u2019t a verified download available yet. You can explore the app and follow development on GitHub.</p>",
+            "target": [
+              ".download-intro"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"https://github.com/lawkitt/mdoc\" data-astro-cid-hu6orqan=\"\">View source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-primary"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"/tools/mdoc/\" data-astro-cid-hu6orqan=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-ghost"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"tag tag-accent\" data-astro-cid-hu6orqan=\"\">In development</span>",
+            "target": [
+              ".tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h2 data-astro-cid-hu6orqan=\"\">A note about source builds</h2>",
+            "target": [
+              ".source-note > h2"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "404",
+    "viewport": 1024,
+    "httpStatus": 404,
+    "metrics": {
+      "title": "Page not found | Lawkitt",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": null,
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 57,
+      "incomplete": 1,
+      "passes": 32,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 5,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"eyebrow\" data-astro-cid-ibpinaeu=\"\">404 / Page not found</p>",
+            "target": [
+              ".eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-astro-cid-ibpinaeu=\"\">A loose end.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p data-astro-cid-ibpinaeu=\"\">This page isn\u2019t here. The tools are a good place to start.</p>",
+            "target": [
+              ".narrow > p:nth-child(3)"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/\" data-astro-cid-ibpinaeu=\"\">Back to Lawkitt <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-primary"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"/tools/mdoc/\" data-astro-cid-ibpinaeu=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-ghost"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "home",
+    "viewport": 390,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "Lawkitt \u2014 Practical tools for everyday legal work",
+      "width": 390,
+      "scrollWidth": 390,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 47,
+      "incomplete": 1,
+      "passes": 42,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 11,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<div class=\"hero-label\" data-rise=\"\" data-astro-cid-lcdefpme=\"\"><span class=\"status-dot\" data-astro-cid-lcdefpme=\"\"></span> Made for the work between the big decisions</div>",
+            "target": [
+              ".hero-label"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-rise=\"\" style=\"--d:.07s\" data-astro-cid-lcdefpme=\"\">Practical tools for<br class=\"desktop-break\" data-astro-cid-lcdefpme=\"\"> everyday legal work.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"hero-subtitle\" data-rise=\"\" style=\"--d:.14s\" data-astro-cid-lcdefpme=\"\">Free, open-source utilities from Lawkitt.</p>",
+            "target": [
+              ".hero-subtitle"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/tools/mdoc/\" data-astro-cid-lcdefpme=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions > .btn-primary.btn[href$=\"mdoc/\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"https://github.com/lawkitt\" data-astro-cid-lcdefpme=\"\">Browse on GitHub <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions > .btn-ghost.btn[href$=\"lawkitt\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"catalog-cue\" href=\"#tools\" data-astro-cid-lcdefpme=\"\">Meet the tools <span aria-hidden=\"true\" data-astro-cid-lcdefpme=\"\">\u2193</span></a>",
+            "target": [
+              ".catalog-cue"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-lcdefpme=\"\">\u2193</span>",
+            "target": [
+              ".catalog-cue > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p class=\"eyebrow\" data-astro-cid-lcdefpme=\"\">03 / Build with us</p>",
+            "target": [
+              ".community-panel > div > .eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<h2 id=\"community-title\" data-astro-cid-lcdefpme=\"\">Good tools grow<br data-astro-cid-lcdefpme=\"\">with real work.</h2>",
+            "target": [
+              "#community-title"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a background gradient",
+            "html": "<p data-astro-cid-lcdefpme=\"\">Bring a reproducible bug, a practical use case or a contribution. Development happens on GitHub.</p>",
+            "target": [
+              ".community-panel > div > p:nth-child(3)"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "mdoc",
+    "viewport": 390,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "mdoc \u2014 Legal documents to editable Markdown | Lawkitt",
+      "width": 390,
+      "scrollWidth": 390,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/tools/mdoc/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 46,
+      "incomplete": 1,
+      "passes": 43,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 18,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"back-link\" href=\"/#tools\" data-astro-cid-566q7bpd=\"\"><span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u2190</span> All tools</a>",
+            "target": [
+              ".back-link"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u2190</span>",
+            "target": [
+              ".back-link > span[aria-hidden=\"true\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span data-astro-cid-566q7bpd=\"\">mdoc</span>",
+            "target": [
+              ".product-heading > span:nth-child(2)"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"tag tag-accent\" data-astro-cid-566q7bpd=\"\">In development</span>",
+            "target": [
+              ".tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-rise=\"\" style=\"--d:.07s\" data-astro-cid-566q7bpd=\"\">Turn legal documents into editable Markdown for AI tools.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"product-intro\" data-rise=\"\" style=\"--d:.14s\" data-astro-cid-566q7bpd=\"\">Open your document. Keep the original in view.<br class=\"desktop-break\" data-astro-cid-566q7bpd=\"\"> Prepare the text for the tool you use next.</p>",
+            "target": [
+              ".product-intro"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/tools/mdoc/download/\" data-astro-cid-566q7bpd=\"\">Check availability <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions[data-rise=\"\"] > .btn-primary.btn[href$=\"download/\"]"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"https://github.com/lawkitt/mdoc\" data-astro-cid-566q7bpd=\"\">View source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".actions[data-rise=\"\"] > .btn-ghost.btn"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"availability-note\" data-astro-cid-566q7bpd=\"\">Downloads coming soon <span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u00b7</span> Free software under GPL-3.0-or-later</p>",
+            "target": [
+              ".availability-note"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-566q7bpd=\"\">\u00b7</span>",
+            "target": [
+              ".availability-note > span[aria-hidden=\"true\"]"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "download",
+    "viewport": 390,
+    "httpStatus": 200,
+    "metrics": {
+      "title": "mdoc downloads & availability | Lawkitt",
+      "width": 390,
+      "scrollWidth": 390,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": "https://lawkitt.com/tools/mdoc/download/",
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 51,
+      "incomplete": 1,
+      "passes": 38,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 36,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"back-link\" href=\"/tools/mdoc/\" data-astro-cid-hu6orqan=\"\"><span aria-hidden=\"true\" data-astro-cid-hu6orqan=\"\">\u2190</span> Back to mdoc</a>",
+            "target": [
+              ".back-link"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters",
+            "html": "<span aria-hidden=\"true\" data-astro-cid-hu6orqan=\"\">\u2190</span>",
+            "target": [
+              ".back-link > span"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span data-astro-cid-hu6orqan=\"\">mdoc</span>",
+            "target": [
+              ".app-label > span"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"eyebrow\" data-astro-cid-hu6orqan=\"\">Availability</p>",
+            "target": [
+              ".eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-astro-cid-hu6orqan=\"\">Downloads coming soon.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"download-intro\" data-astro-cid-hu6orqan=\"\">We\u2019re preparing public installers. There isn\u2019t a verified download available yet. You can explore the app and follow development on GitHub.</p>",
+            "target": [
+              ".download-intro"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"https://github.com/lawkitt/mdoc\" data-astro-cid-hu6orqan=\"\">View source <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M7 17 17 7M7 7h10v10\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-primary"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"/tools/mdoc/\" data-astro-cid-hu6orqan=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-ghost"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<span class=\"tag tag-accent\" data-astro-cid-hu6orqan=\"\">In development</span>",
+            "target": [
+              ".tag"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h2 data-astro-cid-hu6orqan=\"\">A note about source builds</h2>",
+            "target": [
+              ".source-note > h2"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  },
+  {
+    "page": "404",
+    "viewport": 390,
+    "httpStatus": 404,
+    "metrics": {
+      "title": "Page not found | Lawkitt",
+      "width": 390,
+      "scrollWidth": 390,
+      "brokenImages": 0,
+      "h1": 1,
+      "canonical": null,
+      "anchors": []
+    },
+    "axeCounts": {
+      "inapplicable": 57,
+      "incomplete": 1,
+      "passes": 32,
+      "violations": 0
+    },
+    "violations": [],
+    "incomplete": [
+      {
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=axeAPI",
+        "id": "color-contrast",
+        "impact": "serious",
+        "nodeCount": 5,
+        "nodes": [
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p class=\"eyebrow\" data-astro-cid-ibpinaeu=\"\">404 / Page not found</p>",
+            "target": [
+              ".eyebrow"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<h1 data-astro-cid-ibpinaeu=\"\">A loose end.</h1>",
+            "target": [
+              "h1"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<p data-astro-cid-ibpinaeu=\"\">This page isn\u2019t here. The tools are a good place to start.</p>",
+            "target": [
+              ".narrow > p:nth-child(3)"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-primary\" href=\"/\" data-astro-cid-ibpinaeu=\"\">Back to Lawkitt <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-primary"
+            ]
+          },
+          {
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element",
+            "html": "<a class=\"btn btn-ghost\" href=\"/tools/mdoc/\" data-astro-cid-ibpinaeu=\"\">Explore mdoc <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\" data-astro-cid-tns2tesc=\"\"><path d=\"M4 12h16m-6-6 6 6-6 6\" data-astro-cid-tns2tesc=\"\"></path></svg></a>",
+            "target": [
+              ".btn-ghost"
+            ]
+          }
+        ],
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    ]
+  }
+]

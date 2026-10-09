@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.preview-dist/
+.astro/
+.wrangler/
+docs/reference/
+docs/evidence/
+public/
+.agents/
+.claude/
+package-lock.json

@@ -1,0 +1,486 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Arrow from "../../../components/Arrow.astro";
+import ProductScreenshot from "../../../components/ProductScreenshot.astro";
+import { Image } from "astro:assets";
+import { mdoc } from "../../../lib/catalog";
+import { mdocAvailability } from "../../../lib/releases";
+import { Content } from "../../../content/tools/mdoc.md";
+---
+
+<Layout
+  title="mdoc — Legal documents to editable Markdown | Lawkitt"
+  description="Prepare PDF and DOCX as editable Markdown with mdoc. Review beside the original, use local OCR on supported platforms, then copy to your external AI tool."
+  socialImage="/social/mdoc.png"
+>
+  <section class="hero product-hero">
+    <div class="container">
+      <a class="back-link" href="/#tools">
+        <span aria-hidden="true">←</span> All tools
+      </a>
+      <div class="product-heading" data-rise>
+        <Image src={mdoc.icon} alt="" width={48} height={48} format="webp" />
+        <span>mdoc</span>
+        <span class="tag tag-accent">{mdoc.maturity}</span>
+      </div>
+      <h1 data-rise style="--d:.07s">
+        Turn legal documents into editable Markdown for AI tools.
+      </h1>
+      <p class="product-intro" data-rise style="--d:.14s">
+        Open your document. Keep the original in view.
+        <br class="desktop-break" /> Prepare the text for the tool you use next.
+      </p>
+      <div class="actions" data-rise style="--d:.21s">
+        <a class="btn btn-primary" href="/tools/mdoc/download/">
+          Check availability <Arrow />
+        </a>
+        <a class="btn btn-ghost" href={mdoc.source}>
+          View source <Arrow diagonal />
+        </a>
+      </div>
+      <p class="availability-note">
+        {mdocAvailability} <span aria-hidden="true">·</span> Free software under{" "}
+        {mdoc.license}
+      </p>
+      <div class="hero-shot">
+        <ProductScreenshot />
+      </div>
+    </div>
+  </section>
+  <nav class="product-nav container" aria-label="On this page">
+    <a href="#workflow">Workflow</a>
+    <a href="#documents-ready-for-your-next-step">Capabilities</a>
+    <a href="#prepare-thoughtfully-share-deliberately">Sharing & review</a>
+    <a href="#a-few-practical-questions">FAQ</a>
+  </nav>
+  <section
+    class="section workflow"
+    id="workflow"
+    aria-labelledby="workflow-title"
+  >
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">01 / A simple workflow</p>
+          <h2 id="workflow-title">From document to prepared text.</h2>
+        </div>
+        <p>Three deliberate steps. Your judgment stays in the loop.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <div class="step-visual">
+            <span class="file-pill">.pdf</span>
+            <span class="file-pill">.docx</span>
+            <Arrow />
+            <span class="file-pill prepared">.md</span>
+          </div>
+          <div class="step-title">
+            <span>01</span>
+            <h3>Open</h3>
+          </div>
+          <p>
+            Open a PDF or Word document. Convert native text, or choose local
+            OCR for a scanned PDF on a supported platform.
+          </p>
+        </li>
+        <li>
+          <div class="step-visual compare">
+            <span>Markdown</span>
+            <span aria-hidden="true">│</span>
+            <span>Original</span>
+          </div>
+          <div class="step-title">
+            <span>02</span>
+            <h3>Review</h3>
+          </div>
+          <p>
+            Read the converted text beside the source. Correct wording, check
+            structure and edit what you need.
+          </p>
+        </li>
+        <li>
+          <div class="step-visual">
+            <span class="file-pill prepared">.md</span>
+            <Arrow />
+            <span class="copy-label">Copy Markdown</span>
+          </div>
+          <div class="step-title">
+            <span>03</span>
+            <h3>Copy</h3>
+          </div>
+          <p>
+            Copy the prepared Markdown and paste it into your external AI tool.
+            You choose what leaves your workspace.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <section class="section product-content">
+    <div class="container prose-grid">
+      <aside>
+        <p class="eyebrow">02 / The details</p>
+        <p class="aside-copy">
+          Know what the tool does.
+          <br />
+          Know what to review.
+        </p>
+      </aside>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </section>
+  <section class="product-cta">
+    <div class="container">
+      <div class="cta-panel">
+        <div>
+          <p class="eyebrow">03 / Follow the project</p>
+          <h2>
+            Meet your next
+            <br />
+            document workspace.
+          </h2>
+          <p>
+            {mdocAvailability}. Follow the code, check availability or help
+            shape what comes next.
+          </p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="/tools/mdoc/download/">
+            Check availability <Arrow />
+          </a>
+          <a class="btn btn-ghost" href={mdoc.source}>
+            View source <Arrow diagonal />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+<style>
+  .product-hero {
+    padding: 40px 0 0;
+  }
+  .back-link {
+    color: var(--dim);
+    font: 11px var(--mono);
+    display: inline-flex;
+    gap: 8px;
+  }
+  .back-link:hover {
+    color: var(--fg);
+  }
+  .product-heading {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin: 48px 0 28px;
+  }
+  .product-heading img {
+    border-radius: 10px;
+  }
+  .product-heading > span:not(.tag) {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  .product-heading .tag {
+    margin-left: 8px;
+  }
+  .product-hero h1 {
+    max-width: 1000px;
+    font-size: clamp(44px, 5.4vw, 72px);
+  }
+  .product-intro {
+    color: var(--muted);
+    font-size: 18px;
+    margin-top: 28px;
+  }
+  .product-hero .actions {
+    margin-top: 28px;
+  }
+  .availability-note {
+    color: var(--dim);
+    font-size: 11px;
+    margin-top: 16px;
+  }
+  .availability-note span {
+    margin: 0 6px;
+  }
+  .hero-shot {
+    margin-top: 60px;
+  }
+  .product-nav {
+    display: flex;
+    gap: 30px;
+    font-size: 12px;
+    color: var(--muted);
+    padding-top: 28px;
+    padding-bottom: 28px;
+    flex-wrap: wrap;
+  }
+  .product-nav a:hover {
+    color: var(--accent);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    counter-reset: step;
+  }
+  .steps li {
+    border-top: 1px solid var(--border-strong);
+    padding-top: 28px;
+  }
+  .step-visual {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 28px;
+    color: var(--dim);
+  }
+  .file-pill {
+    font: 12px var(--mono);
+    background: #1a1a20;
+    color: #c1c1cc;
+    border: 1px solid var(--border-strong);
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .prepared {
+    color: var(--accent);
+    border-color: oklch(0.68 0.17 250 / 0.35);
+    background: var(--accent-dim);
+  }
+  .compare {
+    font: 12px var(--mono);
+    color: #c1c1cc;
+    gap: 22px;
+  }
+  .compare span:first-child {
+    color: var(--accent);
+  }
+  .copy-label {
+    color: #c1c1cc;
+    font: 11px var(--mono);
+  }
+  .step-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .step-title > span {
+    color: var(--accent);
+    font: 11px var(--mono);
+  }
+  .steps p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-top: 18px;
+  }
+  .prose-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+  }
+  .aside-copy {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  .prose {
+    max-width: 740px;
+  }
+  .prose :global(h2) {
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 0 0 24px;
+    scroll-margin-top: 104px;
+  }
+  .prose :global(h2:not(:first-child)) {
+    margin-top: 80px;
+    padding-top: 64px;
+    border-top: 1px solid var(--border);
+  }
+  .prose :global(h3) {
+    font-size: 22px;
+    margin: 36px 0 14px;
+    line-height: 1.3;
+  }
+  .prose :global(p) {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+  .prose :global(strong) {
+    color: #dedee5;
+    font-weight: 600;
+  }
+  .prose :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .prose :global(code) {
+    font: 12px var(--mono);
+  }
+  .prose :global(.review-note) {
+    background: var(--bg-card);
+    border: 1px solid var(--border-strong);
+    border-left: 2px solid var(--accent);
+    padding: 20px 24px;
+    margin-top: 28px;
+    border-radius: 0 8px 8px 0;
+    color: #b9b9c4;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .prose :global(.review-note strong) {
+    display: block;
+    margin-bottom: 6px;
+  }
+  .prose :global(.experimental) {
+    border-left-color: #d3b46b;
+  }
+  .prose :global(details) {
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .prose :global(summary) {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 22px 30px 22px 0;
+    color: #dedee5;
+  }
+  .prose :global(summary:hover) {
+    color: var(--accent);
+  }
+  .prose :global(details p) {
+    padding: 0 0 6px;
+    font-size: 14px;
+  }
+  .product-cta {
+    padding: 0 0 100px;
+  }
+  .cta-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    padding: 48px;
+    background:
+      radial-gradient(ellipse at 100% 0%, var(--accent-dim), transparent 65%),
+      var(--bg-elev);
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+  }
+  .cta-panel h2 {
+    font-size: 38px;
+    margin-top: 20px;
+  }
+  .cta-panel p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 20px;
+    max-width: 450px;
+  }
+  @media (max-width: 1024px) {
+    .prose-grid {
+      grid-template-columns: 190px 1fr;
+      gap: 40px;
+    }
+    .cta-panel {
+      align-items: start;
+    }
+    .cta-panel .actions {
+      flex-direction: column;
+      flex-shrink: 0;
+    }
+  }
+  @media (max-width: 700px) {
+    .product-hero {
+      padding-top: 28px;
+    }
+    .product-heading {
+      margin-top: 32px;
+      margin-bottom: 22px;
+    }
+    .product-heading .tag {
+      font-size: 9px;
+    }
+    .product-hero h1 {
+      font-size: 44px;
+    }
+    .product-intro {
+      font-size: 16px;
+    }
+    .desktop-break {
+      display: none;
+    }
+    .availability-note {
+      max-width: 300px;
+      line-height: 1.8;
+    }
+    .hero-shot {
+      margin-top: 36px;
+    }
+    .product-nav {
+      gap: 20px;
+      font-size: 11px;
+    }
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .step-visual {
+      height: 95px;
+      margin-bottom: 22px;
+    }
+    .prose-grid {
+      display: block;
+    }
+    aside {
+      margin-bottom: 36px;
+    }
+    .aside-copy {
+      display: none;
+    }
+    .prose :global(h2) {
+      font-size: 32px;
+    }
+    .prose :global(h2:not(:first-child)) {
+      margin-top: 56px;
+      padding-top: 48px;
+    }
+    .prose :global(p) {
+      font-size: 14px;
+    }
+    .prose :global(.review-note) {
+      padding: 18px;
+    }
+    .cta-panel {
+      display: block;
+      padding: 30px 24px;
+    }
+    .cta-panel h2 {
+      font-size: 32px;
+    }
+    .cta-panel .actions {
+      margin-top: 28px;
+      flex-direction: row;
+    }
+    .product-cta {
+      padding-bottom: 64px;
+    }
+  }
+</style>

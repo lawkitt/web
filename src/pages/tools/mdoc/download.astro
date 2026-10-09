@@ -1,0 +1,368 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Arrow from "../../../components/Arrow.astro";
+import { Image } from "astro:assets";
+import { mdoc } from "../../../lib/catalog";
+import {
+  latestMdocRelease,
+  mdocAvailability,
+  releaseStatusCheckedAt,
+} from "../../../lib/releases";
+---
+
+<Layout
+  title="mdoc downloads & availability | Lawkitt"
+  description={
+    latestMdocRelease
+      ? "Download verified mdoc installers and check platform capabilities, release details and source build requirements."
+      : "Check mdoc installer availability, platform feature limits and source build requirements. Public downloads are coming soon."
+  }
+  socialImage="/social/mdoc.png"
+>
+  <section class="hero download-page">
+    <div class="container narrow">
+      <a class="back-link" href="/tools/mdoc/">
+        <span aria-hidden="true">←</span> Back to mdoc
+      </a>
+      <div class="app-label">
+        <Image src={mdoc.icon} width={48} height={48} alt="" format="webp" />
+        <span>mdoc</span>
+      </div>
+      <p class="eyebrow">Availability</p>
+      <h1>{mdocAvailability}.</h1>
+      {latestMdocRelease ? (
+        <>
+          <p class="download-intro">
+            Version {latestMdocRelease.version} — choose a verified installer
+            for your platform.
+          </p>
+          <p class="release-date">
+            Published{" "}
+            <time datetime={latestMdocRelease.publishedAt}>
+              {new Date(
+                `${latestMdocRelease.publishedAt}T00:00:00Z`,
+              ).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                timeZone: "UTC",
+              })}
+            </time>
+          </p>
+          <div class="downloads">
+            {latestMdocRelease.assets.map((asset) => (
+              <article>
+                <h2>
+                  {asset.platform} <span>{asset.architecture}</span>
+                </h2>
+                <a
+                  class="btn btn-primary"
+                  href={asset.url}
+                  aria-label={`${asset.label} for ${asset.platform} (${asset.architecture})`}
+                >
+                  {asset.label} <Arrow />
+                </a>
+                <details>
+                  <summary>SHA-256 checksum</summary>
+                  <code>{asset.sha256}</code>
+                </details>
+              </article>
+            ))}
+          </div>
+          <a class="text-link" href={latestMdocRelease.notesUrl}>
+            Release notes <Arrow diagonal />
+          </a>
+        </>
+      ) : (
+        <>
+          <p class="download-intro">
+            We’re preparing public installers. There isn’t a verified download
+            available yet. You can explore the app and follow development on
+            GitHub.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href={mdoc.source}>
+              View source <Arrow diagonal />
+            </a>
+            <a class="btn btn-ghost" href="/tools/mdoc/">
+              Explore mdoc <Arrow />
+            </a>
+          </div>
+        </>
+      )}
+      <p class="checked-date">
+        Availability checked{" "}
+        <time datetime={releaseStatusCheckedAt}>
+          {new Date(`${releaseStatusCheckedAt}T00:00:00Z`).toLocaleDateString(
+            "en-US",
+            { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" },
+          )}
+        </time>
+        .
+      </p>
+      <div class="source-note">
+        <span class="tag tag-accent">{mdoc.maturity}</span>
+        <h2>A note about source builds</h2>
+        <p>
+          The code is public and licensed under {mdoc.license}. Building
+          currently requires access to the pinned private{" "}
+          <code>lawkitt/anydoc</code> dependency. The repository documents the
+          current requirements.
+        </p>
+        <a class="text-link" href={`${mdoc.source}#run`}>
+          Read the build requirements <Arrow diagonal />
+        </a>
+      </div>
+      <div class="platform-section">
+        <h2>Platform capabilities</h2>
+        <p>
+          Build targets describe the application’s platform scope. They do not
+          indicate installer availability.
+        </p>
+        <div class="platform-table">
+          <table>
+            <caption class="visually-hidden">
+              mdoc capabilities by build target
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Build target</th>
+                <th scope="col">Native-text import</th>
+                <th scope="col">Local OCR & automatic pseudonymization</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">macOS / Apple Silicon</th>
+                <td>Supported</td>
+                <td>Available in development builds</td>
+              </tr>
+              <tr>
+                <th scope="row">Windows / x64</th>
+                <td>Supported</td>
+                <td>Available in development builds</td>
+              </tr>
+              <tr>
+                <th scope="row">macOS / Intel</th>
+                <td>Supported</td>
+                <td>Not currently supported</td>
+              </tr>
+              <tr>
+                <th scope="row">Windows / ARM64</th>
+                <td>Supported</td>
+                <td>Not currently supported</td>
+              </tr>
+              <tr>
+                <th scope="row">Linux</th>
+                <td>Supported</td>
+                <td>Not currently supported</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="platform-footnote">
+          OCR needs a one-time model/runtime download; Windows x64 also needs
+          the Visual C++ Redistributable. Automatic pseudonymization is
+          experimental and has known misses. Review every result before sharing.
+          Manual replacement review is available on all build targets.
+        </p>
+      </div>
+      <div class="help-row">
+        <p>A question or a reproducible bug?</p>
+        <a class="text-link" href={mdoc.issues}>
+          Open the issue tracker <Arrow diagonal />
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+<style>
+  .checked-date,
+  .release-date {
+    color: var(--dim);
+    font-size: 11px;
+    margin-top: 18px;
+  }
+  .download-page {
+    padding: 40px 0 100px;
+  }
+  .back-link {
+    color: var(--dim);
+    font: 11px var(--mono);
+    display: inline-flex;
+    gap: 8px;
+  }
+  .back-link:hover {
+    color: var(--fg);
+  }
+  .app-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 52px 0 32px;
+    font-size: 26px;
+    font-weight: 600;
+  }
+  .app-label img {
+    border-radius: 10px;
+  }
+  h1 {
+    margin-top: 18px;
+    font-size: clamp(44px, 5.2vw, 64px);
+    max-width: 700px;
+  }
+  .download-intro {
+    font-size: 17px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 24px 0 28px;
+  }
+  .source-note {
+    padding: 32px;
+    background: var(--bg-elev);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    margin-top: 48px;
+  }
+  .source-note h2 {
+    font-size: 24px;
+    margin: 20px 0 14px;
+  }
+  .source-note p {
+    max-width: 680px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.85;
+  }
+  code {
+    font: 12px var(--mono);
+    color: #c9c9d2;
+    overflow-wrap: anywhere;
+  }
+  .source-note .text-link {
+    margin-top: 22px;
+  }
+  .platform-section {
+    margin-top: 60px;
+  }
+  .platform-section h2 {
+    font-size: 30px;
+  }
+  .platform-section > p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 16px;
+    max-width: 720px;
+  }
+  .platform-table {
+    overflow-x: auto;
+    margin-top: 26px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    text-align: left;
+  }
+  th,
+  td {
+    padding: 18px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  thead th {
+    color: var(--dim);
+    font: 10px/1.7 var(--mono);
+  }
+  tbody th {
+    font-weight: 500;
+    color: #d5d5de;
+  }
+  td {
+    color: var(--muted);
+  }
+  .platform-section .platform-footnote {
+    font-size: 11px;
+    line-height: 1.9;
+  }
+  .help-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 28px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .help-row p {
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .downloads {
+    display: grid;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+  .downloads article {
+    border: 1px solid var(--border-strong);
+    padding: 24px;
+    border-radius: 12px;
+  }
+  .downloads h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .downloads h2 span {
+    color: var(--muted);
+    font-size: 16px;
+  }
+  .downloads details {
+    margin-top: 18px;
+  }
+  .downloads summary {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 12px;
+  }
+  @media (max-width: 700px) {
+    .download-page {
+      padding: 28px 0 64px;
+    }
+    .app-label {
+      margin-top: 36px;
+    }
+    h1 {
+      font-size: 44px;
+    }
+    .download-intro {
+      font-size: 15px;
+    }
+    .source-note {
+      padding: 24px;
+    }
+    .platform-section {
+      margin-top: 44px;
+    }
+    .platform-section h2 {
+      font-size: 28px;
+    }
+    th,
+    td {
+      padding: 14px 9px;
+      font-size: 11px;
+    }
+    th:first-child {
+      width: 36%;
+    }
+    .help-row {
+      display: grid;
+      gap: 10px;
+    }
+  }
+</style>

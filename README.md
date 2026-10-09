@@ -1,57 +1,114 @@
-# Lawkitt website
+# Lawkitt marketing catalog
 
-Current checkpoint: **Stage 1 — faithful T3 Code reference clone**.
+English-only, static Astro website for Lawkitt-developed free OSS legal utilities.
+T3's reviewed styling and Artcraft's catalog organization, starting with mdoc.
+Target: **Cloudflare Workers Static Assets** at `https://lawkitt.com`.
 
-The approved design is in [docs/design/implementation-brief.md](docs/design/implementation-brief.md).
-Lawkitt tailoring starts after the user reviews this baseline. Nothing is deployed.
+## Local development
 
-## Local preview
-
-Requires Node.js 22.12 or newer.
+Use Node.js 22.12+ (verified with 26.11) and npm.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the Local URL printed by Astro. The default configured port is 4173; Astro
-selects another port if it is occupied. Homepage: `/`; download page: `/download`.
-The reference's Stable/Nightly switch and platform-aware download actions remain.
-They query T3's public GitHub releases with upstream release-page fallbacks.
-Reference policy links lead to the original T3 website. CLI scripts are served
-as files, matching the pinned upstream; no installation script is run during setup.
-
-The review preview is running at `http://127.0.0.1:4173/`. To stop the Astro
-daemon, run `./node_modules/.bin/astro dev stop` from this directory.
-
-## Verification
+Open http://127.0.0.1:4173/. Astro 7's dev server can continue as a daemon after
+the command exits. Stop that server with `npx astro dev stop`.
 
 ```sh
-npm run typecheck
-npm run build
+npm run check
 npm run preview
 ```
 
-This standalone package preserves the pinned Astro/TypeScript versions. Sharp
-uses the 0.35.5 security patch instead of upstream's 0.35.4 (GHSA-wq5f-xc86-pv6w).
-It excludes the T3 application JSON-schema endpoint, retro page, Vercel deployment
-configuration and monorepo test runner. The marketing pages need none of them.
-Pinned CLI scripts are copied into public instead of staged from a monorepo.
-The homepage, download page, fonts, imagery, styles and motion stay upstream-derived.
-Local previews have noindex metadata.
-The Astro development toolbar is disabled so it does not cover the reference design.
+The static build is `dist/`. Dev pages use `noindex`; production builds use
+`https://lawkitt.com` canonical URLs. `npm run build:preview` generates an explicitly non-indexable build in
+`.preview-dist/`, including a disallow-all robots file. Production `npm run build`
+always writes to `dist/` with indexing enabled, even if the shell has
+`PUBLIC_PREVIEW=true`.
+`node scripts/verify-build.mjs --preview` verifies that preview policy.
 
-## Source baseline
+## Cloudflare Workers
 
-Upstream commit: `ec80933ac8cd02fec5c97b342462ccc9567cdb1e`.
-See [NOTICE.md](NOTICE.md), [LICENSE](LICENSE), and
-[docs/reference/import-manifest.json](docs/reference/import-manifest.json).
-Standalone changes and visual verification are recorded in docs/reference.
-Read [docs/reference/verification.md](docs/reference/verification.md) for capture
-comparisons, behavior checks and inherited accessibility findings.
+```sh
+npm run workers:preview
+```
 
-## Next checkpoint
+This builds a non-indexable `.preview-dist/` and runs Wrangler's **local** Workers runtime
+at http://127.0.0.1:8787/. Ctrl+C stops it. Use this preview for deep-link, trailing
+slash, custom 404 and `_headers` behavior; Astro's dev server does not reproduce
+Workers routing and headers. Preview builds leave existing production output intact.
 
-After clone review: adapt to the approved English-only Lawkitt catalog and mdoc
-product/download pages. Prepare Cloudflare Workers Static Assets for
-`https://lawkitt.com`; deployment remains outside the current authorized scope.
+`wrangler.jsonc` configures `dist/`, trailing slash normalization, a genuine 404
+fallback, and the custom domain `lawkitt.com`. No SSR script, adapter, database or
+API is needed. Fingerprinted `/_astro/` assets receive immutable caching; HTML
+keeps Workers' revalidation behavior. No analytics, forms or client release fetch.
+
+**Deployment is prepared, not performed.** Once deployment is authorized, use a
+Cloudflare account with the `lawkitt.com` zone active, authenticate Wrangler,
+then run:
+
+```sh
+npx wrangler login
+npm run deploy
+```
+
+This checks types, explicitly rebuilds production assets, validates the output and deploys
+the configured custom domain. Wrangler creates/manages its custom-domain DNS
+record; review existing domain records before that authorized deployment. No
+account IDs or credentials are checked in. `npx wrangler deploy --dry-run` checks
+packaging locally without deployment. See the official [Astro SSG guide](https://developers.cloudflare.com/workers/framework-guides/web-apps/astro/),
+[SSG/404 routing](https://developers.cloudflare.com/workers/static-assets/routing/static-site-generation/)
+and [custom domains](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/).
+
+## Content and release updates
+
+- `src/lib/catalog.ts`: typed catalog metadata, icon, screenshot, maturity,
+  installer availability, platform targets and source links.
+- `src/content/tools/mdoc.md`: longer product content, limitations and FAQ.
+- `src/data/mdoc-releases.json`: manually maintained release manifest.
+- `src/lib/release-manifest.mjs`: validates dates, release ordering, installer
+  targets, GitHub release URLs, duplicate entries and SHA-256 checksums at build time.
+- `src/lib/releases.ts`: typed access to the validated manifest.
+- `src/components/ToolCard.astro`: reusable app card.
+- `src/layouts/Layout.astro`: shared navigation, metadata and footer.
+- `src/styles/global.css`: T3-inspired tokens and shared styles.
+
+mdoc has **no public releases** as checked on 2026-10-09. The empty manifest
+produces “Downloads coming soon.” Source builds currently require access to the
+private pinned `lawkitt/anydoc` dependency. Neither build targets nor maturity
+indicate installer availability.
+
+Before adding a release: verify it on the public mdoc repository, confirm every
+installer URL/platform/architecture, calculate its SHA-256, record the version,
+publication date and release-notes URL, and populate `src/data/mdoc-releases.json` in newest-first order. Update its
+`checkedAt` field and review product feature limitations. Availability labels,
+catalog notes, download metadata, release date and installer links update together
+from the manifest. Never add inferred asset names or unfinished
+packaging links. Re-run the checks and inspect the download page before publishing.
+
+The social-card sources and technical exports are checked in. Regenerate the
+favicon, touch icon and social PNG/SVG cards from supplied brand assets with
+`npm run assets:brand` when branding changes. Product screenshots are optimized
+by Astro during the build. Capture provenance is in `docs/evidence/stage2/`.
+
+## Checks and maintainability
+
+`npm run check` checks source formatting, Astro/types, six release tests, the
+production build and generated links/metadata. `npm run format` formats editable
+source. The installer render test builds a synthetic release in an isolated
+temporary directory; it never changes the real manifest or user preview.
+
+`.github/workflows/check.yml` runs these checks and validates the separate preview
+build on pushes and pull requests. It uses read-only repository access and does
+not deploy. The workflow has been added locally; it has not run on GitHub.
+
+## Review checkpoints and licensing
+
+The reviewed Stage 1 clone is preserved at Git tag `reference-clone-stage1`;
+its upstream pin, source hashes and QA captures remain in `docs/reference/`.
+Stage 2 decisions and implementation acceptance are in `docs/design/` and
+`docs/adr/`. Current verification: `docs/evidence/completion/verification.md`.
+
+Website code: MIT (retained T3 copyright). mdoc: GPL-3.0-or-later.
+See LICENSE and NOTICE.md for source, asset and font attribution.

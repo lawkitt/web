@@ -1,0 +1,12 @@
+{
+  "capturedOn": "2026-10-09",
+  "app": "mdoc",
+  "existingLocalBinary": "/Users/tebriz/Developer/lawkitt/mdoc/target/release/mdoc",
+  "binaryModifiedAt": "2026-10-08T22:44:51.329298+03:00",
+  "binarySha256": "e226c9db289b263f5fbd28781fefcad28f6decab9f258e129b60de4e6937a049",
+  "sourceRepositoryHead": "204394e29901aea24e19824072715244eb01acf6",
+  "fixture": "fixtures/Services Agreement.docx",
+  "image": "mdoc-native.png",
+  "method": "Native app screenshot through cua_repl; no fabricated application UI",
+  "notes": "Real document conversion and original preview. Existing local build is not a public release. Synthetic companies and contract terms."
+}

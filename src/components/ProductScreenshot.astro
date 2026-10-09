@@ -1,0 +1,109 @@
+---
+import { Image } from "astro:assets";
+import { mdoc, type Tool } from "../lib/catalog";
+interface Props {
+  compact?: boolean;
+  tool?: Tool;
+}
+const { compact = false, tool = mdoc } = Astro.props;
+---
+
+<figure class:list={["product-shot", { compact }]}>
+  <div class="shot-bar">
+    <span class="shot-label">
+      {tool.name} / {tool.category.toLowerCase()}
+    </span>
+    <span class="shot-tag">Actual app capture</span>
+  </div>
+  <div
+    class="shot-scroll"
+    tabindex="0"
+    role="region"
+    aria-label={`${tool.name} screenshot; scroll horizontally on small screens to compare both panes`}
+  >
+    <Image
+      src={tool.screenshot}
+      alt={tool.screenshotAlt}
+      widths={[1100, 1650, 2200]}
+      sizes="(max-width: 700px) 740px, 1100px"
+      format="webp"
+      loading={compact ? "lazy" : "eager"}
+      fetchpriority={compact ? "auto" : "high"}
+    />
+  </div>
+  <figcaption>
+    <span>{tool.screenshotCaption}</span>
+    <span class="mobile-hint">
+      Scroll to compare both panes <span aria-hidden="true">↔</span>
+    </span>
+  </figcaption>
+</figure>
+<style>
+  .product-shot {
+    margin: 0;
+    width: 100%;
+    min-width: 0;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-card);
+    box-shadow: 0 24px 100px #0005;
+  }
+  .shot-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font: 11px var(--mono);
+    color: var(--muted);
+  }
+  .shot-tag {
+    color: var(--accent);
+  }
+  .shot-scroll {
+    overflow-x: auto;
+  }
+  .shot-scroll:focus-visible {
+    outline-offset: -3px;
+  }
+  .shot-scroll img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  figcaption {
+    padding: 13px 20px;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .mobile-hint {
+    display: none;
+  }
+  @media (max-width: 700px) {
+    .shot-scroll img {
+      width: 740px;
+      max-width: none;
+    }
+    .shot-bar {
+      padding: 12px 14px;
+      font-size: 10px;
+    }
+    .shot-tag {
+      display: none;
+    }
+    figcaption {
+      padding: 12px 14px;
+      display: grid;
+    }
+    .mobile-hint {
+      display: inline;
+      color: var(--accent);
+    }
+  }
+</style>

@@ -195,3 +195,13 @@ Q20 (responsive/accessibility acceptance) and Q21 (source attribution).
   and responsive captures verified. Six viewport comparisons matched the pinned
   baseline exactly. Inherited accessibility findings recorded, not marked passing.
   Main local preview retained for review; Stage 2 and deployment have not begun.
+
+- 2026-10-09: User explicitly requested Stage 2 implementation after the clone
+  checkpoint. English-only Lawkitt catalog, mdoc product/availability routes,
+  authentic synthetic-document capture and Workers Static Assets preparation
+  implemented. Stage 1 remains preserved at `reference-clone-stage1`. No deploy.
+
+- 2026-10-09: Full implementation completion pass closed release-manifest
+  validation, availability consistency, source maintainability and preview-output
+  isolation. Added functional tests and local CI configuration. All agreed routes
+  and local checks pass; final evidence is in `../evidence/completion/`.

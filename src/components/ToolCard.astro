@@ -1,0 +1,154 @@
+---
+import { Image } from "astro:assets";
+import ProductScreenshot from "./ProductScreenshot.astro";
+import Arrow from "./Arrow.astro";
+import { toolPath, type Tool } from "../lib/catalog";
+interface Props {
+  tool: Tool;
+  index: number;
+}
+const { tool, index } = Astro.props;
+---
+
+<article class="tool-card">
+  <div class="tool-visual">
+    <ProductScreenshot compact tool={tool} />
+  </div>
+  <div class="tool-info">
+    <p class="tool-category">{tool.category}</p>
+    <div class="tool-name">
+      <Image src={tool.icon} alt="" width={48} height={48} format="webp" />
+      <h3>{tool.name}</h3>
+      <span class="tool-number" aria-hidden="true">
+        {String(index + 1).padStart(2, "0")}
+      </span>
+    </div>
+    <p class="tool-pitch">{tool.pitch}</p>
+    <div class="tool-tags">
+      <span class="tag tag-accent">{tool.maturity}</span>
+      <span class="tag">{tool.availability}</span>
+    </div>
+    <dl class="tool-meta">
+      <div>
+        <dt>Build targets</dt>
+        <dd>{tool.platforms.join(" · ")}</dd>
+      </div>
+      <div>
+        <dt>License</dt>
+        <dd>{tool.license}</dd>
+      </div>
+    </dl>
+    <p class="tool-footnote">{tool.availabilityNote}</p>
+    <a class="btn btn-primary" href={toolPath(tool)}>
+      Explore {tool.name} <Arrow />
+    </a>
+  </div>
+</article>
+<style>
+  .tool-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+    background: var(--bg-elev);
+    overflow: hidden;
+  }
+  .tool-visual {
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #141623, #0c0c10 75%);
+    border-right: 1px solid var(--border);
+    min-width: 0;
+  }
+  .tool-info {
+    padding: 36px;
+  }
+  .tool-category {
+    color: var(--accent);
+    font: 11px var(--mono);
+    margin-bottom: 22px;
+  }
+  .tool-name {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .tool-name img {
+    border-radius: 10px;
+  }
+  .tool-name h3 {
+    font-size: 35px;
+  }
+  .tool-number {
+    margin-left: auto;
+    color: var(--dim);
+    font: 11px var(--mono);
+  }
+  .tool-pitch {
+    margin-top: 24px;
+    color: #c8c8d0;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .tool-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 24px 0;
+  }
+  .tool-meta {
+    padding-top: 20px;
+    margin: 0;
+    border-top: 1px solid var(--border);
+    font-size: 12px;
+  }
+  .tool-meta div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  dt {
+    color: var(--dim);
+  }
+  dd {
+    margin: 0;
+    text-align: right;
+    color: #c8c8d0;
+  }
+  .tool-footnote {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.65;
+    margin: 13px 0 24px;
+  }
+  @media (max-width: 1024px) {
+    .tool-card {
+      grid-template-columns: 1.1fr 1fr;
+    }
+    .tool-visual {
+      padding: 20px;
+    }
+    .tool-info {
+      padding: 28px;
+    }
+  }
+  @media (max-width: 700px) {
+    .tool-card {
+      display: flex;
+      flex-direction: column;
+    }
+    .tool-visual {
+      padding: 16px;
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .tool-info {
+      padding: 26px;
+    }
+    .tool-meta div {
+      font-size: 11px;
+    }
+  }
+</style>
