@@ -1,0 +1,74 @@
+[
+  {
+    "name": "home-desktop",
+    "width": 1440,
+    "height": 1000,
+    "changedPixels": 0,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 1440000,
+    "meanAbsoluteChannelDifference": 0
+  },
+  {
+    "name": "home-tablet",
+    "width": 1024,
+    "height": 768,
+    "changedPixels": 0,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 786432,
+    "meanAbsoluteChannelDifference": 0
+  },
+  {
+    "name": "home-phone",
+    "width": 390,
+    "height": 844,
+    "changedPixels": 0,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 329160,
+    "meanAbsoluteChannelDifference": 0
+  },
+  {
+    "name": "home-desktop-full",
+    "width": 1440,
+    "height": 4552,
+    "changedPixels": 13978,
+    "changedPixelsAbove5": 58,
+    "totalPixels": 6554880,
+    "meanAbsoluteChannelDifference": 0.0014505732116123153
+  },
+  {
+    "name": "download-desktop",
+    "width": 1440,
+    "height": 1000,
+    "changedPixels": 0,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 1440000,
+    "meanAbsoluteChannelDifference": 0
+  },
+  {
+    "name": "download-tablet",
+    "width": 1024,
+    "height": 768,
+    "changedPixels": 0,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 786432,
+    "meanAbsoluteChannelDifference": 0
+  },
+  {
+    "name": "download-phone",
+    "width": 390,
+    "height": 844,
+    "changedPixels": 0,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 329160,
+    "meanAbsoluteChannelDifference": 0
+  },
+  {
+    "name": "download-desktop-full",
+    "width": 1440,
+    "height": 1558,
+    "changedPixels": 1,
+    "changedPixelsAbove5": 0,
+    "totalPixels": 2243520,
+    "meanAbsoluteChannelDifference": 8.914562829838824e-7
+  }
+]

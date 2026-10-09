@@ -1,0 +1,241 @@
+{
+  "repository": "https://github.com/pingdotgg/t3code",
+  "commit": "ec80933ac8cd02fec5c97b342462ccc9567cdb1e",
+  "directory": "apps/marketing",
+  "files": [
+    {
+      "path": "astro.config.mjs",
+      "sha256": "4af44ceb02efb4697d22ca8b1328384e70665366dc8047f19884eff591effcd8"
+    },
+    {
+      "path": "public/apple-touch-icon.png",
+      "sha256": "d3f2bd6ffd7d255e7254136da1a3b4d52f76ed2395da60c6c5a71cd4d0ca020d"
+    },
+    {
+      "path": "public/favicon-16x16.png",
+      "sha256": "3fb92cb9fba9f29d0d9c008850fba011520301da67285d35156c9498005cf6d6"
+    },
+    {
+      "path": "public/favicon-32x32.png",
+      "sha256": "018496bdb0909955181e735e42689ae9b9b0c7500d6ca453d423880947437f8f"
+    },
+    {
+      "path": "public/favicon.ico",
+      "sha256": "efe32d57042144f4a7e02f2551b7e50ef6f5be5a5c8c7419d343f5f51de1730d"
+    },
+    {
+      "path": "public/fonts/dm-sans-OFL.txt",
+      "sha256": "7ec15e79c59bc14b86436a17e5eb7926b46cbcaeb08e1a7e6c110b415e6eb2a2"
+    },
+    {
+      "path": "public/fonts/jetbrains-mono-OFL.txt",
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d"
+    },
+    {
+      "path": "public/harnesses/antigravity.svg",
+      "sha256": "a407bd965b3ebf72a818296cb8de82a9efd96bf28e2bac459615cc870f5e8bc0"
+    },
+    {
+      "path": "public/harnesses/claude-ai-icon.svg",
+      "sha256": "36d216f45d3c8adb8c409f9f183c1656927b6abf2441482afc619f62e2a0e233"
+    },
+    {
+      "path": "public/harnesses/cursor_light.svg",
+      "sha256": "3a53e9fa27424b01f49cb960af8e3d4f5d13c8477837d20bf4bf65abbae7ef24"
+    },
+    {
+      "path": "public/harnesses/grok-dark.svg",
+      "sha256": "d94521ab4bd62ce3e43d4f4e3b954e07e657370949d7a9007db6d6dc5ce9fc9e"
+    },
+    {
+      "path": "public/harnesses/openai_dark.svg",
+      "sha256": "6e3ba71f36714eaa7ce57c89454ed4a36bc2e70ba124fd33ea28ce53a7991dcc"
+    },
+    {
+      "path": "public/harnesses/opencode-dark.svg",
+      "sha256": "cf3e950c408e197bc7da17496fa329ac1f7b08b7c13fa0524d3d4ea39b3018d9"
+    },
+    {
+      "path": "public/nightly-sky.svg",
+      "sha256": "f790075a1992054c255a97269f497fef680c23cfb72941cf919fd527aeb71586"
+    },
+    {
+      "path": "public/pfps/BennettBuhner.webp",
+      "sha256": "d41354d5441e9842fe899510ecb3a2cdeca67425c101bdc80ce3182ad1c46c98"
+    },
+    {
+      "path": "public/pfps/DavidKPiano.webp",
+      "sha256": "776976c54d668371a29e3f93c5faa6a07554f501305312aa6855660a1c281c95"
+    },
+    {
+      "path": "public/pfps/JoshuaRileyDev.webp",
+      "sha256": "5988fbed5bacbaacaf7159d71ccbfcd4ed85f0f7565698ceb7f7d7a96a92bd18"
+    },
+    {
+      "path": "public/pfps/Josikinz.webp",
+      "sha256": "6fe52774a2ede7b3d470311c2f6be5515043e90d1aadbad94409ddcf5b1f75a7"
+    },
+    {
+      "path": "public/pfps/QuinnyPig.webp",
+      "sha256": "f49ccd6cd2a53c9ac5ccfebaff96a6a65acb3b36fdf727d44e9a067e0511cd9d"
+    },
+    {
+      "path": "public/pfps/RhysSullivan.webp",
+      "sha256": "d372ab69671b7584e8c00901a6c28b19dacc066f9d77fa892f2cbcb424f60ca6"
+    },
+    {
+      "path": "public/pfps/Shay_Benshabtay.webp",
+      "sha256": "8e99f486571945b92c3b1a21cdc5a127d7a908284891ac6bb7b6875dd695931b"
+    },
+    {
+      "path": "public/pfps/_winter_wonders.webp",
+      "sha256": "6eed92c1f842948725621149ad1d0bcc5cd777e925092dad798461cabf672ce2"
+    },
+    {
+      "path": "public/pfps/aronprins.webp",
+      "sha256": "1390c74da4ee4acc2ff0b836884636f2ab0bfd2db0af6f6f18d46856c17b091d"
+    },
+    {
+      "path": "public/pfps/developedbyed.webp",
+      "sha256": "6b33bbce5a0553a886431633cc9f250ca5d562b17e9143712b6f930052e2b8a7"
+    },
+    {
+      "path": "public/pfps/enunomaduro.webp",
+      "sha256": "fb3008d3739a2796be1a457c80482e387471b4b6bde5c75d09058c5467a7755e"
+    },
+    {
+      "path": "public/pfps/ex0t1clol.webp",
+      "sha256": "5a84750eaf96a26c2b1d5271708e8b41e44bd8cd294ec0fb411a9b9188c2c045"
+    },
+    {
+      "path": "public/pfps/iamkaffe.webp",
+      "sha256": "a7efc89388ab53dbedeb35f68bc34fa570423b0f70237720ad57678cf19443c0"
+    },
+    {
+      "path": "public/pfps/kostyniuk00.webp",
+      "sha256": "859bb49815e734b20b84e8863b81e3dce4028afb3840c89a39cebf6f14ee6aab"
+    },
+    {
+      "path": "public/pfps/leodev.webp",
+      "sha256": "031b089e1a5a1201d3a0b40e5ff36fb5631a6b9dd02e153e96d316db15456824"
+    },
+    {
+      "path": "public/pfps/mil000.webp",
+      "sha256": "0e48037e9a43bc36a77ec1393e226bc20e821b282e8c3dcfb443f829be052c2a"
+    },
+    {
+      "path": "public/pfps/pocarles.webp",
+      "sha256": "6f0831aeda1aad038683900a44383a04709d08c4afaeeba9611a6787c0ba761b"
+    },
+    {
+      "path": "public/pfps/ryanrhughes.webp",
+      "sha256": "c4db9f0e759c682fd4bada89aa8df6f05cb97212800ea557d22a3c20b5f93d4f"
+    },
+    {
+      "path": "public/pfps/tannerlinsley.webp",
+      "sha256": "d4833d051ce0788aa7678d9e89d51a486a1404ae5e67c83bc87cd1108114db97"
+    },
+    {
+      "path": "public/pfps/teja2495.webp",
+      "sha256": "f97844d2c49adcd8180442679c5ce171b6f4a2c730ae80e363cbc26600e3351f"
+    },
+    {
+      "path": "src/assets/app-desktop.webp",
+      "sha256": "a7b97a59446ae9816a89916bd9917279795c4e0be19e0d28dda6f2b436964f2b"
+    },
+    {
+      "path": "src/assets/fonts/dm-sans-latin-ext.woff2",
+      "sha256": "5d18d31d23ada61ebee1d589b11d5da30db9e158f589d5e35221ba2b1a45de54"
+    },
+    {
+      "path": "src/assets/fonts/dm-sans-latin.woff2",
+      "sha256": "ca72d2bcea8f4daa783dbdfa2d9b46068c3ce38168e05918fb867aa453b4f890"
+    },
+    {
+      "path": "src/assets/fonts/jetbrains-mono-cyrillic-ext.woff2",
+      "sha256": "62213be8a78b42f1e29d1452d91e2f8b3e745572a9dd98d3941e39fa00b37d76"
+    },
+    {
+      "path": "src/assets/fonts/jetbrains-mono-cyrillic.woff2",
+      "sha256": "e17cfd15fb96909d64095015f958207063a0c07191da3512df7d560a781aebdf"
+    },
+    {
+      "path": "src/assets/fonts/jetbrains-mono-greek.woff2",
+      "sha256": "0a557721b1f8b36d3f3f84442689a71ca4a744300abcb46a1953f51bfc663b66"
+    },
+    {
+      "path": "src/assets/fonts/jetbrains-mono-latin-ext.woff2",
+      "sha256": "db5ff4db83e580426280e9337a58dc57d3a83784a1b03ad80914651594441d52"
+    },
+    {
+      "path": "src/assets/fonts/jetbrains-mono-latin.woff2",
+      "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be"
+    },
+    {
+      "path": "src/assets/fonts/jetbrains-mono-vietnamese.woff2",
+      "sha256": "c89b9cc0bc6262bd4f8d8494b6961601f3aefa829d08c2e3635f4d501d3a47c2"
+    },
+    {
+      "path": "src/assets/icon-nightly.webp",
+      "sha256": "9435e024ef99f1bdd2ab3092dd19b0396e148943104f02e0bd8f5e4bb5b15435"
+    },
+    {
+      "path": "src/assets/icon.webp",
+      "sha256": "e0f1d423d12c5b323a73ad3d28f97ec741b5126484b2682b1a61fb85b951cf3e"
+    },
+    {
+      "path": "src/assets/social-card.webp",
+      "sha256": "be056e83b159f22be0d64af71947f7546554b2951b2afba32a502c6ce96ed862"
+    },
+    {
+      "path": "src/env.d.ts",
+      "sha256": "9c9283a414423d9223e5ea86941b142443b8af7a007f77612dc2c098de2d2500"
+    },
+    {
+      "path": "src/layouts/Layout.astro",
+      "sha256": "881e76a50e7517e6f0b04726f95fa0763b795d9fe1dbb7b81af91c1ec42cfc0e"
+    },
+    {
+      "path": "src/lib/homeMotion.ts",
+      "sha256": "2d3312cca804969d2f25e17bc5286f784e74b81b187ba4a9c0ed370df4db2c91"
+    },
+    {
+      "path": "src/lib/releases.ts",
+      "sha256": "4469141e01ce1a6784ff10581af4f7051e2dab430cedae225183cb9fd639acb8"
+    },
+    {
+      "path": "src/lib/site.ts",
+      "sha256": "22eb129abb843ebf03deec371e48c48deb948a9610a0fa44fcc867c115798513"
+    },
+    {
+      "path": "src/lib/tweets.ts",
+      "sha256": "1634a4ef8cabd1c9626a1b0da124f840127b8ddad3118abd231acb0cbb22ddc1"
+    },
+    {
+      "path": "src/pages/download.astro",
+      "sha256": "20dcb5d6539132b02e871b195529b62c7db588580b5fed2c05f7037108c4c6b1"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "sha256": "086154b13e4227d13668d3ce271e547844621c18c3c6da8a49c5587d343d63d5"
+    },
+    {
+      "path": "src/styles/fonts.css",
+      "sha256": "ca239d3663b51cb216e4dadab6a264055e16d94ca974e02bde20c0bcf403687e"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "974b0a3b37e52f3649d9df63e72e374794e9e797c8ae61eca4812f844406f7ef"
+    },
+    {
+      "path": "public/install.sh",
+      "upstreamPath": "scripts/install.sh",
+      "sha256": "dc7b3ddd02ae2700eece3d3c58c0945927311950913de148c8dd8570f1d1c6d5"
+    },
+    {
+      "path": "public/install.ps1",
+      "upstreamPath": "scripts/install.ps1",
+      "sha256": "3c0b9489df3e348ce54cfe0e99bbef2cafa150cbde610a40ff6097744e2f1525"
+    }
+  ]
+}
