@@ -88,5 +88,9 @@ export interface Metric {
 
 // Measured with synthetic documents; see docs/evidence/performance/. Leave
 // empty rather than publishing an estimate.
-export const mdocMetrics: readonly Metric[] = [];
-export const mdocMetricsNote = "";
+export const mdocMetrics: readonly Metric[] = [
+  { value: "0.12 s", label: "to convert a 100-page contract PDF" },
+  { value: "~40", label: "scanned pages recognized per minute" },
+];
+export const mdocMetricsNote =
+  "Measured on a fanless MacBook Air (M4, 24 GB), using synthetic text-heavy documents. Your results depend on your computer and documents.";
