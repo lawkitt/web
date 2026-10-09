@@ -59,8 +59,8 @@ alias mappings are not included.
 <details>
 <summary>Can I download mdoc today?</summary>
 <p>Check the <a href="/tools/mdoc/download/">availability page</a> for verified
-downloads and current status. The source is public, but a source build currently requires access to
-the pinned private <code>lawkitt/anydoc</code> dependency.</p>
+downloads and current status. The source and all of its dependencies are public,
+so you can also build mdoc yourself.</p>
 </details>
 
 <details>
@@ -87,8 +87,8 @@ features need particular care. Keep the source in view and review the result.</p
 <details>
 <summary>Is it free and open source?</summary>
 <p>mdoc is free software under GPL-3.0-or-later. Its source and development are
-public on GitHub. The current private conversion dependency limits independent
-source builds; that is a separate issue from the app’s license.</p>
+public on GitHub, including its document-conversion library
+<code>lawkitt/anydoc</code>.</p>
 </details>
 
 <details>
