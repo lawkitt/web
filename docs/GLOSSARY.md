@@ -30,5 +30,11 @@
 - **Workers Static Assets**: The Cloudflare Workers hosting mode selected for the
   generated Astro site. Current scope prepares configuration; publication comes later.
 - **Pseudonymization**: In mdoc, reviewable replacement of selected identifying
-  text with consistent aliases. The current implementation is experimental;
-  it does not establish that a document cannot be identified.
+  text with consistent aliases. Marketed as a core mdoc feature (ADR 0004):
+  mdoc proposes replacements, the lawyer reviews and approves each one. It does
+  not establish that a document cannot be identified.
+- **Pillars**: The four mdoc marketing claims (ADR 0004): local parsing of PDFs,
+  scans and Word files; local pseudonymization; fast native performance; macOS
+  (Apple Silicon) and Windows x64.
+- **Umbrella hero**: The homepage hero carrying the Lawkitt brand line, which
+  leads directly into mdoc while it is the only catalog entry.
