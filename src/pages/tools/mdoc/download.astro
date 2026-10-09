@@ -76,16 +76,17 @@ import {
       ) : (
         <>
           <p class="download-intro">
-            We’re preparing public installers. There isn’t a verified download
-            available yet. You can explore the app and follow development on
-            GitHub.
+            The first public release of mdoc is being prepared. To hear the
+            moment it’s out, watch the repository on GitHub: choose{" "}
+            <strong>Watch → Custom → Releases</strong>. GitHub then notifies you
+            about new releases only.
           </p>
           <div class="actions">
             <a class="btn btn-primary" href={mdoc.source}>
-              View source <Arrow diagonal />
+              Watch releases on GitHub <Arrow diagonal />
             </a>
             <a class="btn btn-ghost" href="/tools/mdoc/">
-              Explore mdoc <Arrow />
+              See what mdoc does <Arrow />
             </a>
           </div>
         </>
@@ -101,7 +102,7 @@ import {
         .
       </p>
       <div class="source-note">
-        <span class="tag tag-accent">{mdoc.maturity}</span>
+        <span class="tag tag-accent">For developers</span>
         <h2>A note about source builds</h2>
         <p>
           The code is public and licensed under {mdoc.license}. Its
@@ -113,57 +114,25 @@ import {
         </a>
       </div>
       <div class="platform-section">
-        <h2>Platform capabilities</h2>
-        <p>
-          Build targets describe the application’s platform scope. They do not
-          indicate installer availability.
-        </p>
-        <div class="platform-table">
-          <table>
-            <caption class="visually-hidden">
-              mdoc capabilities by build target
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">Build target</th>
-                <th scope="col">Native-text import</th>
-                <th scope="col">Local OCR & automatic pseudonymization</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">macOS / Apple Silicon</th>
-                <td>Supported</td>
-                <td>Available in development builds</td>
-              </tr>
-              <tr>
-                <th scope="row">Windows / x64</th>
-                <td>Supported</td>
-                <td>Available in development builds</td>
-              </tr>
-              <tr>
-                <th scope="row">macOS / Intel</th>
-                <td>Supported</td>
-                <td>Not currently supported</td>
-              </tr>
-              <tr>
-                <th scope="row">Windows / ARM64</th>
-                <td>Supported</td>
-                <td>Not currently supported</td>
-              </tr>
-              <tr>
-                <th scope="row">Linux</th>
-                <td>Supported</td>
-                <td>Not currently supported</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <h2>System requirements</h2>
+        <ul class="requirements">
+          <li>
+            <strong>Mac</strong> with Apple silicon (M1 or later).
+          </li>
+          <li>
+            <strong>Windows PC</strong> (x64). Scanned-page recognition also
+            needs the free Microsoft Visual C++ Redistributable.
+          </li>
+          <li>
+            <strong>One-time setup</strong> for scan recognition and
+            pseudonymization: mdoc asks before downloading its local models,
+            then works offline.
+          </li>
+        </ul>
         <p class="platform-footnote">
-          OCR needs a one-time model/runtime download; Windows x64 also needs
-          the Visual C++ Redistributable. Automatic pseudonymization is
-          experimental and has known misses. Review every result before sharing.
-          Manual replacement review is available on all build targets.
+          Developers can build mdoc for Intel Macs, Windows on ARM and Linux.
+          Those builds read documents with built-in text, but scan recognition
+          and automatic pseudonymization are not available there.
         </p>
       </div>
       <div class="help-row">
@@ -176,6 +145,26 @@ import {
   </section>
 </Layout>
 <style>
+  .requirements {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+  .requirements li {
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .requirements strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
+  .download-intro strong {
+    color: var(--fg);
+    font-weight: 600;
+  }
   .checked-date,
   .release-date {
     color: var(--dim);
@@ -254,32 +243,6 @@ import {
     margin-top: 16px;
     max-width: 720px;
   }
-  .platform-table {
-    overflow-x: auto;
-    margin-top: 26px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-    text-align: left;
-  }
-  th,
-  td {
-    padding: 18px 14px;
-    border-bottom: 1px solid var(--border);
-  }
-  thead th {
-    color: var(--dim);
-    font: 10px/1.7 var(--mono);
-  }
-  tbody th {
-    font-weight: 500;
-    color: #d5d5de;
-  }
-  td {
-    color: var(--muted);
-  }
   .platform-section .platform-footnote {
     font-size: 11px;
     line-height: 1.9;
@@ -350,14 +313,6 @@ import {
     }
     .platform-section h2 {
       font-size: 28px;
-    }
-    th,
-    td {
-      padding: 14px 9px;
-      font-size: 11px;
-    }
-    th:first-child {
-      width: 36%;
     }
     .help-row {
       display: grid;

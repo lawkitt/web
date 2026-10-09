@@ -30,7 +30,7 @@ const { tool, index } = Astro.props;
     </div>
     <dl class="tool-meta">
       <div>
-        <dt>Build targets</dt>
+        <dt>Runs on</dt>
         <dd>{tool.platforms.join(" · ")}</dd>
       </div>
       <div>
@@ -40,7 +40,7 @@ const { tool, index } = Astro.props;
     </dl>
     <p class="tool-footnote">{tool.availabilityNote}</p>
     <a class="btn btn-primary" href={toolPath(tool)}>
-      Explore {tool.name} <Arrow />
+      See what {tool.name} does <Arrow />
     </a>
   </div>
 </article>

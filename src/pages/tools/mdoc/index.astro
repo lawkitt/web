@@ -2,45 +2,43 @@
 import Layout from "../../../layouts/Layout.astro";
 import Arrow from "../../../components/Arrow.astro";
 import ProductScreenshot from "../../../components/ProductScreenshot.astro";
+import Pillars from "../../../components/Pillars.astro";
+import Workflow from "../../../components/Workflow.astro";
 import { Image } from "astro:assets";
 import { mdoc } from "../../../lib/catalog";
-import { mdocAvailability } from "../../../lib/releases";
+import { latestMdocRelease, mdocAvailability } from "../../../lib/releases";
 import { Content } from "../../../content/tools/mdoc.md";
 ---
 
 <Layout
-  title="mdoc — Legal documents to editable Markdown | Lawkitt"
-  description="Prepare PDF and DOCX as editable Markdown with mdoc. Review beside the original, use local OCR on supported platforms, then copy to your external AI tool."
+  title="mdoc — Prepare legal documents for AI, privately | Lawkitt"
+  description="Open PDFs, scans and Word files, pseudonymize client names and other sensitive details, and copy clean text into ChatGPT, Claude or any AI tool. Free and local on Mac and Windows."
   socialImage="/social/mdoc.png"
 >
   <section class="hero product-hero">
     <div class="container">
-      <a class="back-link" href="/#tools">
-        <span aria-hidden="true">←</span> All tools
-      </a>
       <div class="product-heading" data-rise>
         <Image src={mdoc.icon} alt="" width={48} height={48} format="webp" />
         <span>mdoc</span>
-        <span class="tag tag-accent">{mdoc.maturity}</span>
+        <span class="tag">Free · Open source</span>
       </div>
       <h1 data-rise style="--d:.07s">
-        Turn legal documents into editable Markdown for AI tools.
+        {mdoc.headline}
       </h1>
       <p class="product-intro" data-rise style="--d:.14s">
-        Open your document. Keep the original in view.
-        <br class="desktop-break" /> Prepare the text for the tool you use next.
+        {mdoc.pitch}
       </p>
       <div class="actions" data-rise style="--d:.21s">
         <a class="btn btn-primary" href="/tools/mdoc/download/">
-          Check availability <Arrow />
+          Get mdoc <Arrow />
         </a>
-        <a class="btn btn-ghost" href={mdoc.source}>
-          View source <Arrow diagonal />
+        <a class="btn btn-ghost" href="#how-it-works">
+          See how it works <span aria-hidden="true">↓</span>
         </a>
       </div>
       <p class="availability-note">
-        {mdocAvailability} <span aria-hidden="true">·</span> Free software under{" "}
-        {mdoc.license}
+        {mdocAvailability} <span aria-hidden="true">·</span> macOS (Apple
+        Silicon) and Windows
       </p>
       <div class="hero-shot">
         <ProductScreenshot />
@@ -48,82 +46,74 @@ import { Content } from "../../../content/tools/mdoc.md";
     </div>
   </section>
   <nav class="product-nav container" aria-label="On this page">
-    <a href="#workflow">Workflow</a>
-    <a href="#documents-ready-for-your-next-step">Capabilities</a>
-    <a href="#prepare-thoughtfully-share-deliberately">Sharing & review</a>
-    <a href="#a-few-practical-questions">FAQ</a>
+    <a href="#why">Why mdoc</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#questions-lawyers-ask">Questions</a>
   </nav>
-  <section
-    class="section workflow"
-    id="workflow"
-    aria-labelledby="workflow-title"
-  >
+  <section class="section" id="why" aria-labelledby="why-title">
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">01 / A simple workflow</p>
-          <h2 id="workflow-title">From document to prepared text.</h2>
+          <p class="eyebrow">01 / Why mdoc</p>
+          <h2 id="why-title">Everything AI needs. Nothing it shouldn’t see.</h2>
         </div>
-        <p>Three deliberate steps. Your judgment stays in the loop.</p>
+        <p>
+          The documents lawyers handle, ready for an AI assistant in minutes,
+          with confidential details under your control.
+        </p>
       </div>
-      <ol class="steps">
+      <Pillars />
+    </div>
+  </section>
+  <section class="section" id="how-it-works" aria-labelledby="workflow-title">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">02 / How it works</p>
+          <h2 id="workflow-title">Open. Pseudonymize. Copy.</h2>
+        </div>
+        <p>Three steps. Your judgment stays in charge of each one.</p>
+      </div>
+      <Workflow />
+    </div>
+  </section>
+  <section class="section privacy" id="privacy" aria-labelledby="privacy-title">
+    <div class="container privacy-grid">
+      <div>
+        <p class="eyebrow">03 / Privacy</p>
+        <h2 id="privacy-title">
+          Nothing leaves your computer until you copy it.
+        </h2>
+      </div>
+      <ul class="privacy-list">
         <li>
-          <div class="step-visual">
-            <span class="file-pill">.pdf</span>
-            <span class="file-pill">.docx</span>
-            <Arrow />
-            <span class="file-pill prepared">.md</span>
-          </div>
-          <div class="step-title">
-            <span>01</span>
-            <h3>Open</h3>
-          </div>
-          <p>
-            Open a PDF or Word document. Convert native text, or choose local
-            OCR for a scanned PDF on a supported platform.
-          </p>
+          <strong>No uploads.</strong> mdoc opens, reads and recognizes your
+          documents on your own Mac or PC.
         </li>
         <li>
-          <div class="step-visual compare">
-            <span>Markdown</span>
-            <span aria-hidden="true">│</span>
-            <span>Original</span>
-          </div>
-          <div class="step-title">
-            <span>02</span>
-            <h3>Review</h3>
-          </div>
-          <p>
-            Read the converted text beside the source. Correct wording, check
-            structure and edit what you need.
-          </p>
+          <strong>No account, no tracking.</strong> There is nothing to sign up
+          for, and mdoc does not report on what you do.
         </li>
         <li>
-          <div class="step-visual">
-            <span class="file-pill prepared">.md</span>
-            <Arrow />
-            <span class="copy-label">Copy Markdown</span>
-          </div>
-          <div class="step-title">
-            <span>03</span>
-            <h3>Copy</h3>
-          </div>
-          <p>
-            Copy the prepared Markdown and paste it into your external AI tool.
-            You choose what leaves your workspace.
-          </p>
+          <strong>You choose what is shared.</strong> Text reaches an AI tool
+          only when you copy it and paste it there yourself.
         </li>
-      </ol>
+        <li>
+          <strong>Originals stay untouched.</strong> mdoc never changes the file
+          you opened.
+        </li>
+      </ul>
     </div>
   </section>
   <section class="section product-content">
     <div class="container prose-grid">
       <aside>
-        <p class="eyebrow">02 / The details</p>
+        <p class="eyebrow">04 / Questions</p>
         <p class="aside-copy">
-          Know what the tool does.
+          Straight answers,
           <br />
-          Know what to review.
+          including the limits.
         </p>
       </aside>
       <div class="prose">
@@ -135,20 +125,21 @@ import { Content } from "../../../content/tools/mdoc.md";
     <div class="container">
       <div class="cta-panel">
         <div>
-          <p class="eyebrow">03 / Follow the project</p>
+          <p class="eyebrow">05 / Get mdoc</p>
           <h2>
-            Meet your next
+            Ready for your
             <br />
-            document workspace.
+            next document.
           </h2>
           <p>
-            {mdocAvailability}. Follow the code, check availability or help
-            shape what comes next.
+            {latestMdocRelease
+              ? "Free for Apple Silicon Macs and Windows PCs. No account needed."
+              : "The first public release is on its way. Watch the repository on GitHub to hear when it lands."}
           </p>
         </div>
         <div class="actions">
           <a class="btn btn-primary" href="/tools/mdoc/download/">
-            Check availability <Arrow />
+            Get mdoc <Arrow />
           </a>
           <a class="btn btn-ghost" href={mdoc.source}>
             View source <Arrow diagonal />
@@ -162,20 +153,42 @@ import { Content } from "../../../content/tools/mdoc.md";
   .product-hero {
     padding: 40px 0 0;
   }
-  .back-link {
-    color: var(--dim);
-    font: 11px var(--mono);
-    display: inline-flex;
-    gap: 8px;
+  .privacy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
   }
-  .back-link:hover {
+  .privacy-grid h2 {
+    margin-top: 18px;
+  }
+  .privacy-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .privacy-list li {
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .privacy-list li:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .privacy-list strong {
+    display: block;
     color: var(--fg);
+    font-weight: 600;
+    margin-bottom: 4px;
   }
   .product-heading {
     display: flex;
     gap: 14px;
     align-items: center;
-    margin: 48px 0 28px;
+    margin: 32px 0 28px;
   }
   .product-heading img {
     border-radius: 10px;
@@ -187,6 +200,10 @@ import { Content } from "../../../content/tools/mdoc.md";
   }
   .product-heading .tag {
     margin-left: 8px;
+  }
+  .product-intro {
+    max-width: 720px;
+    line-height: 1.6;
   }
   .product-hero h1 {
     max-width: 1000px;
@@ -222,71 +239,6 @@ import { Content } from "../../../content/tools/mdoc.md";
   }
   .product-nav a:hover {
     color: var(--accent);
-  }
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    counter-reset: step;
-  }
-  .steps li {
-    border-top: 1px solid var(--border-strong);
-    padding-top: 28px;
-  }
-  .step-visual {
-    height: 110px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: var(--bg-elev);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    margin-bottom: 28px;
-    color: var(--dim);
-  }
-  .file-pill {
-    font: 12px var(--mono);
-    background: #1a1a20;
-    color: #c1c1cc;
-    border: 1px solid var(--border-strong);
-    padding: 8px;
-    border-radius: 5px;
-  }
-  .prepared {
-    color: var(--accent);
-    border-color: oklch(0.68 0.17 250 / 0.35);
-    background: var(--accent-dim);
-  }
-  .compare {
-    font: 12px var(--mono);
-    color: #c1c1cc;
-    gap: 22px;
-  }
-  .compare span:first-child {
-    color: var(--accent);
-  }
-  .copy-label {
-    color: #c1c1cc;
-    font: 11px var(--mono);
-  }
-  .step-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .step-title > span {
-    color: var(--accent);
-    font: 11px var(--mono);
-  }
-  .steps p {
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-top: 18px;
   }
   .prose-grid {
     display: grid;
@@ -334,24 +286,6 @@ import { Content } from "../../../content/tools/mdoc.md";
   }
   .prose :global(code) {
     font: 12px var(--mono);
-  }
-  .prose :global(.review-note) {
-    background: var(--bg-card);
-    border: 1px solid var(--border-strong);
-    border-left: 2px solid var(--accent);
-    padding: 20px 24px;
-    margin-top: 28px;
-    border-radius: 0 8px 8px 0;
-    color: #b9b9c4;
-    font-size: 13px;
-    line-height: 1.8;
-  }
-  .prose :global(.review-note strong) {
-    display: block;
-    margin-bottom: 6px;
-  }
-  .prose :global(.experimental) {
-    border-left-color: #d3b46b;
   }
   .prose :global(details) {
     border-bottom: 1px solid var(--border-strong);
@@ -408,6 +342,12 @@ import { Content } from "../../../content/tools/mdoc.md";
     }
   }
   @media (max-width: 700px) {
+    .privacy-grid {
+      display: block;
+    }
+    .privacy-list {
+      margin-top: 32px;
+    }
     .product-hero {
       padding-top: 28px;
     }
@@ -438,14 +378,6 @@ import { Content } from "../../../content/tools/mdoc.md";
       gap: 20px;
       font-size: 11px;
     }
-    .steps {
-      grid-template-columns: 1fr;
-      gap: 36px;
-    }
-    .step-visual {
-      height: 95px;
-      margin-bottom: 22px;
-    }
     .prose-grid {
       display: block;
     }
@@ -464,9 +396,6 @@ import { Content } from "../../../content/tools/mdoc.md";
     }
     .prose :global(p) {
       font-size: 14px;
-    }
-    .prose :global(.review-note) {
-      padding: 18px;
     }
     .cta-panel {
       display: block;
