@@ -1,0 +1,186 @@
+{
+  "checkedAt": "2026-10-09T19:47:00.492534+00:00",
+  "results": [
+    {
+      "path": "/",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "6a4cda523a21690925d4a9d2aa7a1afe1ca70868715d2f1b45ef5bfe7a895c96"
+    },
+    {
+      "path": "/apple-touch-icon.png",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "6306ef344a36f73ec53e93638d8cf22d08b8cbadac364e959a30279d683f551c"
+    },
+    {
+      "path": "/not-found-check/",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "9da90fa372a30d1eea3fd200f9faa214913396104f2cffdf9fece33bed426166",
+      "buildFile": "404.html"
+    },
+    {
+      "path": "/sitemap.xml",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "7406f2c186f02e1a96444283af7d64cba9e9d5044f86ff628b5d58cd3d1d535a"
+    },
+    {
+      "path": "/robots.txt",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "1400ce975b8a079233781a6c3ca35195037b247ef608dd8efea4590504343f95"
+    },
+    {
+      "path": "/favicon-32x32.png",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "2b77672df5b073c67920eaa571022ae7706d1a98ab5de57f58632a73b48b3a6d"
+    },
+    {
+      "path": "/social/lawkitt.png",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "0e5cbb79ab85309ae1ab5745c580a9a51b6ffbebd701716dd746de4d3cd763c5"
+    },
+    {
+      "path": "/social/lawkitt.svg",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "b74db783db68f8b6ffa45adb1932a742a8531dbfee5b8f134c5879f7e5fd5ba5"
+    },
+    {
+      "path": "/social/mdoc.svg",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "4837b03bee60d39f052954a08240b34ac646ba69ffebde55d54fb9793fa122ac"
+    },
+    {
+      "path": "/social/mdoc.png",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "87a05b69e8e46960d82dab5e0eab62508cee53428cc318637d79053e2538bb50"
+    },
+    {
+      "path": "/_astro/mdoc-icon.B_mpNLpl_Z2qS2yW.webp",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "214446679c7fd73cdeb987dfd6bc5365ef0bab17fba1557d78c8bc947724bd81"
+    },
+    {
+      "path": "/_astro/mdoc-screenshot.D86zMPzD_ZxximW.webp",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "1b163d343b4869706bb3b59c8787b968f22dcbc08dc6e8dc9a615465d38701d4"
+    },
+    {
+      "path": "/_astro/jetbrains-mono-greek.D3oMJlXt.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "0a557721b1f8b36d3f3f84442689a71ca4a744300abcb46a1953f51bfc663b66"
+    },
+    {
+      "path": "/_astro/Layout.C6u8lA3D.css",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "0f1503fb9f75f8bb0c2f7dfd48e1a8a8795c1d15a5f74b48742f33bcd9a8bb11"
+    },
+    {
+      "path": "/_astro/index.Bfg2WwpD.css",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "9d481b60f523a036ed56dc2a2740ebe863b728b2d7073cc96ac605e7109c1624"
+    },
+    {
+      "path": "/_astro/mdoc-screenshot.D86zMPzD_EbLRv.webp",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "8ba1dcbe99e0254a441bcc3731ebe89f50e89c9f580129addde91999f2e5e999"
+    },
+    {
+      "path": "/_astro/jetbrains-mono-vietnamese.BehTv68k.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "c89b9cc0bc6262bd4f8d8494b6961601f3aefa829d08c2e3635f4d501d3a47c2"
+    },
+    {
+      "path": "/_astro/index.D0WjHviN.css",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "bdb531284d044563f7c3b6bf407d1500e1c9b78f8c98fd6e0e58547089319fa5"
+    },
+    {
+      "path": "/_astro/dm-sans-latin.Bf69Tn_J.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "ca72d2bcea8f4daa783dbdfa2d9b46068c3ce38168e05918fb867aa453b4f890"
+    },
+    {
+      "path": "/_astro/jetbrains-mono-cyrillic-ext.BIM06flf.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "62213be8a78b42f1e29d1452d91e2f8b3e745572a9dd98d3941e39fa00b37d76"
+    },
+    {
+      "path": "/_astro/mdoc-screenshot.D86zMPzD_ZxMGMG.webp",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "eaf75919aa27b66d26b4fa42977799edfc952581841db961138a72345db0ac2a"
+    },
+    {
+      "path": "/_astro/dm-sans-latin-ext.oos9povj.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "5d18d31d23ada61ebee1d589b11d5da30db9e158f589d5e35221ba2b1a45de54"
+    },
+    {
+      "path": "/_astro/mdoc-screenshot.D86zMPzD_Z1zCGQo.webp",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "ad78c22595a38416a16400ff86a32315b9edf7301e65fca357f8ebc27228112e"
+    },
+    {
+      "path": "/_astro/jetbrains-mono-cyrillic.Buze_B52.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "e17cfd15fb96909d64095015f958207063a0c07191da3512df7d560a781aebdf"
+    },
+    {
+      "path": "/_astro/jetbrains-mono-latin.6fWv1k7M.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "83c005d49d8a6a50474c73a5a36ac0468076e9c4a29da7bdb14995d80560a5be"
+    },
+    {
+      "path": "/_astro/jetbrains-mono-latin-ext.DIC32ArD.woff2",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "db5ff4db83e580426280e9337a58dc57d3a83784a1b03ad80914651594441d52"
+    },
+    {
+      "path": "/fonts/dm-sans-OFL.txt",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "7ec15e79c59bc14b86436a17e5eb7926b46cbcaeb08e1a7e6c110b415e6eb2a2"
+    },
+    {
+      "path": "/fonts/jetbrains-mono-OFL.txt",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "b2fe5e8987594e9ffd1d2ca52a2f5d73eb8335243893c5d6254b5ad69269591d"
+    },
+    {
+      "path": "/tools/mdoc/",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "f39109eb470a80c98be21c0557ce59679a114b09bbdb26a1da0b2d4bc99151b3"
+    },
+    {
+      "path": "/tools/mdoc/download/",
+      "exitCode": 0,
+      "matchesBuild": true,
+      "sha256": "ef923596b47ab0427db475afe434e2a5cd8a83367a47f63fca6932398a671de8"
+    }
+  ]
+}

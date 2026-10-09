@@ -1,7 +1,7 @@
 # Lawkitt website implementation brief
 
 Date: 2026-10-09
-Status: Full agreed implementation complete locally; deployment prepared
+Status: Full agreed implementation complete; GitHub published and Cloudflare deployed
 
 Decision record: `marketing-site.md` and `../adr/0001-*` through `0003-*`.
 
@@ -105,3 +105,11 @@ functional release/build checks and a non-deploying CI workflow. Full local
 verification and captures: `../evidence/completion/verification.md`. No remaining
 implementation items in the agreed brief. Public mdoc installers and production
 deployment remain separately scoped external work.
+
+## Publication
+
+2026-10-09: The user explicitly requested publication to `github.com/lawkitt/web`
+and deployment on Cloudflare, extending the earlier implementation-only scope.
+Published `main` and both review tags to the public repository and deployed
+`lawkitt-web` at `https://lawkitt.com`. See
+`../evidence/deployment/verification.md` for production checks.

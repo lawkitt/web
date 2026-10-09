@@ -1,7 +1,10 @@
 # Lawkitt marketing site
 
 Interview started: 2026-10-09. Status: design settled, all three rounds confirmed;
-user confirmed shared understanding; Stage 1 complete and awaiting visual review.
+user confirmed shared understanding; full implementation published on GitHub
+and deployed on Cloudflare on 2026-10-09. Earlier scope entries below record the
+design sequence; the publication authorization in the decision log supersedes
+the initial implementation-only delivery constraint.
 
 Implementation starts only after the design tree is settled and the user
 confirms shared understanding. Research and decision documentation are authorized now.
@@ -205,3 +208,8 @@ Q20 (responsive/accessibility acceptance) and Q21 (source attribution).
   validation, availability consistency, source maintainability and preview-output
   isolation. Added functional tests and local CI configuration. All agreed routes
   and local checks pass; final evidence is in `../evidence/completion/`.
+
+- 2026-10-09: User explicitly requested “publish on github.com/lawkitt/web and
+  deploy on cloudflare”. Published the public repository and preserved both
+  review tags. Deployed `lawkitt-web` to the custom domain `lawkitt.com`;
+  production verification is in `../evidence/deployment/verification.md`.

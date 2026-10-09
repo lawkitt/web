@@ -2,7 +2,8 @@
 
 English-only, static Astro website for Lawkitt-developed free OSS legal utilities.
 T3's reviewed styling and Artcraft's catalog organization, starting with mdoc.
-Target: **Cloudflare Workers Static Assets** at `https://lawkitt.com`.
+Live: **Cloudflare Workers Static Assets** at [lawkitt.com](https://lawkitt.com).
+Public source: [lawkitt/web](https://github.com/lawkitt/web).
 
 ## Local development
 
@@ -44,9 +45,11 @@ fallback, and the custom domain `lawkitt.com`. No SSR script, adapter, database 
 API is needed. Fingerprinted `/_astro/` assets receive immutable caching; HTML
 keeps Workers' revalidation behavior. No analytics, forms or client release fetch.
 
-**Deployment is prepared, not performed.** Once deployment is authorized, use a
-Cloudflare account with the `lawkitt.com` zone active, authenticate Wrangler,
-then run:
+**Published on 2026-10-09.** The production site is deployed as `lawkitt-web`
+with the custom domain `lawkitt.com`. Deployment verification is recorded in
+`docs/evidence/deployment/verification.md`. For future deployments, use a
+Cloudflare account with access to the active `lawkitt.com` zone, authenticate
+Wrangler, then run:
 
 ```sh
 npx wrangler login
@@ -101,7 +104,8 @@ temporary directory; it never changes the real manifest or user preview.
 
 `.github/workflows/check.yml` runs these checks and validates the separate preview
 build on pushes and pull requests. It uses read-only repository access and does
-not deploy. The workflow has been added locally; it has not run on GitHub.
+not deploy. The workflow passed on GitHub for the initial publication of `main`.
+Deployments remain manual through `npm run deploy`; GitHub pushes only run checks.
 
 ## Review checkpoints and licensing
 

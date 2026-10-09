@@ -1,0 +1,65 @@
+{
+  "checkedAt": "2026-10-09T19:45:44.090312+00:00",
+  "origin": "https://lawkitt.com",
+  "transport": "HTTPS certificate validated; public DNS Cloudflare IP pinned while local negative DNS cache expires",
+  "results": [
+    {
+      "path": "/",
+      "exitCode": 0,
+      "headers": "HTTP/2 200 \ndate: Fri, 09 Oct 2026 19:45:42 GMT\ncontent-type: text/html\ncontent-length: 13822\ncf-cache-status: HIT\ncache-control: public, max-age=0, must-revalidate\netag: \"664c00a021a6f0b576955a10ea048b09\"\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=RZ%2B3Xg6Xb7p%2BN5A4Ajq7RVuY35Shg3%2BUDEpFwEuCKh%2B5rhvOERkjYPRL%2FKvbez8uhX2wU0q40X06EMXVHb%2Fu3CRbAJ%2B8qL3Hw6pTAO3Ffxa6RWVaswFgpRmxbR8HYA%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe31e6d20edf4-LHR\nalt-svc: h3=\":443\"; ma=86400",
+      "title": "Lawkitt \u2014 Practical tools for everyday legal work",
+      "robots": "index, follow",
+      "error": null
+    },
+    {
+      "path": "/tools/mdoc/",
+      "exitCode": 0,
+      "headers": "HTTP/2 200 \ndate: Fri, 09 Oct 2026 19:45:42 GMT\ncontent-type: text/html\ncontent-length: 19284\ncf-cache-status: MISS\ncache-control: public, max-age=0, must-revalidate\netag: \"e8b26e555806264a14281a2a377d58c2\"\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=gj5JlohUHaG9IM%2B%2FcyKeXHArPNfdFZtqkKCI9VTXHFTQEfRIpwrKznIgcm4EFnynC5GdFIYJ6h4XCu2dO70e%2BWH6IMVsW7gE07%2BRh9JMdRvmX4wsWCG0VyYEC7HnDA%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe3200ba3ad10-AMS\nalt-svc: h3=\":443\"; ma=86400",
+      "title": "mdoc \u2014 Legal documents to editable Markdown | Lawkitt",
+      "robots": "index, follow",
+      "error": null
+    },
+    {
+      "path": "/tools/mdoc/download/",
+      "exitCode": 0,
+      "headers": "HTTP/2 200 \ndate: Fri, 09 Oct 2026 19:45:42 GMT\ncontent-type: text/html\ncontent-length: 14321\ncf-cache-status: MISS\ncache-control: public, max-age=0, must-revalidate\netag: \"9ec975873bafc4a5d8da31765f082916\"\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=tZQUvN85dw3n2EBNojKRx4K0qKPMKIe0NQk0ZnMIocOYs13xSue684wk0CN79bY6KagZXW9amVUJUsIEXze%2BZHogjlnPU5cyXm1hN6UsZixLwlqjq%2BKyheHSVJ06NQ%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe3227b00330e-LHR\nalt-svc: h3=\":443\"; ma=86400",
+      "title": "mdoc downloads &amp; availability | Lawkitt",
+      "robots": "index, follow",
+      "error": null
+    },
+    {
+      "path": "/not-found-check/",
+      "exitCode": 0,
+      "headers": "HTTP/2 404 \ndate: Fri, 09 Oct 2026 19:45:43 GMT\ncontent-type: text/html\ncontent-length: 6649\ncf-cache-status: HIT\ncache-control: public, max-age=0, must-revalidate\netag: \"f587cb7c3e65b8471d2cfc47c908835e\"\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=sN43z5me09RVv8jDdiXtlLG8J%2FYma45QX7%2BXwpVLFiVq919M9fyp18w%2B%2FVTBvIsW5BLdAxjRZBUsqKv%2BdBF7SjRevw1iCC9Mg7y%2FkWPsYZrI%2BTQwMg9U4H3ePEzkBg%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe324cae06639-AMS\nalt-svc: h3=\":443\"; ma=86400",
+      "title": "Page not found | Lawkitt",
+      "robots": "noindex, nofollow",
+      "error": null
+    },
+    {
+      "path": "/tools/mdoc",
+      "exitCode": 0,
+      "headers": "HTTP/2 307 \ndate: Fri, 09 Oct 2026 19:45:43 GMT\ncontent-length: 0\nlocation: /tools/mdoc/\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=%2BsH2tcAdFezga%2BHfwAc6FkmRauatox5zlJ8nyKb%2FPkVcbXjTy4Z7FKa2SyqmS0wm8UVKWduwuyqG4oDJOZlt9dTDckgEpYlGv3OJQDS62HU9F5pqM8AtZsQhRor4dQ%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe3262fc70b58-AMS\nalt-svc: h3=\":443\"; ma=86400",
+      "title": null,
+      "robots": null,
+      "error": null
+    },
+    {
+      "path": "/robots.txt",
+      "exitCode": 0,
+      "headers": "HTTP/2 200 \ndate: Fri, 09 Oct 2026 19:45:43 GMT\ncontent-type: text/plain\ncontent-length: 64\ncf-cache-status: MISS\ncache-control: public, max-age=0, must-revalidate\netag: \"f64b359cac4aba854150ea7fb2a81347\"\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Z5MfBcFiZ6GpOEYmouVUOgYik7Rv6ZIGhNPCH7CF8%2Fpr9OJjiSdQZG5JU3ONh%2FyXqW356EAObsS%2Fpemph%2Fri3Y9Yi1dinQ%2FgC9cHKNQmr8MvVXcIEhss5ug26kfGjg%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe3276a7f86dc-AMS\nalt-svc: h3=\":443\"; ma=86400",
+      "title": null,
+      "robots": null,
+      "error": null,
+      "body": "User-agent: *\nAllow: /\nSitemap: https://lawkitt.com/sitemap.xml\n"
+    },
+    {
+      "path": "/sitemap.xml",
+      "exitCode": 0,
+      "headers": "HTTP/2 200 \ndate: Fri, 09 Oct 2026 19:45:44 GMT\ncontent-type: application/xml\ncontent-length: 264\ncf-cache-status: MISS\ncache-control: public, max-age=0, must-revalidate\netag: \"463ff189ceb977e1895eac73d3e11146\"\ncontent-security-policy: default-src 'self'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'none'\npermissions-policy: camera=(), microphone=(), geolocation=()\nreferrer-policy: strict-origin-when-cross-origin\nx-content-type-options: nosniff\nx-frame-options: DENY\nreport-to: {\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=ygWc9qP%2BQK4WwR3vS3mGAfp62tLY2qe3l8PAijT9NAeo3YTnPrRWUnqEipvCYHxJ5MLy6fgf45yHzZ08MTC6mxeb3x20kWwlNOju2oE7oZqVGe7gqdHEp%2B9BqTAofg%3D%3D\"}]}\nnel: {\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}\nserver: cloudflare\ncf-ray: a47fe3299d2b34b7-AMS\nalt-svc: h3=\":443\"; ma=86400",
+      "title": null,
+      "robots": null,
+      "error": null,
+      "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><url><loc>https://lawkitt.com/</loc></url><url><loc>https://lawkitt.com/tools/mdoc/</loc></url><url><loc>https://lawkitt.com/tools/mdoc/download/</loc></url></urlset>"
+    }
+  ]
+}
