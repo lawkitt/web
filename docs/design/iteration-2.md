@@ -102,3 +102,7 @@ Live check: `/`, `/tools/mdoc/` and `/tools/mdoc/download/` return 200 with the
 new headings; unknown paths return 404.
 Open follow-ups: new app screenshots (pseudonymization, OCR), and the
 pseudonymization timing (the harness run was killed by the OS).
+
+2026-10-10: hero animation and plainer hero (ADR 0005, ADR 0004 amendment)
+merged as #4 and deployed from `main` (961ac47), Worker version
+`ea80b978-a2ac-4e34-999d-12deba13139a`.
