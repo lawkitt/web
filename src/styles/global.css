@@ -251,6 +251,11 @@ main:focus {
 .footer a:hover {
   color: var(--fg);
 }
+.footer .footer-legal {
+  max-width: 360px;
+  font-size: 11px;
+  line-height: 1.6;
+}
 .footer .footer-note {
   margin: 0;
   text-align: right;
@@ -358,6 +363,11 @@ main:focus {
     width: 100%;
     order: 3;
     gap: 20px;
+  }
+  .footer .footer-legal {
+    max-width: 360px;
+    font-size: 11px;
+    line-height: 1.6;
   }
   .footer .footer-note {
     font-size: 11px;

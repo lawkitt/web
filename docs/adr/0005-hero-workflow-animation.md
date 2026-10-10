@@ -5,8 +5,9 @@ Status: Accepted (design); implementation after prototype approval
 
 ## Decision
 
-- Homepage hero becomes two columns on desktop: left-aligned copy and actions,
-  animation on the right. On phones the animation sits below the actions.
+- Placement (revised by the user after the first prototype): the hero stays
+  centered. The animation sits under the mdoc screenshot in the left column of
+  the homepage catalog card, and stacks under it on phones.
 - Storyboard (~9 s loop): a PDF or Word card arrives → enters an mdoc window and
   is parsed into clean Markdown → names glow amber and flip to blue alias chips
   (`PERSON_1`, `ORG_1`) with a "✓ approved" tick → clean text flies to a ChatGPT
