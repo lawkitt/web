@@ -4,6 +4,7 @@ import Arrow from "../components/Arrow.astro";
 import ToolCard from "../components/ToolCard.astro";
 import Pillars from "../components/Pillars.astro";
 import Workflow from "../components/Workflow.astro";
+import WorkflowAnimation from "../components/WorkflowAnimation.astro";
 import { tools } from "../lib/catalog";
 import { latestMdocRelease } from "../lib/releases";
 import { SITE } from "../lib/site";
@@ -11,31 +12,37 @@ import { SITE } from "../lib/site";
 
 <Layout>
   <section class="hero home-hero">
-    <div class="container">
-      <h1 data-rise>Free, open-source tools for legal work.</h1>
-      <p class="hero-subtitle" data-rise style="--d:.07s">
-        We start with <strong>mdoc</strong>: open PDFs, scans and Word files,
-        replace client names, and copy clean text into ChatGPT or Claude. It all
-        happens on your own computer.
-      </p>
-      <ul class="facts" data-rise style="--d:.14s">
-        <li>
-          <span aria-hidden="true">✓</span> Free, no account or subscription
-        </li>
-        <li>
-          <span aria-hidden="true">✓</span> Open source, code on GitHub
-        </li>
-        <li>
-          <span aria-hidden="true">✓</span> mdoc runs locally on Mac and Windows
-        </li>
-      </ul>
-      <div class="actions" data-rise style="--d:.21s">
-        <a class="btn btn-primary" href="/tools/mdoc/download/">
-          Get mdoc <Arrow />
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/lawkitt/mdoc">
-          View the source <Arrow diagonal />
-        </a>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 data-rise>Free, open-source tools for legal work.</h1>
+        <p class="hero-subtitle" data-rise style="--d:.07s">
+          We start with <strong>mdoc</strong>: open PDFs, scans and Word files,
+          replace client names, and copy clean text into ChatGPT or Claude. It
+          all happens on your own computer.
+        </p>
+        <ul class="facts" data-rise style="--d:.14s">
+          <li>
+            <span aria-hidden="true">✓</span> Free, no account or subscription
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span> Open source, code on GitHub
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span> mdoc runs locally on Mac and
+            Windows
+          </li>
+        </ul>
+        <div class="actions" data-rise style="--d:.21s">
+          <a class="btn btn-primary" href="/tools/mdoc/download/">
+            Get mdoc <Arrow />
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/lawkitt/mdoc">
+            View the source <Arrow diagonal />
+          </a>
+        </div>
+      </div>
+      <div class="hero-anim" data-rise style="--d:.28s">
+        <WorkflowAnimation />
       </div>
     </div>
   </section>
@@ -147,15 +154,19 @@ import { SITE } from "../lib/site";
 </Layout>
 <style>
   .home-hero {
-    padding: 72px 0 44px;
-    text-align: center;
+    padding: 72px 0 56px;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 540px);
+    gap: 56px;
+    align-items: center;
   }
   .facts {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px 28px;
+    flex-direction: column;
+    gap: 10px;
     margin: 26px 0 0;
     padding: 0;
     color: #d4d4dc;
@@ -169,25 +180,28 @@ import { SITE } from "../lib/site";
     padding: 0 0 100px;
   }
   .home-hero h1 {
-    max-width: 900px;
-    font-size: clamp(40px, 5.2vw, 68px);
+    font-size: clamp(40px, 4.6vw, 64px);
     text-wrap: balance;
-    margin: 0 auto;
   }
   .hero-subtitle {
     color: var(--muted);
     font-size: 19px;
     line-height: 1.6;
-    max-width: 640px;
-    margin: 28px auto 0;
+    max-width: 560px;
+    margin-top: 26px;
   }
   .hero-subtitle strong {
     color: var(--fg);
     font-weight: 600;
   }
   .home-hero .actions {
-    justify-content: center;
     margin-top: 32px;
+  }
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
   }
   .principles-grid {
     display: grid;
@@ -248,10 +262,6 @@ import { SITE } from "../lib/site";
       padding: 48px 0 32px;
     }
     .facts {
-      flex-direction: column;
-      align-items: flex-start;
-      width: fit-content;
-      margin-inline: auto;
       gap: 8px;
       font-size: 13px;
     }
@@ -260,7 +270,7 @@ import { SITE } from "../lib/site";
     }
     .hero-subtitle {
       font-size: 16px;
-      margin: 24px auto 0;
+      margin-top: 22px;
     }
     .home-hero .actions {
       gap: 10px;

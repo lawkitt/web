@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import ProductScreenshot from "./ProductScreenshot.astro";
-import WorkflowAnimation from "./WorkflowAnimation.astro";
 import Arrow from "./Arrow.astro";
 import { toolPath, type Tool } from "../lib/catalog";
 interface Props {
@@ -14,7 +13,6 @@ const { tool, index } = Astro.props;
 <article class="tool-card">
   <div class="tool-visual">
     <ProductScreenshot compact tool={tool} />
-    {tool.slug === "mdoc" && <WorkflowAnimation />}
   </div>
   <div class="tool-info">
     <p class="tool-category">{tool.category}</p>
@@ -58,9 +56,7 @@ const { tool, index } = Astro.props;
   .tool-visual {
     padding: 32px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 28px;
+    align-items: center;
     background: linear-gradient(135deg, #141623, #0c0c10 75%);
     border-right: 1px solid var(--border);
     min-width: 0;
