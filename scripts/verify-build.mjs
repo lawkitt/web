@@ -25,6 +25,15 @@ for (const page of pages) {
   const html = await readFile(path.join(root, page), "utf8");
   assert.equal((html.match(/<h1\b/g) ?? []).length, 1, `${page}: one H1`);
   assert.match(html, /<html lang="en"/, `${page}: English document`);
+  for (const [, attributes, body] of html.matchAll(
+    /<script\b([^>]*)>([\s\S]*?)<\/script>/g,
+  )) {
+    if (/\btype="application\/ld\+json"/.test(attributes)) continue;
+    assert.ok(
+      /\bsrc="/.test(attributes) && body.trim() === "",
+      `${page}: executable scripts must be external for the content security policy`,
+    );
+  }
   assert.doesNotMatch(
     html,
     /T3 Code|t3\.codes|pingdotgg|nightly|testimonials/i,
