@@ -104,3 +104,6 @@ pseudonymization timing (the harness run was killed by the OS).
 2026-10-10: hero animation and plainer hero (ADR 0005, ADR 0004 amendment)
 merged as #4 and deployed from `main` (961ac47), Worker version
 `ea80b978-a2ac-4e34-999d-12deba13139a`.
+
+2026-10-10: /mdoc URL and page cleanup (ADR 0006) merged as #5 and deployed
+from `main` (922cb20), Worker version `3655118c-e31a-414c-9632-71124eb1b0d3`.
