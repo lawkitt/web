@@ -11,6 +11,12 @@ tag `reference-clone-stage1`. The adaptation retains its typography, dark palett
 accent hue, button treatment and restrained entrance motion. T3 product branding,
 installer scripts, screenshots and endorsements are removed from the built site.
 
+`src/assets/ai/openai.svg` and `src/assets/ai/claude.svg` were taken from the
+same reference (`apps/marketing/public/harnesses/`). They are the ChatGPT
+(OpenAI) and Claude (Anthropic) marks, used only to name compatible tools; they
+are trademarks of their owners and are not covered by the MIT license. Lawkitt is
+not affiliated with OpenAI or Anthropic.
+
 DM Sans and JetBrains Mono font licenses are retained in `public/fonts/`.
 The Lawkitt wordmark and square mark were supplied in the project root. mdoc's
 icon comes from `../mdoc/resources/icons/icon.png`. The product screenshot is a

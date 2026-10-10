@@ -4,6 +4,7 @@ import Arrow from "../components/Arrow.astro";
 import ToolCard from "../components/ToolCard.astro";
 import Pillars from "../components/Pillars.astro";
 import Workflow from "../components/Workflow.astro";
+import WorkflowAnimation from "../components/WorkflowAnimation.astro";
 import { tools } from "../lib/catalog";
 import { latestMdocRelease } from "../lib/releases";
 import { SITE } from "../lib/site";
@@ -11,42 +12,42 @@ import { SITE } from "../lib/site";
 
 <Layout>
   <section class="hero home-hero">
-    <div class="container">
-      <div class="hero-label" data-rise>
-        <span class="status-dot"></span> Free & open source · Runs on your
-        computer
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1 data-rise>Free, open-source tools for legal work.</h1>
+        <p class="hero-subtitle" data-rise style="--d:.07s">
+          We start with <strong>mdoc</strong>: open PDFs, scans and Word files,
+          replace client names, and copy clean text into ChatGPT or Claude. It
+          all happens on your own computer.
+        </p>
+        <ul class="facts" data-rise style="--d:.14s">
+          <li>
+            <span aria-hidden="true">✓</span> Free, no account or subscription
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span> Open source, code on GitHub
+          </li>
+          <li>
+            <span aria-hidden="true">✓</span> mdoc runs locally on Mac and
+            Windows
+          </li>
+        </ul>
+        <div class="actions" data-rise style="--d:.21s">
+          <a class="btn btn-primary" href="/tools/mdoc/download/">
+            Get mdoc <Arrow />
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/lawkitt/mdoc">
+            View the source <Arrow diagonal />
+          </a>
+        </div>
       </div>
-      <h1 data-rise style="--d:.07s">
-        Practical tools for
-        <br class="desktop-break" /> everyday legal work.
-      </h1>
-      <p class="hero-subtitle" data-rise style="--d:.14s">
-        Our first tool, <strong>mdoc</strong>, gets your PDFs, scans and Word
-        files ready for ChatGPT or Claude, with client names replaced before
-        anything leaves your computer.
-      </p>
-      <div class="actions" data-rise style="--d:.21s">
-        <a class="btn btn-primary" href="/tools/mdoc/download/">
-          Get mdoc <Arrow />
-        </a>
-        <a class="btn btn-ghost" href="#how-it-works">
-          See how it works <span aria-hidden="true">↓</span>
-        </a>
+      <div class="hero-anim" data-rise style="--d:.28s">
+        <WorkflowAnimation />
       </div>
     </div>
   </section>
-  <section class="section catalog" id="tools" aria-labelledby="catalog-title">
+  <section class="catalog" id="tools" aria-label="mdoc">
     <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">01 / Our first tool</p>
-          <h2 id="catalog-title">Prepare legal documents for AI. Privately.</h2>
-        </div>
-        <p>
-          Lawkitt builds focused, free utilities for the everyday work of
-          lawyers. We start with documents.
-        </p>
-      </div>
       {tools.map((tool, index) => (
         <ToolCard tool={tool} index={index} />
       ))}
@@ -60,7 +61,7 @@ import { SITE } from "../lib/site";
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">02 / How it works</p>
+          <p class="eyebrow">01 / How it works</p>
           <h2 id="how-it-works-title">Open. Pseudonymize. Copy.</h2>
         </div>
         <p>Three steps. Your judgment stays in charge of each one.</p>
@@ -72,7 +73,7 @@ import { SITE } from "../lib/site";
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">03 / Why mdoc</p>
+          <p class="eyebrow">02 / Why mdoc</p>
           <h2 id="pillars-title">Built for confidential work.</h2>
         </div>
         <p>
@@ -87,7 +88,7 @@ import { SITE } from "../lib/site";
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">04 / What we build for</p>
+          <p class="eyebrow">03 / What we build for</p>
           <h2 id="principles-title">Useful by design.</h2>
         </div>
         <p>
@@ -108,7 +109,7 @@ import { SITE } from "../lib/site";
           <span class="principle-num">02</span>
           <h3>Your work stays yours</h3>
           <p>
-            Our tools run on your computer. You decide what is shared, and with
+            mdoc runs on your computer. You decide what is shared, and with
             whom.
           </p>
         </article>
@@ -127,7 +128,7 @@ import { SITE } from "../lib/site";
     <div class="container">
       <div class="community-panel">
         <div>
-          <p class="eyebrow">05 / Get started</p>
+          <p class="eyebrow">04 / Get started</p>
           <h2 id="community-title">
             Ready for your
             <br />
@@ -153,42 +154,54 @@ import { SITE } from "../lib/site";
 </Layout>
 <style>
   .home-hero {
-    padding: 112px 0 62px;
-    text-align: center;
+    padding: 72px 0 56px;
   }
-  .hero-label {
-    display: inline-flex;
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 540px);
+    gap: 56px;
     align-items: center;
-    gap: 9px;
-    color: var(--muted);
-    font: 11px var(--mono);
-    margin-bottom: 27px;
   }
-  .status-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    box-shadow: 0 0 15px var(--accent-dim);
+  .facts {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 26px 0 0;
+    padding: 0;
+    color: #d4d4dc;
+    font-size: 14px;
+  }
+  .facts span {
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .catalog {
+    padding: 0 0 100px;
   }
   .home-hero h1 {
-    max-width: 1000px;
-    margin: 0 auto;
+    font-size: clamp(40px, 4.6vw, 64px);
+    text-wrap: balance;
   }
   .hero-subtitle {
     color: var(--muted);
     font-size: 19px;
     line-height: 1.6;
-    max-width: 640px;
-    margin: 28px auto 0;
+    max-width: 560px;
+    margin-top: 26px;
   }
   .hero-subtitle strong {
     color: var(--fg);
     font-weight: 600;
   }
   .home-hero .actions {
-    justify-content: center;
     margin-top: 32px;
+  }
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 44px;
+    }
   }
   .principles-grid {
     display: grid;
@@ -246,20 +259,18 @@ import { SITE } from "../lib/site";
   }
   @media (max-width: 700px) {
     .home-hero {
-      padding: 72px 0 42px;
+      padding: 48px 0 32px;
     }
-    .hero-label {
-      font-size: 9px;
-      max-width: 285px;
-      line-height: 1.7;
-      text-align: left;
+    .facts {
+      gap: 8px;
+      font-size: 13px;
     }
-    .desktop-break {
-      display: none;
+    .catalog {
+      padding-bottom: 64px;
     }
     .hero-subtitle {
       font-size: 16px;
-      margin: 24px auto 0;
+      margin-top: 22px;
     }
     .home-hero .actions {
       gap: 10px;
