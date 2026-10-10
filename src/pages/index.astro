@@ -2,12 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import Arrow from "../components/Arrow.astro";
 import ToolCard from "../components/ToolCard.astro";
-import Pillars from "../components/Pillars.astro";
-import Workflow from "../components/Workflow.astro";
 import WorkflowAnimation from "../components/WorkflowAnimation.astro";
 import { tools } from "../lib/catalog";
-import { latestMdocRelease } from "../lib/releases";
-import { SITE } from "../lib/site";
 ---
 
 <Layout>
@@ -33,7 +29,7 @@ import { SITE } from "../lib/site";
           </li>
         </ul>
         <div class="actions" data-rise style="--d:.21s">
-          <a class="btn btn-primary" href="/tools/mdoc/download/">
+          <a class="btn btn-primary" href="/mdoc/">
             Get mdoc <Arrow />
           </a>
           <a class="btn btn-ghost" href="https://github.com/lawkitt/mdoc">
@@ -53,101 +49,43 @@ import { SITE } from "../lib/site";
       ))}
     </div>
   </section>
-  <section
-    class="section"
-    id="how-it-works"
-    aria-labelledby="how-it-works-title"
-  >
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">01 / How it works</p>
-          <h2 id="how-it-works-title">Open. Pseudonymize. Copy.</h2>
-        </div>
-        <p>Three steps. Your judgment stays in charge of each one.</p>
-      </div>
-      <Workflow />
-    </div>
-  </section>
-  <section class="section" aria-labelledby="pillars-title">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">02 / Why mdoc</p>
-          <h2 id="pillars-title">Built for confidential work.</h2>
-        </div>
-        <p>
-          Nothing leaves your computer until you copy it. Not your documents,
-          not your clients’ names.
-        </p>
-      </div>
-      <Pillars />
-    </div>
-  </section>
   <section class="section principles" aria-labelledby="principles-title">
     <div class="container">
       <div class="section-head">
         <div>
-          <p class="eyebrow">03 / What we build for</p>
-          <h2 id="principles-title">Useful by design.</h2>
+          <p class="eyebrow">What we build</p>
+          <h2 id="principles-title">Open tools for AI-native lawyers.</h2>
         </div>
         <p>
-          Lawkitt is a collection of practical utilities, shaped around the work
-          lawyers actually do.
+          Lawyers already work with AI assistants. We build the free utilities
+          around them, in the open.
         </p>
       </div>
       <div class="principles-grid">
         <article>
           <span class="principle-num">01</span>
-          <h3>A clear job to do</h3>
+          <h3>Made for working with AI</h3>
           <p>
-            Each tool does one task well, so you can pick it up between meetings
-            without a manual.
+            Our tools prepare your work for the assistants you already use, such
+            as ChatGPT or Claude. They don’t try to replace them.
           </p>
         </article>
         <article>
           <span class="principle-num">02</span>
-          <h3>Your work stays yours</h3>
+          <h3>Confidential by design</h3>
           <p>
-            mdoc runs on your computer. You decide what is shared, and with
-            whom.
+            mdoc runs on your computer. Nothing is shared until you choose to
+            copy it.
           </p>
         </article>
         <article>
           <span class="principle-num">03</span>
-          <h3>Free. Open. Inspectable.</h3>
+          <h3>Free and open source</h3>
           <p>
-            Free to use, with public code anyone can check. Report an issue or
-            help make it better on GitHub.
+            No subscription and no account. The code is public: check it, report
+            an issue or contribute on GitHub.
           </p>
         </article>
-      </div>
-    </div>
-  </section>
-  <section class="community" aria-labelledby="community-title">
-    <div class="container">
-      <div class="community-panel">
-        <div>
-          <p class="eyebrow">04 / Get started</p>
-          <h2 id="community-title">
-            Ready for your
-            <br />
-            next document.
-          </h2>
-          <p>
-            {latestMdocRelease
-              ? "Download mdoc for your Mac or Windows PC. Free, with no account."
-              : "mdoc’s first public release is on its way. Watch the repository on GitHub to hear when it lands."}
-          </p>
-        </div>
-        <div class="actions">
-          <a class="btn btn-primary" href="/tools/mdoc/download/">
-            Get mdoc <Arrow />
-          </a>
-          <a class="btn btn-ghost" href={SITE.github}>
-            Lawkitt on GitHub <Arrow diagonal />
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -224,34 +162,6 @@ import { SITE } from "../lib/site";
     line-height: 1.8;
     margin-top: 18px;
   }
-  .community {
-    padding: 0 0 100px;
-  }
-  .community-panel .actions {
-    flex-shrink: 0;
-  }
-  .community-panel {
-    padding: 48px;
-    border: 1px solid var(--border-strong);
-    border-radius: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 28px;
-    background:
-      radial-gradient(ellipse at 95% 0%, var(--accent-dim), transparent 60%),
-      var(--bg-elev);
-  }
-  .community h2 {
-    margin-top: 20px;
-    font-size: 38px;
-  }
-  .community p:not(.eyebrow) {
-    color: var(--muted);
-    max-width: 490px;
-    font-size: 14px;
-    margin-top: 20px;
-  }
   @media (max-width: 1024px) {
     .principles-grid {
       gap: 28px;
@@ -284,19 +194,6 @@ import { SITE } from "../lib/site";
     }
     .principles-grid article + article {
       margin-top: 32px;
-    }
-    .community {
-      padding-bottom: 64px;
-    }
-    .community-panel {
-      display: block;
-      padding: 30px 24px;
-    }
-    .community h2 {
-      font-size: 32px;
-    }
-    .community .actions {
-      margin-top: 28px;
     }
   }
 </style>

@@ -4,7 +4,7 @@ import dmSansLatinUrl from "../assets/fonts/dm-sans-latin.woff2?url";
 import "../styles/fonts.css";
 import "../styles/global.css";
 import { SITE } from "../lib/site";
-import Arrow from "../components/Arrow.astro";
+import GitHubStars from "../components/GitHubStars.astro";
 interface Props {
   title?: string;
   description?: string;
@@ -76,29 +76,20 @@ const preview =
         </a>
         <nav class="nav-links" aria-label="Main navigation">
           <a
-            href="/tools/mdoc/"
-            aria-current={
-              Astro.url.pathname === "/tools/mdoc/" ? "page" : undefined
-            }
+            href="/mdoc/"
+            aria-current={Astro.url.pathname === "/mdoc/" ? "page" : undefined}
           >
             mdoc
           </a>
           <a
-            href="/tools/mdoc/download/"
+            href="/mdoc/download/"
             aria-current={
-              Astro.url.pathname === "/tools/mdoc/download/"
-                ? "page"
-                : undefined
+              Astro.url.pathname === "/mdoc/download/" ? "page" : undefined
             }
           >
             Download
           </a>
-          <a class="nav-github" href={SITE.github}>
-            GitHub <Arrow diagonal />
-          </a>
-          <a class="btn btn-primary nav-cta" href="/tools/mdoc/download/">
-            Get mdoc
-          </a>
+          <GitHubStars />
         </nav>
       </div>
     </header>
@@ -124,8 +115,8 @@ const preview =
           </p>
         </div>
         <nav aria-label="Footer navigation">
-          <a href="/tools/mdoc/">mdoc</a>
-          <a href="/tools/mdoc/download/">Download</a>
+          <a href="/mdoc/">mdoc</a>
+          <a href="/mdoc/download/">Download</a>
           <a href={SITE.github}>GitHub</a>
           <a href="https://github.com/lawkitt/mdoc/issues">
             Support & contributions

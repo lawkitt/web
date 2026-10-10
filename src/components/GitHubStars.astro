@@ -1,0 +1,58 @@
+---
+import { starCount, starLabel } from "../lib/github";
+interface Props {
+  repo?: string;
+}
+const { repo = "lawkitt/mdoc" } = Astro.props;
+const label = starLabel(await starCount(repo));
+---
+
+<a
+  class="stars"
+  href={`https://github.com/${repo}`}
+  aria-label={
+    label ? `${label} GitHub stars for ${repo}` : `Star ${repo} on GitHub`
+  }
+>
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.53L12 17.49l-5.87 3.08 1.12-6.53L2.5 9.41l6.56-.95L12 2.5z"></path>
+  </svg>
+  {label ? (
+    <span>
+      <b>{label}</b> GitHub stars
+    </span>
+  ) : (
+    <span>Star on GitHub</span>
+  )}
+</a>
+<style>
+  .stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px 7px 12px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: #ffffff06;
+    color: var(--muted);
+    font-size: 13px;
+    white-space: nowrap;
+    transition:
+      border-color 0.15s,
+      background 0.15s;
+  }
+  .stars:hover {
+    border-color: #ffffff50;
+    background: #ffffff0c;
+    color: var(--fg);
+  }
+  svg {
+    width: 15px;
+    height: 15px;
+    fill: #f2b544;
+  }
+  b {
+    color: var(--fg);
+    font-weight: 600;
+  }
+</style>

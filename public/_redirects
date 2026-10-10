@@ -1,0 +1,4 @@
+/tools/mdoc /mdoc/ 301
+/tools/mdoc/* /mdoc/:splat 301
+/tools /mdoc/ 301
+/tools/ /mdoc/ 301

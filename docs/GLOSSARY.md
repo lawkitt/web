@@ -5,7 +5,7 @@
 - **Catalog entry**: A software project presented to visitors; its exact fields
   are icon, screenshot, category, name, pitch, development status, installer
   availability and Explore action. Catalog entries are on the homepage; details
-  use `/tools/<slug>/` and downloads use `/tools/<slug>/download/`.
+  use `/<slug>/` and downloads use `/<slug>/download/` (ADR 0006).
 - **mdoc**: The first catalog project. A local document-preparation utility
   that turns documents into editable Markdown for use with external AI tools.
 - **Reference clone**: The initial reproduction of the supplied T3 Code

@@ -1,0 +1,244 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Arrow from "../../components/Arrow.astro";
+import ProductScreenshot from "../../components/ProductScreenshot.astro";
+import { Image } from "astro:assets";
+import { mdoc, mdocFeatures, mdocMetricsNote } from "../../lib/catalog";
+import { mdocAvailability } from "../../lib/releases";
+import { Content } from "../../content/tools/mdoc.md";
+---
+
+<Layout
+  title="mdoc — Prepare legal documents for AI on your computer | Lawkitt"
+  description="mdoc is a free, open-source desktop app for Mac and Windows. Open PDFs, scans and Word files, check them against the original, replace client names, and copy clean text into ChatGPT or Claude."
+  socialImage="/social/mdoc.png"
+>
+  <section class="hero product-hero">
+    <div class="container">
+      <div class="product-heading" data-rise>
+        <Image src={mdoc.icon} alt="" width={48} height={48} format="webp" />
+        <span>mdoc</span>
+        <span class="tag">Free · Open source</span>
+      </div>
+      <h1 data-rise style="--d:.07s">
+        Prepare legal documents for AI, on your own computer.
+      </h1>
+      <p class="product-intro" data-rise style="--d:.14s">
+        Open PDFs, scans and Word files. Check the text against the original,
+        replace client names, and copy the result into ChatGPT or Claude.
+      </p>
+      <div class="actions" data-rise style="--d:.21s">
+        <a class="btn btn-primary" href="/mdoc/download/">
+          Download <Arrow />
+        </a>
+        <a class="btn btn-ghost" href={mdoc.source}>
+          View source <Arrow diagonal />
+        </a>
+      </div>
+      <p class="availability-note">
+        {mdocAvailability}
+        <span aria-hidden="true">·</span> macOS (Apple Silicon) and Windows
+        <span aria-hidden="true">·</span>
+        {mdoc.license}
+      </p>
+      <div class="hero-shot">
+        <ProductScreenshot />
+      </div>
+    </div>
+  </section>
+  <section class="section" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <h2 id="features-title" class="visually-hidden">
+        Features
+      </h2>
+      <div class="features">
+        {mdocFeatures.map((feature) => (
+          <article>
+            <h3>{feature.title}</h3>
+            <p>{feature.body}</p>
+          </article>
+        ))}
+      </div>
+      <p class="metrics-note">{mdocMetricsNote}</p>
+    </div>
+  </section>
+  <section class="section product-content">
+    <div class="container prose-grid">
+      <aside>
+        <p class="eyebrow">FAQ</p>
+      </aside>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+  </section>
+</Layout>
+<style>
+  .product-hero {
+    padding: 56px 0 0;
+  }
+  .product-heading {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+  .product-heading img {
+    border-radius: 10px;
+  }
+  .product-heading > span:not(.tag) {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+  .product-heading .tag {
+    margin-left: 8px;
+  }
+  .product-hero h1 {
+    max-width: 900px;
+    font-size: clamp(40px, 5vw, 64px);
+    text-wrap: balance;
+  }
+  .product-intro {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 680px;
+    margin-top: 24px;
+  }
+  .product-hero .actions {
+    margin-top: 28px;
+  }
+  .availability-note {
+    color: var(--dim);
+    font-size: 12px;
+    margin-top: 16px;
+  }
+  .availability-note span {
+    margin: 0 6px;
+  }
+  .hero-shot {
+    margin-top: 48px;
+  }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .features article {
+    background: var(--bg-elev);
+    padding: 32px;
+  }
+  .features h3 {
+    font-size: 19px;
+  }
+  .features p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 12px;
+  }
+  .metrics-note {
+    color: var(--dim);
+    font-size: 11px;
+    margin-top: 16px;
+  }
+  .prose-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+  }
+  .prose {
+    max-width: 740px;
+  }
+  .prose :global(h2) {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 16px;
+  }
+  .prose :global(p) {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 18px;
+  }
+  .prose :global(a) {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .prose :global(code) {
+    font: 12px var(--mono);
+  }
+  .prose :global(details) {
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .prose :global(summary) {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 20px 30px 20px 0;
+    color: #dedee5;
+  }
+  .prose :global(summary:hover) {
+    color: var(--accent);
+  }
+  .prose :global(details p) {
+    padding: 0 0 6px;
+    font-size: 14px;
+  }
+  @media (max-width: 1024px) {
+    .features {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .prose-grid {
+      grid-template-columns: 160px 1fr;
+      gap: 40px;
+    }
+  }
+  @media (max-width: 700px) {
+    .product-hero {
+      padding-top: 36px;
+    }
+    .product-heading .tag {
+      font-size: 9px;
+    }
+    .product-intro {
+      font-size: 16px;
+    }
+    .availability-note {
+      line-height: 1.8;
+    }
+    .hero-shot {
+      margin-top: 32px;
+    }
+    .features {
+      grid-template-columns: 1fr;
+    }
+    .features article {
+      padding: 24px;
+    }
+    .prose-grid {
+      display: block;
+    }
+    aside {
+      margin-bottom: 24px;
+    }
+    .prose :global(h2) {
+      font-size: 28px;
+    }
+    .prose :global(p) {
+      font-size: 14px;
+    }
+  }
+</style>

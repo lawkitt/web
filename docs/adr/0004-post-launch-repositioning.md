@@ -61,10 +61,11 @@ still no mdoc release. Other `lawkitt` org projects use the Lawkitt name.
 
 The user asked for a less promotional hero that stresses free, open source and
 local. This supersedes the Round 3 hero copy:
+
 - H1 "Free, open-source tools for legal work."
 - A factual mdoc sentence, then three facts: free with no account; open source;
   mdoc runs locally on Mac and Windows.
 - Actions: "Get mdoc" and "View the source".
-The catalog section heading and intro were removed so the mdoc screenshot shows
-on first load. Local processing stays attributed to mdoc, not to all Lawkitt
-tools (ADR 0001).
+  The catalog section heading and intro were removed so the mdoc screenshot shows
+  on first load. Local processing stays attributed to mdoc, not to all Lawkitt
+  tools (ADR 0001).
