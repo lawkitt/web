@@ -15,10 +15,10 @@ const { tool } = Astro.props;
   </div>
   <div class="tool-info">
     <p class="tool-category">{tool.category}</p>
-    <div class="tool-name">
+    <a class="tool-name" href={toolPath(tool)}>
       <Image src={tool.icon} alt="" width={48} height={48} format="webp" />
       <h3>{tool.name}</h3>
-    </div>
+    </a>
     <p class="tool-pitch">{tool.pitch}</p>
     <div class="tool-tags">
       <span class="tag tag-accent">{tool.maturity}</span>
@@ -71,7 +71,7 @@ const { tool } = Astro.props;
     margin-bottom: 22px;
   }
   .tool-name {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 14px;
   }
@@ -80,6 +80,10 @@ const { tool } = Astro.props;
   }
   .tool-name h3 {
     font-size: 35px;
+    transition: color 0.15s;
+  }
+  .tool-name:hover h3 {
+    color: var(--accent);
   }
   .tool-pitch {
     margin-top: 24px;
