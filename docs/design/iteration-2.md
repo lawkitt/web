@@ -9,7 +9,7 @@ post-launch review. Nothing here is confirmed until marked SETTLED.
 - Live site: homepage (hero, single mdoc card, three principles, GitHub panel),
   `/tools/mdoc/`, `/tools/mdoc/download/` ("Downloads coming soon").
 - mdoc still has **no GitHub releases**; manifest is empty.
-- **Stale claim:** site and README say source builds need the *private*
+- **Stale claim:** site and README say source builds need the _private_
   `lawkitt/anydoc`. `lawkitt/anydoc` is now **public** (mdoc pins it by git rev)
   and its Cargo.toml has no further git dependencies. Public source builds look
   possible; not yet confirmed by a clean build.
@@ -89,8 +89,6 @@ post-launch review. Nothing here is confirmed until marked SETTLED.
     Deploy to lawkitt.com only on explicit go.
 
 Frontier: empty pending confirmation of shared understanding.
-
-
 
 ## Delivery
 

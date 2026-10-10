@@ -81,11 +81,11 @@ test(
         "utf8",
       );
       const product = await readFile(
-        path.join(fixture, "dist/tools/mdoc/index.html"),
+        path.join(fixture, "dist/mdoc/index.html"),
         "utf8",
       );
       const download = await readFile(
-        path.join(fixture, "dist/tools/mdoc/download/index.html"),
+        path.join(fixture, "dist/mdoc/download/index.html"),
         "utf8",
       );
       for (const page of [home, product, download]) {

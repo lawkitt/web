@@ -1,13 +1,13 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import Arrow from "../../../components/Arrow.astro";
+import Layout from "../../layouts/Layout.astro";
+import Arrow from "../../components/Arrow.astro";
 import { Image } from "astro:assets";
-import { mdoc } from "../../../lib/catalog";
+import { mdoc } from "../../lib/catalog";
 import {
   latestMdocRelease,
   mdocAvailability,
   releaseStatusCheckedAt,
-} from "../../../lib/releases";
+} from "../../lib/releases";
 ---
 
 <Layout
@@ -21,7 +21,7 @@ import {
 >
   <section class="hero download-page">
     <div class="container narrow">
-      <a class="back-link" href="/tools/mdoc/">
+      <a class="back-link" href="/mdoc/">
         <span aria-hidden="true">←</span> Back to mdoc
       </a>
       <div class="app-label">
@@ -85,7 +85,7 @@ import {
             <a class="btn btn-primary" href={mdoc.source}>
               Watch releases on GitHub <Arrow diagonal />
             </a>
-            <a class="btn btn-ghost" href="/tools/mdoc/">
+            <a class="btn btn-ghost" href="/mdoc/">
               See what mdoc does <Arrow />
             </a>
           </div>

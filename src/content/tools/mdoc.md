@@ -2,7 +2,7 @@
 
 <details>
 <summary>Can I download mdoc today?</summary>
-<p>The first public release is being prepared. The <a href="/tools/mdoc/download/">download page</a>
+<p>The first public release is being prepared. The <a href="/mdoc/download/">download page</a>
 always shows what is available. Until installers are published, you can watch the
 repository on GitHub for the release, or build mdoc yourself from its public source.</p>
 </details>

@@ -23,10 +23,9 @@ export interface Tool {
   screenshotCaption: string;
 }
 
-export interface Pillar {
+export interface Feature {
   title: string;
   body: string;
-  detail?: string;
 }
 
 export const tools = [
@@ -57,40 +56,35 @@ export const tools = [
 
 export const mdoc = tools[0]!;
 
-export const mdocFormats =
-  "PDFs and scans, Word, Excel, PowerPoint, OpenDocument, RTF and more";
-
-// The four ADR 0004 pillars. Claims must stay within verified mdoc behavior.
-export const mdocPillars: readonly Pillar[] = [
+// Concise feature list (ADR 0006). Claims must stay within verified mdoc behavior.
+export const mdocFeatures: readonly Feature[] = [
   {
-    title: "Every common document, even scans",
-    body: "Open PDFs, Word, Excel, PowerPoint, OpenDocument and RTF files. mdoc reads their text and structure, and recognizes scanned PDF pages on your computer.",
+    title: "Opens what you have",
+    body: "PDF, Word, Excel, PowerPoint, OpenDocument, RTF, EPUB and CSV files become clean, editable text.",
   },
   {
-    title: "Pseudonymize sensitive details",
-    body: "mdoc finds names, companies, emails, phone numbers, addresses and ID numbers, and proposes consistent replacements. You review and approve every one before you copy.",
+    title: "Reads scanned PDFs",
+    body: "Text recognition runs on your computer, in English or English and Russian. About 40 pages a minute.",
   },
   {
-    title: "Fast and native",
-    body: "A desktop app built in Rust, not a web page. Nothing uploads, nothing waits on a server, and large documents stay responsive.",
+    title: "Original side by side",
+    body: "Check the converted text against the PDF or Word original while you edit. The original file is never changed.",
   },
   {
-    title: "On your Mac or PC",
-    body: "Made for Apple Silicon Macs and Windows. Reading, recognition and pseudonymization all run locally and work offline after a one-time setup.",
+    title: "Pseudonymize",
+    body: "Names, companies, emails, phone numbers, addresses and IDs are replaced with consistent aliases like PERSON_1. You approve each one.",
+  },
+  {
+    title: "Copy for AI",
+    body: "One click copies the prepared text as Markdown, ready to paste into ChatGPT or Claude.",
+  },
+  {
+    title: "Local and fast",
+    body: "No upload, no account. Works offline after a one-time model download. A 100-page PDF converts in 0.12 s.",
   },
 ];
-export const toolPath = (tool: Tool) => `/tools/${tool.slug}/`;
+export const toolPath = (tool: Tool) => `/${tool.slug}/`;
 
-export interface Metric {
-  value: string;
-  label: string;
-}
-
-// Measured with synthetic documents; see docs/evidence/performance/. Leave
-// empty rather than publishing an estimate.
-export const mdocMetrics: readonly Metric[] = [
-  { value: "0.12 s", label: "to convert a 100-page contract PDF" },
-  { value: "~40", label: "scanned pages recognized per minute" },
-];
+// Measured with synthetic documents; see docs/evidence/performance/.
 export const mdocMetricsNote =
-  "Measured on a fanless MacBook Air (M4, 24 GB), using synthetic text-heavy documents. Your results depend on your computer and documents.";
+  "Speeds measured on a fanless MacBook Air (M4, 24 GB) with synthetic text-heavy documents. Your results depend on your computer and documents.";

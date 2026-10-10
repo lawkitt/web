@@ -68,7 +68,8 @@ and [custom domains](https://developers.cloudflare.com/workers/configuration/rou
 
 - `src/lib/catalog.ts`: typed catalog metadata, icon, screenshot, maturity,
   installer availability, platform targets and source links.
-- `src/content/tools/mdoc.md`: longer product content, limitations and FAQ.
+- `src/content/tools/mdoc.md`: mdoc FAQ, including limitations (served at `/mdoc/`).
+- `public/_redirects`: 301s from the old `/tools/mdoc/*` URLs.
 - `src/data/mdoc-releases.json`: manually maintained release manifest.
 - `src/lib/release-manifest.mjs`: validates dates, release ordering, installer
   targets, GitHub release URLs, duplicate entries and SHA-256 checksums at build time.

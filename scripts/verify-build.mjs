@@ -8,8 +8,8 @@ const root = path.resolve(
 );
 const pages = [
   "index.html",
-  "tools/mdoc/index.html",
-  "tools/mdoc/download/index.html",
+  "mdoc/index.html",
+  "mdoc/download/index.html",
   "404.html",
 ];
 const resolveLocal = (url, page) => {
@@ -70,7 +70,7 @@ for (const page of pages) {
   }
 }
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
-for (const route of ["/", "/tools/mdoc/", "/tools/mdoc/download/"])
+for (const route of ["/", "/mdoc/", "/mdoc/download/"])
   assert.ok(sitemap.includes(`<loc>https://lawkitt.com${route}</loc>`));
 assert.ok(!sitemap.includes("404"));
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
