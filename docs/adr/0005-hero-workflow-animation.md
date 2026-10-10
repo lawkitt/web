@@ -5,9 +5,11 @@ Status: Accepted (design); implementation after prototype approval
 
 ## Decision
 
-- Placement: right side of the homepage hero, with left-aligned copy and actions
-  on the left. On narrow screens (≤960px) it stacks below the actions. (The user
+- Placement: right side of the homepage hero, with left-aligned copy
+  on the left. On narrow screens (≤960px) it stacks below the copy. (The user
   briefly tried it under the catalog screenshot, then moved it back to the hero.)
+  The mdoc hero reuses the same component and responsive layout, with its product
+  screenshot below the hero grid.
 - Storyboard (~9 s loop): a PDF or Word card arrives → enters an mdoc window and
   is parsed into clean Markdown → names glow amber and flip to blue alias chips
   (`PERSON_1`, `ORG_1`) with a "✓ approved" tick → clean text flies to a ChatGPT

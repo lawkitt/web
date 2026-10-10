@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Arrow from "../../components/Arrow.astro";
 import ProductScreenshot from "../../components/ProductScreenshot.astro";
+import WorkflowAnimation from "../../components/WorkflowAnimation.astro";
 import { Image } from "astro:assets";
 import { mdoc, mdocFeatures, mdocMetricsNote } from "../../lib/catalog";
 import { mdocAvailability } from "../../lib/releases";
@@ -15,32 +16,46 @@ import { Content } from "../../content/tools/mdoc.md";
 >
   <section class="hero product-hero">
     <div class="container">
-      <div class="product-heading" data-rise>
-        <Image src={mdoc.icon} alt="" width={48} height={48} format="webp" />
-        <span>mdoc</span>
-        <span class="tag">Free · Open source</span>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="product-heading" data-rise>
+            <Image
+              src={mdoc.icon}
+              alt=""
+              width={48}
+              height={48}
+              format="webp"
+            />
+            <span>mdoc</span>
+            <span class="tag">Free · Open source</span>
+          </div>
+          <h1 data-rise style="--d:.07s">
+            Prepare legal documents for AI, on your own computer.
+          </h1>
+          <p class="product-intro" data-rise style="--d:.14s">
+            Open PDFs, scans and Word files. Check the text against the
+            original, replace client names, and copy the result into ChatGPT or
+            Claude.
+          </p>
+          <div class="actions" data-rise style="--d:.21s">
+            <a class="btn btn-primary" href="/mdoc/download/">
+              Download <Arrow />
+            </a>
+            <a class="btn btn-ghost" href={mdoc.source}>
+              View source <Arrow diagonal />
+            </a>
+          </div>
+          <p class="availability-note">
+            {mdocAvailability}
+            <span aria-hidden="true">·</span> macOS (Apple Silicon) and Windows
+            <span aria-hidden="true">·</span>
+            {mdoc.license}
+          </p>
+        </div>
+        <div class="hero-anim" data-rise style="--d:.28s">
+          <WorkflowAnimation />
+        </div>
       </div>
-      <h1 data-rise style="--d:.07s">
-        Prepare legal documents for AI, on your own computer.
-      </h1>
-      <p class="product-intro" data-rise style="--d:.14s">
-        Open PDFs, scans and Word files. Check the text against the original,
-        replace client names, and copy the result into ChatGPT or Claude.
-      </p>
-      <div class="actions" data-rise style="--d:.21s">
-        <a class="btn btn-primary" href="/mdoc/download/">
-          Download <Arrow />
-        </a>
-        <a class="btn btn-ghost" href={mdoc.source}>
-          View source <Arrow diagonal />
-        </a>
-      </div>
-      <p class="availability-note">
-        {mdocAvailability}
-        <span aria-hidden="true">·</span> macOS (Apple Silicon) and Windows
-        <span aria-hidden="true">·</span>
-        {mdoc.license}
-      </p>
       <div class="hero-shot">
         <ProductScreenshot />
       </div>
@@ -77,6 +92,12 @@ import { Content } from "../../content/tools/mdoc.md";
   .product-hero {
     padding: 56px 0 0;
   }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 540px);
+    gap: 56px;
+    align-items: center;
+  }
   .product-heading {
     display: flex;
     gap: 14px;
@@ -95,8 +116,7 @@ import { Content } from "../../content/tools/mdoc.md";
     margin-left: 8px;
   }
   .product-hero h1 {
-    max-width: 900px;
-    font-size: clamp(40px, 5vw, 64px);
+    font-size: clamp(40px, 4.6vw, 64px);
     text-wrap: balance;
   }
   .product-intro {
@@ -204,6 +224,12 @@ import { Content } from "../../content/tools/mdoc.md";
     .prose-grid {
       grid-template-columns: 160px 1fr;
       gap: 40px;
+    }
+  }
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 44px;
     }
   }
   @media (max-width: 700px) {
