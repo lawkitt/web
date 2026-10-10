@@ -3,5 +3,5 @@ export const SITE = {
   origin: "https://lawkitt.com",
   github: "https://github.com/lawkitt",
   description:
-    "Practical tools for everyday legal work. Free, open-source utilities from Lawkitt.",
+    "Free, open-source tools for legal work. mdoc prepares PDFs, scans and Word files for AI assistants, locally on your Mac or PC.",
 } as const;
