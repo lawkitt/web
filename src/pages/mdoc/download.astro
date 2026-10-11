@@ -36,6 +36,13 @@ import {
             Version {latestMdocRelease.version} — choose a verified installer
             for your platform.
           </p>
+          {latestMdocRelease.prerelease && (
+            <p class="beta-note">
+              <span class="tag tag-accent">Public beta</span> Try it with
+              made-up or non-confidential documents first, and tell us what
+              breaks.
+            </p>
+          )}
           <p class="release-date">
             Published{" "}
             <time datetime={latestMdocRelease.publishedAt}>
@@ -62,6 +69,20 @@ import {
                 >
                   {asset.label} <Arrow />
                 </a>
+                {!asset.signed && asset.platform === "macOS" && (
+                  <p class="first-launch">
+                    Not yet notarized by Apple. On first launch, open mdoc once,
+                    then go to{" "}
+                    <strong>System Settings → Privacy & Security</strong> and
+                    click <strong>Open Anyway</strong>.
+                  </p>
+                )}
+                {!asset.signed && asset.platform === "Windows" && (
+                  <p class="first-launch">
+                    Not yet signed. If Windows SmartScreen warns you, choose{" "}
+                    <strong>More info → Run anyway</strong>.
+                  </p>
+                )}
                 <details>
                   <summary>SHA-256 checksum</summary>
                   <code>{asset.sha256}</code>
@@ -145,6 +166,20 @@ import {
   </section>
 </Layout>
 <style>
+  .beta-note {
+    color: var(--muted);
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .beta-note .tag {
+    margin-right: 6px;
+  }
+  .first-launch {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 12px;
+  }
   .requirements {
     list-style: none;
     margin: 20px 0 0;

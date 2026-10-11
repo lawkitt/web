@@ -1,0 +1,228 @@
+---
+// Three short mdoc explainer videos (made in videos/mdoc with fframes) played
+// as one looping sequence. Muted, plays only while on screen; under reduced
+// motion nothing plays by itself and each video shows its final-state poster
+// with controls. Files: public/videos/mdoc/ (videos/mdoc/export-web.sh).
+const steps = [
+  {
+    id: "ocr",
+    tab: "Recognize scans",
+    label:
+      "A scanned court opinion is recognized on the computer and becomes editable Markdown.",
+  },
+  {
+    id: "pseudo",
+    tab: "Pseudonymize",
+    label:
+      "In a services agreement, a company, a person, an email and a phone number are proposed as personal data, approved, and replaced with aliases such as ORG_1 and PERSON_1.",
+  },
+  {
+    id: "ai",
+    tab: "Paste into AI",
+    label:
+      "The prepared text is copied and pasted into ChatGPT or Claude, which only sees the aliases.",
+  },
+];
+---
+
+<div class="demo" data-demo>
+  <div class="tabs" role="tablist" aria-label="mdoc in three steps">
+    {steps.map((step, i) => (
+      <button
+        type="button"
+        role="tab"
+        id={`demo-tab-${step.id}`}
+        aria-controls={`demo-panel-${step.id}`}
+        aria-selected={i === 0 ? "true" : "false"}
+        tabindex={i === 0 ? 0 : -1}
+      >
+        <span class="num">{i + 1}</span>
+        {step.tab}
+        <span class="progress" aria-hidden="true" />
+      </button>
+    ))}
+  </div>
+  <div class="frame">
+    {steps.map((step, i) => (
+      <div
+        class="panel"
+        role="tabpanel"
+        id={`demo-panel-${step.id}`}
+        aria-labelledby={`demo-tab-${step.id}`}
+        hidden={i !== 0}
+      >
+        <video
+          muted
+          playsinline
+          preload={i === 0 ? "metadata" : "none"}
+          poster={`/videos/mdoc/${step.id}-poster.webp`}
+          width="1280"
+          height="720"
+          aria-label={step.label}
+        >
+          <source src={`/videos/mdoc/${step.id}.mp4`} type="video/mp4" />
+        </video>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  for (const demo of document.querySelectorAll<HTMLElement>("[data-demo]")) {
+    const tabs = [...demo.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const panels = [...demo.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+    const videos = panels.map((panel) => panel.querySelector("video")!);
+    let active = 0;
+    let visible = false;
+
+    const play = () => {
+      const video = videos[active]!;
+      if (visible && !reduce.matches) video.play().catch(() => {});
+    };
+    const select = (index: number, focus = false) => {
+      videos[active]!.pause();
+      active = (index + tabs.length) % tabs.length;
+      tabs.forEach((tab, i) => {
+        const on = i === active;
+        tab.setAttribute("aria-selected", String(on));
+        tab.tabIndex = on ? 0 : -1;
+        panels[i]!.hidden = !on;
+      });
+      if (focus) tabs[active]!.focus();
+      const video = videos[active]!;
+      if (visible && !reduce.matches) {
+        video.currentTime = 0;
+        play();
+      } else {
+        // Not playing: reset to the poster rather than the black first frame.
+        video.load();
+      }
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener("click", () => select(i));
+      tab.addEventListener("keydown", (event) => {
+        const step = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
+        if (step) {
+          event.preventDefault();
+          select(active + step, true);
+        }
+      });
+    });
+    videos.forEach((video, i) => {
+      // One sequence: each video hands over to the next, and the last loops.
+      video.addEventListener("ended", () => {
+        if (i === active && !reduce.matches) select(active + 1);
+      });
+      video.addEventListener("timeupdate", () => {
+        if (video.duration)
+          tabs[i]!.style.setProperty(
+            "--p",
+            String(video.currentTime / video.duration),
+          );
+      });
+    });
+
+    const applyMotion = () => {
+      videos.forEach((video) => (video.controls = reduce.matches));
+      demo.classList.toggle("still", reduce.matches);
+      if (reduce.matches) videos[active]!.pause();
+      else play();
+    };
+    reduce.addEventListener("change", applyMotion);
+    applyMotion();
+
+    new IntersectionObserver(
+      ([entry]) => {
+        visible = entry!.isIntersecting;
+        if (visible) play();
+        else videos[active]!.pause();
+      },
+      { threshold: 0.35 },
+    ).observe(demo);
+  }
+</script>
+
+<style>
+  .demo {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg-card);
+    overflow: hidden;
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--border);
+  }
+  .tabs button {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    border: 0;
+    background: none;
+    color: var(--dim);
+    font: 500 15px/1.2 var(--font);
+    cursor: pointer;
+  }
+  .tabs button + button {
+    border-left: 1px solid var(--border);
+  }
+  .tabs button[aria-selected="true"] {
+    color: var(--fg);
+    background: var(--bg-elev);
+  }
+  .tabs button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  .num {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--border-strong);
+    font-size: 12px;
+  }
+  [aria-selected="true"] .num {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .progress {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    transform: scaleX(var(--p, 0));
+    transform-origin: left;
+    opacity: 0;
+  }
+  [aria-selected="true"] .progress {
+    opacity: 1;
+  }
+  .still .progress {
+    display: none;
+  }
+  .frame video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background: var(--bg);
+  }
+  @media (max-width: 640px) {
+    .tabs button {
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+      padding: 12px 6px;
+    }
+  }
+</style>

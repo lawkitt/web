@@ -10,9 +10,11 @@ const asset = {
   label: "Download .dmg",
   url: "https://github.com/lawkitt/mdoc/releases/download/v1.0.0/mdoc.dmg",
   sha256: "a".repeat(64),
+  signed: true,
 };
 const release = {
   version: "1.0.0",
+  prerelease: false,
   publishedAt: "2026-10-01",
   notesUrl: "https://github.com/lawkitt/mdoc/releases/tag/v1.0.0",
   assets: [asset],
@@ -79,4 +81,26 @@ test("rejects ambiguous duplicates and contradictory dates", () => {
     publishedAt: "2026-10-08",
   });
   assert.throws(() => validateReleaseManifest(order));
+});
+test("a pre-release is offered as a public beta", () => {
+  const m = manifest();
+  m.releases[0].version = "1.0.0-beta.1";
+  m.releases[0].prerelease = true;
+  assert.equal(
+    releaseAvailability(validateReleaseManifest(m).releases[0]),
+    "Public beta available",
+  );
+});
+test("rejects a pre-release flag that contradicts the version", () => {
+  const m = manifest();
+  m.releases[0].prerelease = true;
+  assert.throws(() => validateReleaseManifest(m));
+  const beta = manifest();
+  beta.releases[0].version = "1.0.0-beta.1";
+  assert.throws(() => validateReleaseManifest(beta));
+});
+test("every installer states whether it is signed", () => {
+  const m = manifest();
+  delete m.releases[0].assets[0].signed;
+  assert.throws(() => validateReleaseManifest(m));
 });

@@ -20,7 +20,7 @@ fn key_frames_match_snapshots() {
         &mut previewer,
         &mut CpuFrameRenderer::default(),
         // Settled frames: the middle of a scene, not the end of it where it fades out.
-        &["OcrScene@8s", "PseudoScene@4s", "PseudoScene@10s", "AiScene@7s", "OutroScene@2s"],
+        &["OcrScene@8s", "PseudoScene@4s", "PseudoScene@8s", "AiScene@7s", "OutroScene@2s"],
         &snapshot::SnapshotOptions::default(),
     );
 }

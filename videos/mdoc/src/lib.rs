@@ -201,7 +201,7 @@ impl Video for MdocVideosVideo<'_> {
 
 // ---------------------------------------------------------------- 1. scan → Markdown
 
-const OCR_SECONDS: f32 = 10.0;
+const OCR_SECONDS: f32 = 9.5;
 /// The page card: 640 px tall, the scan's aspect ratio (930 × 1400).
 const PAGE_X: f32 = LEFT;
 const PAGE_Y: f32 = 300.0;
@@ -321,7 +321,7 @@ impl Scene for OcrScene {
 
 // ---------------------------------------------------------------- 2. pseudonymization
 
-const PSEUDO_SECONDS: f32 = 12.5;
+const PSEUDO_SECONDS: f32 = 10.5;
 
 #[derive(Debug, Clone, Copy)]
 enum Kind {
@@ -525,7 +525,7 @@ impl Scene for PseudoScene {
                 <text x={legend_x + 36.0} y={card_y + 64.0} font-family={SANS} font-size="26" font-weight="500" letter-spacing="2" fill={DIM}>"REPLACEMENTS"</text>
                 {rows}
             </g>
-            {pill(&mut frame, ctx, 7.6, LEFT, 958.0, "You approve every replacement. Originals stay on this computer.")}
+            {pill(&mut frame, ctx, 6.6, LEFT, 958.0, "You approve every replacement. Originals stay on this computer.")}
             // Pointer arrow, drawn last so it sits above the card.
             <g opacity={pointer_o} transform={Transform::translate(pointer_x, pointer_y)}>
                 <path d="M0 0 L0 34 L9 26 L15 40 L21 37 L15 24 L27 24 Z" fill={FG} stroke={BG} stroke-width="2" stroke-linejoin="round" />
@@ -571,6 +571,17 @@ impl Scene for AiScene {
     }
 
     fn render_frame<'a>(&'a self, mut frame: Frame, ctx: &FFramesContext<'a, '_>) -> Svgr<'a> {
+        let openai = ctx.get_image("openai.png").map(|i| i.href());
+        let claude = ctx.get_image("claude.png").map(|i| i.href());
+        let brand = |icon: Option<_>, x: f32, y: f32, name: &'a str| -> Svgr<'a> {
+            fframes::svgr!(<g>
+                {match icon {
+                    Some(href) => fframes::svgr!(<image href={href} x={x} y={y} width="36" height="36" />),
+                    None => Svgr::empty(),
+                }}
+                <text x={x + 48.0} y={y + 28.0} font-family={SANS} font-size="26" font-weight="500" fill={MUTED}>{name}</text>
+            </g>)
+        };
         let doc_x = LEFT;
         let doc_y = 320.0;
         let doc_w = 700.0;
@@ -633,7 +644,9 @@ impl Scene for AiScene {
                 <circle cx={chat_x + 36.0} cy={chat_y + 42.0} r="7" fill={BORDER_STRONG} />
                 <circle cx={chat_x + 60.0} cy={chat_y + 42.0} r="7" fill={BORDER_STRONG} />
                 <circle cx={chat_x + 84.0} cy={chat_y + 42.0} r="7" fill={BORDER_STRONG} />
-                <text x={chat_x + 116.0} y={chat_y + 52.0} font-family={SANS} font-size="26" font-weight="500" fill={DIM}>"Your AI assistant"</text>
+                // Works the same in either; the site footer notes the trademarks.
+                {brand(openai, chat_x + 116.0, chat_y + 24.0, "ChatGPT")}
+                {brand(claude, chat_x + 296.0, chat_y + 24.0, "Claude")}
                 <path d={format!("M{} {} H{}", chat_x, chat_y + 84.0, chat_x + chat_w)} stroke={BORDER} stroke-width="1.5" />
                 // The user's message.
                 <g opacity={sent} transform={Transform::translate(0.0, rise(&frame, 3.4, 24.0))}>

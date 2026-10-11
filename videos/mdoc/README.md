@@ -7,16 +7,25 @@ amber for detected personal data. 1920×1080 at 30 fps, no audio.
 
 | cut | scenes | length |
 | --- | --- | --- |
-| `ocr` | a scanned page recognized into Markdown | 10 s |
-| `pseudo` | names, an email and a phone number proposed, applied, listed as aliases | 12.5 s |
+| `ocr` | a scanned page recognized into Markdown | 9.5 s |
+| `pseudo` | names, an email and a phone number proposed, applied, listed as aliases | 10.5 s |
 | `ai` | Copy, then paste into an AI chat that only sees aliases | 9.5 s |
-| `hero` | the three above plus an mdoc outro | 36 s |
-| `readme` | `ocr` then `pseudo`; the source of mdoc's `docs/images/demo.webp` | 22.5 s |
+| `hero` | the three above plus an mdoc outro | 33.5 s |
+| `readme` | `ocr` then `pseudo`; the source of mdoc's `docs/images/demo.webp` | 20 s |
 
 All content is fictitious or public domain: the services agreement and its
 parties are made up (the phone number is from Ofcom's drama range), and the scan
 is *Brown v. Board of Education*, 347 U.S. 483 (1954). The fonts are under the
-SIL Open Font License; their licenses are in `public/fonts/`.
+SIL Open Font License; their licenses are in `public/fonts/`. The ChatGPT and
+Claude icons in the `ai` cut are rasterized from `src/assets/ai/` and are
+trademarks of OpenAI and Anthropic (see ADR 0005 and the site footer).
+
+## On the website
+
+`./export-web.sh` renders the `ocr`, `pseudo` and `ai` cuts into
+`public/videos/mdoc/` as 1280 px H.264 files with WebP posters, which the
+"See it work" section of the mdoc page (`src/components/DemoVideos.astro`)
+plays in sequence.
 
 | file | what |
 | --- | --- |

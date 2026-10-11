@@ -1,5 +1,5 @@
-/** @typedef {{ platform: 'macOS' | 'Windows' | 'Linux', architecture: 'Apple Silicon' | 'Intel' | 'x64' | 'ARM64', label: string, url: string, sha256: string }} DownloadAsset */
-/** @typedef {{ version: string, publishedAt: string, notesUrl: string, assets: DownloadAsset[] }} Release */
+/** @typedef {{ platform: 'macOS' | 'Windows' | 'Linux', architecture: 'Apple Silicon' | 'Intel' | 'x64' | 'ARM64', label: string, url: string, sha256: string, signed: boolean }} DownloadAsset */
+/** @typedef {{ version: string, prerelease: boolean, publishedAt: string, notesUrl: string, assets: DownloadAsset[] }} Release */
 /** @typedef {{ checkedAt: string, releases: Release[] }} ReleaseManifest */
 const architectures = {
   macOS: ["Apple Silicon", "Intel"],
@@ -64,6 +64,12 @@ export function validateReleaseManifest(input) {
     if (versions.has(release.version))
       throw new Error("Duplicate release version");
     versions.add(release.version);
+    if (typeof release.prerelease !== "boolean")
+      throw new Error("prerelease must be true or false");
+    if (release.prerelease !== release.version.includes("-"))
+      throw new Error(
+        "prerelease must match a hyphenated (pre-release) version",
+      );
     const publishedAt = date(release.publishedAt, "publishedAt");
     if (publishedAt > previousDate)
       throw new Error(
@@ -95,6 +101,8 @@ export function validateReleaseManifest(input) {
         !/^[a-fA-F0-9]{64}$/.test(asset.sha256)
       )
         throw new Error("Each installer needs a SHA-256 checksum");
+      if (typeof asset.signed !== "boolean")
+        throw new Error("Each installer must state whether it is signed");
       const url = githubUrl(
         asset.url,
         "Asset URL",
@@ -113,5 +121,6 @@ export function validateReleaseManifest(input) {
 }
 /** @param {Release | undefined} release */
 export function releaseAvailability(release) {
-  return release ? "Downloads available" : "Downloads coming soon";
+  if (!release) return "Downloads coming soon";
+  return release.prerelease ? "Public beta available" : "Downloads available";
 }

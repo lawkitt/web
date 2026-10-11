@@ -1,4 +1,29 @@
 {
-  "checkedAt": "2026-10-09",
-  "releases": []
+  "checkedAt": "2026-10-11",
+  "releases": [
+    {
+      "version": "0.1.0-beta.2",
+      "prerelease": true,
+      "publishedAt": "2026-10-11",
+      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.2",
+      "assets": [
+        {
+          "platform": "macOS",
+          "architecture": "Apple Silicon",
+          "label": "Download .dmg",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.2/mdoc_0.1.0-beta.2_arm64.dmg",
+          "sha256": "714a420b1edf172c49c568ccd3d3fa0348652f16ef3b7660767f51de44cd1f8b",
+          "signed": false
+        },
+        {
+          "platform": "Windows",
+          "architecture": "x64",
+          "label": "Download installer (.exe)",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.2/mdoc_0.1.0-beta.2_x64-setup.exe",
+          "sha256": "4ab78df8caad64fb593d7acd13ee481624def58dc4da9eb1a1a0f35b35caf077",
+          "signed": false
+        }
+      ]
+    }
+  ]
 }

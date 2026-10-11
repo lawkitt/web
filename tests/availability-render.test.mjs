@@ -48,6 +48,7 @@ test(
         label: "Download installer",
         url: `https://github.com/lawkitt/mdoc/releases/download/v1.0.0/${file}`,
         sha256: "a".repeat(64),
+        signed: target.platform !== "macOS",
       }));
       await writeFile(
         path.join(fixture, "src/data/mdoc-releases.json"),
@@ -56,6 +57,7 @@ test(
           releases: [
             {
               version: "1.0.0",
+              prerelease: false,
               publishedAt: "2026-10-01",
               notesUrl: "https://github.com/lawkitt/mdoc/releases/tag/v1.0.0",
               assets,
@@ -96,6 +98,10 @@ test(
       assert.match(download, /Version 1\.0\.0/);
       assert.match(download, /datetime="2026-10-01"/);
       assert.match(download, /Release notes/);
+      // Only the unsigned macOS installer gets first-launch help.
+      assert.match(download, /Open Anyway/);
+      assert.doesNotMatch(download, /Run anyway/);
+      assert.doesNotMatch(download, /Public beta/);
       assert.match(download, /A note about source builds/);
       assert.match(download, /lawkitt\/anydoc/);
       assert.doesNotMatch(download, /Public downloads are coming soon/);

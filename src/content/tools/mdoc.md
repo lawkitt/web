@@ -2,9 +2,10 @@
 
 <details>
 <summary>Can I download mdoc today?</summary>
-<p>The first public release is being prepared. The <a href="/mdoc/download/">download page</a>
-always shows what is available. Until installers are published, you can watch the
-repository on GitHub for the release, or build mdoc yourself from its public source.</p>
+<p>Yes, as a public beta for Macs with Apple silicon and Windows PCs. Get it from the
+<a href="/mdoc/download/">download page</a>. Beta builds may still have rough edges, so
+try mdoc with made-up or non-confidential documents first. mdoc tells you in its
+settings when a newer version is out.</p>
 </details>
 
 <details>
@@ -12,7 +13,8 @@ repository on GitHub for the release, or build mdoc yourself from its public sou
 <p>No. Opening, reading, recognizing scans and pseudonymizing all happen on your
 computer. mdoc connects to the internet only when you approve the one-time download of
 its recognition and pseudonymization models, from GitHub and Hugging Face.
-After that it works offline. Text reaches an AI tool only when you copy it and paste
+After that it works offline. It also checks GitHub for a newer version when it starts,
+without sending any document data; you can turn that off in its settings. Text reaches an AI tool only when you copy it and paste
 it there yourself, and that tool’s own data terms then apply.</p>
 </details>
 

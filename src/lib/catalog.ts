@@ -37,7 +37,11 @@ export const tools = [
     pitch:
       "Open PDFs, scans and Word files, pseudonymize sensitive details, and copy clean text into any AI tool. Everything runs locally on your Mac or PC.",
     headline: "Prepare legal documents for AI. Privately.",
-    maturity: "In development",
+    maturity: !latestMdocRelease
+      ? "In development"
+      : latestMdocRelease.prerelease
+        ? "Beta"
+        : "Stable",
     availability: mdocAvailability,
     availabilityNote: latestMdocRelease
       ? "For Apple Silicon Macs and Windows PCs."
