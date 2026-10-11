@@ -700,13 +700,13 @@ impl Scene for OutroScene {
         let scale = lerp(0.92, 1.0, icon_in);
         fframes::svgr!(<g opacity={o}>
             <g opacity={icon_in} transform={format!("translate(960 420) scale({scale}) translate(-80 -80)")}>
-                <defs><clipPath id="outro-icon-clip"><rect x="10" y="10" width="140" height="140" rx="34" /></clipPath></defs>
-                <g clip-path="url(#outro-icon-clip)">
-                    {match icon {
-                        Some(href) => fframes::svgr!(<image href={href} x="0" y="0" width="160" height="160" />),
-                        None => Svgr::empty(),
-                    }}
-                </g>
+                // The icon carries its own rounded square and transparent corners.
+                {match icon {
+                    Some(href) => fframes::svgr!(<image href={href} x="0" y="0" width="160" height="160" />),
+                    None => Svgr::empty(),
+                }}
+                // A faint edge so the dark icon doesn't dissolve into the background.
+                <rect x="1" y="1" width="158" height="158" rx="40" fill="none" stroke={BORDER_STRONG} stroke-width="1.5" />
             </g>
             <g opacity={title_in} transform={Transform::translate(0.0, rise(&frame, 0.4, 24.0))}>
                 <text x="960" y="600" text-anchor="middle" font-family={SANS} font-size="96" font-weight="700" letter-spacing="-3" fill={FG}>"mdoc"</text>
