@@ -75,6 +75,8 @@ and [custom domains](https://developers.cloudflare.com/workers/configuration/rou
   targets, GitHub release URLs, duplicate entries and SHA-256 checksums at build time.
 - `src/lib/releases.ts`: typed access to the validated manifest.
 - `src/components/ToolCard.astro`: reusable app card.
+- `videos/mdoc/`: mdoc explainer videos made with fframes (a separate Rust
+  project, not part of the site build); see its README.
 - `src/layouts/Layout.astro`: shared navigation, metadata and footer.
 - `src/styles/global.css`: T3-inspired tokens and shared styles.
 
