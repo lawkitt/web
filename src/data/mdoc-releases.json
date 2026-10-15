@@ -1,50 +1,50 @@
 {
-  "checkedAt": "2026-10-11",
+  "checkedAt": "2026-10-16",
   "releases": [
     {
-      "version": "0.1.0-beta.3",
+      "version": "0.1.0-beta.10",
       "prerelease": true,
-      "publishedAt": "2026-10-11",
-      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.3",
+      "publishedAt": "2026-10-15",
+      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.10",
       "assets": [
         {
           "platform": "macOS",
           "architecture": "Apple Silicon",
           "label": "Download .dmg",
-          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.3/mdoc_0.1.0-beta.3_arm64.dmg",
-          "sha256": "581ace52ad40cd3c35011d1254d65cef0f01bfd232777e3dd35c916d08ff426a",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.10/mdoc_0.1.0-beta.10_arm64.dmg",
+          "sha256": "823f8fcf1300d1832961c4c2211e3e5ae79c193440325982da2ea274e4b23bb7",
           "signed": true
         },
         {
           "platform": "Windows",
           "architecture": "x64",
           "label": "Download installer (.exe)",
-          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.3/mdoc_0.1.0-beta.3_x64-setup.exe",
-          "sha256": "2577e5db8db5b85192d755836ae8daa48ace9ec882db39f52fbfb619638aacf0",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.10/mdoc_0.1.0-beta.10_x64-setup.exe",
+          "sha256": "53f6d0095c80ebfbb30fe27f91277eb4bf3bb4e023ac79372ebba0a757fd2aad",
           "signed": false
         }
       ]
     },
     {
-      "version": "0.1.0-beta.2",
+      "version": "0.1.0-beta.9",
       "prerelease": true,
-      "publishedAt": "2026-10-11",
-      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.2",
+      "publishedAt": "2026-10-14",
+      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.9",
       "assets": [
         {
           "platform": "macOS",
           "architecture": "Apple Silicon",
           "label": "Download .dmg",
-          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.2/mdoc_0.1.0-beta.2_arm64.dmg",
-          "sha256": "714a420b1edf172c49c568ccd3d3fa0348652f16ef3b7660767f51de44cd1f8b",
-          "signed": false
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.9/mdoc_0.1.0-beta.9_arm64.dmg",
+          "sha256": "f89a89d56623ce054a83b9dedfab43a569f4c1d23274f39693df267eabdf04a8",
+          "signed": true
         },
         {
           "platform": "Windows",
           "architecture": "x64",
           "label": "Download installer (.exe)",
-          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.2/mdoc_0.1.0-beta.2_x64-setup.exe",
-          "sha256": "4ab78df8caad64fb593d7acd13ee481624def58dc4da9eb1a1a0f35b35caf077",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.9/mdoc_0.1.0-beta.9_x64-setup.exe",
+          "sha256": "b8908a54de8ccc496614009afe6914471c1b6d8624cd4bda7a3af3e90222868f",
           "signed": false
         }
       ]
