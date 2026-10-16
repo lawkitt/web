@@ -1,32 +1,33 @@
 ---
-// Three short mdoc explainer videos (made in videos/mdoc with fframes) played
+// Three short films of actual mdoc captures (made in videos/mdoc with fframes) played
 // as one looping sequence. Muted, plays only while on screen; under reduced
-// motion nothing plays by itself and each video shows its final-state poster
-// with controls. Files: public/videos/mdoc/ (videos/mdoc/export-web.sh).
+// motion nothing plays by itself. Native controls remain available in both modes.
+// Motion between captures is editorial, not a measure of processing speed.
+// Files: public/videos/mdoc/ (videos/mdoc/export-web.sh).
 const steps = [
   {
-    id: "ocr",
-    tab: "Recognize scans",
+    id: "review",
+    tab: "Review identities",
     label:
-      "A scanned court opinion is recognized on the computer and becomes editable Markdown.",
+      "Actual mdoc captures in light and dark themes: review proposed names and their consistent aliases in a fictional agreement.",
   },
   {
-    id: "pseudo",
-    tab: "Pseudonymize",
+    id: "compare",
+    tab: "Compare aliases",
     label:
-      "In a services agreement, a company, a person, an email and a phone number are proposed as personal data, approved, and replaced with aliases such as ORG_1 and PERSON_1.",
+      "Actual mdoc captures: original names and applied aliases appear side by side, in dark and light themes.",
   },
   {
-    id: "ai",
-    tab: "Paste into AI",
+    id: "share",
+    tab: "Copy for AI",
     label:
-      "The prepared text is copied and pasted into ChatGPT or Claude, which only sees the aliases.",
+      "Actual mdoc captures: the Share panel offers Copy for AI, with the fictional agreement's names replaced by aliases.",
   },
 ];
 ---
 
 <div class="demo" data-demo>
-  <div class="tabs" role="tablist" aria-label="mdoc in three steps">
+  <div class="tabs" role="tablist" aria-label="mdoc review and AI handoff">
     {steps.map((step, i) => (
       <button
         type="button"
@@ -52,12 +53,13 @@ const steps = [
         hidden={i !== 0}
       >
         <video
+          controls
           muted
           playsinline
           preload={i === 0 ? "metadata" : "none"}
           poster={`/videos/mdoc/${step.id}-poster.webp`}
-          width="1280"
-          height="720"
+          width="1920"
+          height="1080"
           aria-label={step.label}
         >
           <source src={`/videos/mdoc/${step.id}.mp4`} type="video/mp4" />
@@ -125,7 +127,6 @@ const steps = [
     });
 
     const applyMotion = () => {
-      videos.forEach((video) => (video.controls = reduce.matches));
       demo.classList.toggle("still", reduce.matches);
       if (reduce.matches) videos[active]!.pause();
       else play();

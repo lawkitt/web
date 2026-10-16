@@ -1,6 +1,11 @@
 import type { ImageMetadata } from "astro";
 import mdocIcon from "../assets/mdoc-icon.png";
-import mdocScreenshot from "../assets/mdoc-screenshot.png";
+import sourceDark from "../assets/mdoc-source-dark.jpg";
+import sourceLight from "../assets/mdoc-source-light.jpg";
+import reviewDark from "../assets/mdoc-review-dark.jpg";
+import reviewLight from "../assets/mdoc-review-light.jpg";
+import compareDark from "../assets/mdoc-compare-dark.jpg";
+import compareLight from "../assets/mdoc-compare-light.jpg";
 import { latestMdocRelease, mdocAvailability } from "./releases";
 
 export interface Tool {
@@ -18,8 +23,13 @@ export interface Tool {
   issues: string;
   license: string;
   icon: ImageMetadata;
-  screenshot: ImageMetadata;
-  screenshotAlt: string;
+  captures: readonly {
+    id: string;
+    label: string;
+    dark: ImageMetadata;
+    light: ImageMetadata;
+    alt: string;
+  }[];
   screenshotCaption: string;
 }
 
@@ -51,10 +61,30 @@ export const tools = [
     issues: "https://github.com/lawkitt/mdoc/issues",
     license: "GPL-3.0-or-later",
     icon: mdocIcon,
-    screenshot: mdocScreenshot,
-    screenshotAlt:
-      "Real mdoc window: a synthetic services agreement converted to editable Markdown on the left, with its original DOCX preview on the right.",
-    screenshotCaption: "Synthetic contract. Real workflow.",
+    captures: [
+      {
+        id: "source",
+        label: "Convert",
+        dark: sourceDark,
+        light: sourceLight,
+        alt: "mdoc showing a fictional Word services agreement as editable Markdown beside its original document.",
+      },
+      {
+        id: "review",
+        label: "Review",
+        dark: reviewDark,
+        light: reviewLight,
+        alt: "mdoc reviewing highlighted names and proposed aliases in a fictional services agreement.",
+      },
+      {
+        id: "compare",
+        label: "Compare",
+        dark: compareDark,
+        light: compareLight,
+        alt: "mdoc comparing original names with applied aliases, side by side.",
+      },
+    ],
+    screenshotCaption: "Fictional agreement. Captured in mdoc 0.1.0-beta.10.",
   },
 ] satisfies Tool[];
 
