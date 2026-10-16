@@ -4,8 +4,8 @@
 <summary>Can I download mdoc today?</summary>
 <p>Yes, as a public beta for Macs with Apple silicon and Windows PCs. Get it from the
 <a href="/mdoc/download/">download page</a>. Beta builds may still have rough edges, so
-try mdoc with made-up or non-confidential documents first. mdoc tells you in its
-settings when a newer version is out.</p>
+try mdoc with made-up or non-confidential documents first. mdoc tells you when a
+newer version is out.</p>
 </details>
 
 <details>
@@ -14,8 +14,19 @@ settings when a newer version is out.</p>
 computer. mdoc connects to the internet only when you approve the one-time download of
 its recognition and pseudonymization models, from GitHub and Hugging Face.
 After that it works offline. It also checks GitHub for a newer version when it starts,
-without sending any document data; you can turn that off in its settings. Text reaches an AI tool only when you copy it and paste
-it there yourself, and that tool’s own data terms then apply.</p>
+without sending any document data; you can turn that off in Settings. Text reaches an
+AI tool only when you copy it and paste it there yourself, and that tool’s own data
+terms then apply.</p>
+</details>
+
+<details>
+<summary>How do the real names get back into the AI’s answer?</summary>
+<p>Copy the answer from ChatGPT or Claude and choose <strong>Paste AI reply</strong> in
+mdoc. It opens the answer in a new tab with every alias it knows replaced by the
+original wording, on your computer. Aliases it does not recognize are highlighted
+rather than guessed. To come back to a matter later, save it as a case: the mapping
+is stored encrypted on this computer, with its key protected by the operating system
+(the macOS keychain or Windows data protection).</p>
 </details>
 
 <details>
@@ -23,7 +34,7 @@ it there yourself, and that tool’s own data terms then apply.</p>
 <p>It catches most names and identifiers, but not all of them. In our tests on
 synthetic English legal documents it found about 84% of identifying details;
 Russian text is detected less reliably. That is why mdoc only <em>proposes</em>
-replacements: you review each one, add anything it missed, and approve before
+replacements: you review each one, add anything it missed, and apply them before
 copying. Dates, amounts and other context are not replaced automatically and
 may still identify the parties. Pseudonymization helps you prepare a document;
 it does not guarantee that the result is anonymous.</p>
