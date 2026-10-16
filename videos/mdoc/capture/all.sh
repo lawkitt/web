@@ -23,6 +23,8 @@ echo "3/6 takes (driving mdoc)"
 steps=(start detect tooltip popup alias keep address apply copy restore compare scan)
 capture/take.sh "$profile" Dark "${steps[@]}"
 capture/take.sh "$profile" Light "${steps[@]}"
+capture/take.sh "$profile" Dark court
+capture/take.sh "$profile" Light court
 kill "$(cat "$profile/pid")" 2>/dev/null || true
 
 echo "4/6 clips"

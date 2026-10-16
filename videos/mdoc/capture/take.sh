@@ -3,6 +3,7 @@
 # Usage: capture/take.sh <profile-dir> <Dark|Light> <step...>
 # Steps: start detect tooltip popup alias keep address apply copy restore compare scan
 # (run them in this order; each builds on the app state the previous one left).
+# `court` is separate: a fresh session with Brown v. Board, OCR run (README proof).
 # Each step records a clip into out/clips/<theme>/<step>.mov and/or saves window
 # stills into stills/<name>-<theme>.png. Control positions live in capture/ui.env;
 # when mdoc's UI moves, re-measure there rather than editing this file.
@@ -113,6 +114,19 @@ for step in "$@"; do
   scan) # the scanned PDF asks for text recognition
     ids; "$in" front "$pid" move $(at TAB_SCAN) 400 click wait 1500
     still scan-prompt
+    ;;
+  court) # Brown v. Board: the recognition prompt, then the recognized Markdown
+    capture/session.sh "$home" "$theme" court >"$state"
+    ids
+    still court-prompt
+    # GPUI needs a pointer move inside the button before a click registers here.
+    read -r ox oy <<<"$(at RUN_OCR)"
+    "$in" front "$pid" wait 800 move $((ox - 2)) $((oy - 2)) 500 wait 300 move "$ox" "$oy" 200 \
+      wait 300 click wait 300
+    still court-ocr-start
+    sleep 14
+    still court-ocr
+    rm -f "stills/court-ocr-start-$lower.png"
     ;;
   *)
     echo "unknown step $step" >&2

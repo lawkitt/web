@@ -14,3 +14,6 @@ swift topdf.swift claim-letter-scan.pdf out/page1.jpg out/page2.jpg
 ls -l claim-letter-scan.pdf
 # The same letter as Word, for the review scenes (clean structure, Source pane).
 python3 docx.py "Letter before claim.docx"
+# Brown v. Board of Education, 347 U.S. 483 (1954), first page of the public-domain
+# slip opinion: the README's OCR proof (a real scan, unlike the letter).
+swift topdf.swift brown-v-board.pdf ../media/scan-page.png

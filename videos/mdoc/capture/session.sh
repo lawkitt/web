@@ -2,7 +2,8 @@
 # Starts a clean, isolated mdoc for captures and prints "<pid> <window-id>".
 # Usage: capture/session.sh <profile-dir> <Dark|Light> <tabs...>
 #   tabs: letter (the DOCX letter as Markdown with its Source pane), letter-plain
-#         (the same without the Source pane) and/or
+#         (the same without the Source pane), court (Brown v. Board, a real
+#         scan for the OCR proof) and/or
 #         scan (the scanned PDF, which asks for text recognition)
 # The profile links the real OCR and pseudonymization models (read-only use) so
 # nothing downloads, and turns off spelling and update checks so no squiggles or
@@ -21,6 +22,7 @@ mkdir -p "$support" "$docs"
 rm -rf "$support/cases" "$support/recents.json" "$docs"/*
 cp "$dir/../fixture/Letter before claim.docx" "$dir/../fixture/Letter before claim.md" "$docs/"
 cp "$dir/../fixture/claim-letter-scan.pdf" "$docs/Letter before claim.pdf"
+cp "$dir/../fixture/brown-v-board.pdf" "$docs/Brown v. Board of Education.pdf"
 ln -sfn "$real/ocr" "$support/ocr"
 ln -sfn "$real/pseudonymization" "$support/pseudonymization"
 python3 - "$real/settings.json" "$support" "$docs" "$theme" "$@" <<'PY'
@@ -38,6 +40,8 @@ records = {
                      "attachment": f"{docs}/Letter before claim.docx", "caret": 20},
     "scan": {"markdown": "", "source_only": True,
              "attachment": f"{docs}/Letter before claim.pdf", "preview_visible": True},
+    "court": {"markdown": "", "source_only": True,
+              "attachment": f"{docs}/Brown v. Board of Education.pdf", "preview_visible": True},
 }
 session = {"version": 1, "tabs": [records[t] for t in tabs], "active": 0,
            "sidebar_visible": True, "theme_choice": theme}

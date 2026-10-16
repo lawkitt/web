@@ -10,8 +10,11 @@ letter before claim; nothing is mocked except the neutral AI chat scene.
 videos/mdoc/capture/all.sh        # from the web repo root, about 6 minutes
 ```
 
-It builds the helpers, the fixture, records a dark and a light take, trims the
-clips, copies the stills into the site gallery and renders the films. Before you
+It builds the helpers, the fixture, records a dark and a light take (plus the
+`court` step: *Brown v. Board* recognized by OCR, for mdoc's README), trims the
+clips, copies the stills into the site gallery and renders the films. mdoc's
+README media are made from the same stills and scenes (see lawkitt/mdoc
+`docs/product-media/README.md`). Before you
 run it:
 
 - mdoc is installed in `/Applications` and has downloaded its OCR and
@@ -55,7 +58,7 @@ open `/mdoc/` in the dev server.
 
 | piece | does |
 | --- | --- |
-| `fixture/build.sh` | the letter as a scanned PDF (Chrome headless, `scan.mjs`, `topdf.swift`) and as Word + Markdown (`docx.py`); `ai-reply.md` is the alias-only AI reply |
+| `fixture/build.sh` | the letter as a scanned PDF (Chrome headless, `scan.mjs`, `topdf.swift`) and as Word + Markdown (`docx.py`), and *Brown v. Board* as `brown-v-board.pdf` for the OCR proof; `ai-reply.md` is the alias-only AI reply |
 | `capture/session.sh` | an isolated mdoc process: own `HOME`, models linked, spelling and update checks off, tabs and theme written to `session.json`, window placed per `ui.env` |
 | `capture/take.sh` | drives the steps, records ProRes clips to `out/clips/<theme>/`, saves stills to `stills/` (ignored) |
 | `capture/input.swift` | CGEvent pointer and keys with eased moves and the frontmost guard |
