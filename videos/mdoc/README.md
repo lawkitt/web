@@ -4,31 +4,66 @@ Screenshots and films for the mdoc product page, made from **scripted screen
 recordings of mdoc 0.1.0-beta.11** (ADR 0007). Everything shown is a fictional
 letter before claim; nothing is mocked except the neutral AI chat scene.
 
+## Rebuild everything
+
+```sh
+videos/mdoc/capture/all.sh        # from the web repo root, about 6 minutes
+```
+
+It builds the helpers, the fixture, records a dark and a light take, trims the
+clips, copies the stills into the site gallery and renders the films. Before you
+run it:
+
+- mdoc is installed in `/Applications` and has downloaded its OCR and
+  pseudonymization models once (the capture profile links them read-only).
+- The terminal running it has **Screen Recording** and **Accessibility**
+  permission (System Settings → Privacy & Security).
+- Google Chrome, ffmpeg, cwebp and the Xcode command line tools are installed,
+  and `npm install` has run in this repo.
+- Nothing else uses the mouse or keyboard while the takes run. The input helper
+  refuses to type unless the capture instance is frontmost, so a stolen focus
+  stops the take instead of typing into another app. Close the main mdoc window
+  if you like; it is never touched (the capture runs as its own process with its
+  own `HOME`).
+
+Then look at `review/library-dark.webp` and the stills, run `npm run check`, and
+open `/mdoc/` in the dev server.
+
+## When mdoc's UI changes
+
+1. **Moved controls:** run `capture/take.sh <profile> Dark start detect`, then
+   `node capture/measure.mjs stills/review-dark.png` and read the new positions off
+   `out/measure.png` (labels are window points). Update only the changed names in
+   `capture/ui.env`. Steps run in order and build on each other, so run a take up
+   to the step you changed and check its still before running the rest.
+2. **New or changed flow:** add or edit a step in `capture/take.sh`. Each step is a
+   `rec <scene> <seconds> <input commands>` (recording) and/or `still`/`shot`
+   (window PNG). Input commands: `move X Y [ms]`, `click`, `dclick`, `drag X1 Y1 X2 Y2`,
+   `key CODE [cmd,shift,alt,ctrl]`, `type TEXT`, `wait MS` (see `capture/input.swift`).
+3. **Timing:** `capture/sheet.sh <scene>` makes a 0.5 s contact sheet of a raw
+   recording; set its trim (`<scene> <start> <seconds>`) in `capture/clips.sh` and
+   the same length in `LIBRARY` in `src/scenes.rs`.
+4. **Different document:** edit `fixture/docx.py` (Word and Markdown) and
+   `fixture/page*.html` (the scan), run `fixture/build.sh`. Positions in `ui.env`
+   that point into the text (`MENTION_*`, `MISSED_*`) move with the wording.
+5. **Gallery picks:** `capture/publish.sh` maps stills to gallery views; captions
+   and alt text live in `src/lib/catalog.ts`.
+6. **Films:** reorder or swap scenes in `export-web.sh`; captions per scene are in
+   `LIBRARY` in `src/scenes.rs`.
+
 ## Pipeline
 
-1. `fixture/build.sh` builds the letter as a scanned PDF (`claim-letter-scan.pdf`,
-   Chrome headless + sharp + PDFKit) and as Word (`Letter before claim.docx` and the
-   matching `.md`, `fixture/docx.py`). `fixture/ai-reply.md` is the AI reply that
-   only uses aliases.
-2. `capture/take.sh <profile-dir> Dark|Light <steps...>` runs one take in an
-   isolated mdoc profile (`capture/session.sh`: own `HOME`, links the installed
-   OCR and pseudonymization models, spelling and update checks off, tabs and theme
-   seeded through `session.json`, so the user's own session is never touched).
-   It drives the window with `out/bin/input` (CGEvent input that refuses to type
-   unless the capture process is frontmost), saves window stills with transparent
-   corners to `stills/` (ignored) and records ProRes clips with `out/bin/rec`
-   (ScreenCaptureKit, whole display cropped to the window, so macOS does not swap
-   the traffic lights for its capture indicator) into `out/clips/<theme>/`.
-   Build the helpers once:
-   `swiftc -O capture/{winid,input,rec}.swift -o out/bin/{winid,input,rec}` (one each).
-3. `capture/clips.sh` trims the recordings into `film/clip-<scene>-<theme>.mp4`
-   (1440 × 900, 30 fps). `film/` is the films' runtime media folder (the
-   compile-time media macro cannot hold MP4s).
-4. `src/scenes.rs` is the scene library; `export-web.sh` renders the page's films
-   from ordered scene lists into `public/videos/mdoc/`.
-
-The site's gallery PNGs in `src/assets/mdoc-{scan,review,compare,copy,restore}-{dark,light}.png`
-are copies of stills from a take.
+| piece | does |
+| --- | --- |
+| `fixture/build.sh` | the letter as a scanned PDF (Chrome headless, `scan.mjs`, `topdf.swift`) and as Word + Markdown (`docx.py`); `ai-reply.md` is the alias-only AI reply |
+| `capture/session.sh` | an isolated mdoc process: own `HOME`, models linked, spelling and update checks off, tabs and theme written to `session.json`, window placed per `ui.env` |
+| `capture/take.sh` | drives the steps, records ProRes clips to `out/clips/<theme>/`, saves stills to `stills/` (ignored) |
+| `capture/input.swift` | CGEvent pointer and keys with eased moves and the frontmost guard |
+| `capture/rec.swift` | ScreenCaptureKit recording of the whole display cropped to the window, so macOS keeps the traffic lights (a window filter swaps them for its capture indicator) |
+| `capture/winid.swift` | the capture window's id for `screencapture -l` |
+| `capture/clips.sh` | trims recordings into `film/clip-<scene>-<theme>.mp4` (1440 × 900, 30 fps); `film/` is the films' runtime media |
+| `capture/publish.sh` | stills into `src/assets/mdoc-*-{dark,light}.png` and `film/still-scan-*.png` |
+| `src/scenes.rs`, `export-web.sh` | the scene library and the page films in `public/videos/mdoc/` |
 
 ## Scene library
 
@@ -93,7 +128,7 @@ SIL Open Font License; their licenses are in `public/fonts/`. The ChatGPT and
 Claude icons in the `ai` cut are rasterized from `src/assets/ai/` and are
 trademarks of OpenAI and Anthropic (see ADR 0005 and the site footer).
 
-## On the website
+### Legacy files
 
 The previous exporter rendered the `ocr`, `pseudo` and `ai` cuts into
 `public/videos/mdoc/` as 1280 px H.264 files with WebP posters, which the
@@ -107,7 +142,7 @@ previously played in sequence.
 | `media/` | fonts, the scan page and the mdoc icon, embedded into the binary |
 | `tests/frames.rs` | frame snapshots of the hero and a check of every frame of every cut |
 
-## Work on it
+### Work on the legacy cuts
 
 Needs Rust and the ffmpeg libraries (`brew install pkg-config ffmpeg x264 x265 opus nasm ninja`).
 `--cut` defaults to `hero`.
@@ -122,7 +157,7 @@ cargo run --release -- --cut pseudo render -o out/mdoc-pseudo.mp4
 cargo test --release                                # snapshots (FFRAMES_UPDATE_SNAPSHOTS=1 to accept)
 ```
 
-## Earlier README animation
+### Earlier README animation
 
 mdoc's previous README used an animated WebP of the `readme` cut, 1200 px at 15 fps:
 
