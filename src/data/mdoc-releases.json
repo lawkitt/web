@@ -2,6 +2,30 @@
   "checkedAt": "2026-10-16",
   "releases": [
     {
+      "version": "0.1.0-beta.11",
+      "prerelease": true,
+      "publishedAt": "2026-10-16",
+      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.11",
+      "assets": [
+        {
+          "platform": "macOS",
+          "architecture": "Apple Silicon",
+          "label": "Download .dmg",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.11/mdoc_0.1.0-beta.11_arm64.dmg",
+          "sha256": "1f9698e0cc29206eb26926e9c3a38ac75ca7200b659b026b81f77210c4348671",
+          "signed": true
+        },
+        {
+          "platform": "Windows",
+          "architecture": "x64",
+          "label": "Download installer (.exe)",
+          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.11/mdoc_0.1.0-beta.11_x64-setup.exe",
+          "sha256": "d37f023586b4eadced277e348c3313879a67c45db0cebfb12d4f81c188820051",
+          "signed": false
+        }
+      ]
+    },
+    {
       "version": "0.1.0-beta.10",
       "prerelease": true,
       "publishedAt": "2026-10-15",
@@ -21,30 +45,6 @@
           "label": "Download installer (.exe)",
           "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.10/mdoc_0.1.0-beta.10_x64-setup.exe",
           "sha256": "53f6d0095c80ebfbb30fe27f91277eb4bf3bb4e023ac79372ebba0a757fd2aad",
-          "signed": false
-        }
-      ]
-    },
-    {
-      "version": "0.1.0-beta.9",
-      "prerelease": true,
-      "publishedAt": "2026-10-14",
-      "notesUrl": "https://github.com/lawkitt/mdoc/releases/tag/v0.1.0-beta.9",
-      "assets": [
-        {
-          "platform": "macOS",
-          "architecture": "Apple Silicon",
-          "label": "Download .dmg",
-          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.9/mdoc_0.1.0-beta.9_arm64.dmg",
-          "sha256": "f89a89d56623ce054a83b9dedfab43a569f4c1d23274f39693df267eabdf04a8",
-          "signed": true
-        },
-        {
-          "platform": "Windows",
-          "architecture": "x64",
-          "label": "Download installer (.exe)",
-          "url": "https://github.com/lawkitt/mdoc/releases/download/v0.1.0-beta.9/mdoc_0.1.0-beta.9_x64-setup.exe",
-          "sha256": "b8908a54de8ccc496614009afe6914471c1b6d8624cd4bda7a3af3e90222868f",
           "signed": false
         }
       ]

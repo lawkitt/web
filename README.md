@@ -80,7 +80,7 @@ and [custom domains](https://developers.cloudflare.com/workers/configuration/rou
 - `src/layouts/Layout.astro`: shared navigation, metadata and footer.
 - `src/styles/global.css`: T3-inspired tokens and shared styles.
 
-mdoc's latest public release is **v0.1.0-beta.10**, published on 2026-10-15
+mdoc's latest public release is **v0.1.0-beta.11**, published on 2026-10-16
 and checked on 2026-10-16. The manifest keeps the two newest releases, with
 installers for Apple Silicon Macs and Windows x64. The macOS app is signed and
 notarized; the Windows installer is unsigned. Since 2026-10-10 the pinned
