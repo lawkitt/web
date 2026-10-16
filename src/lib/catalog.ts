@@ -50,10 +50,10 @@ export const tools = [
     slug: "mdoc",
     name: "mdoc",
     category: "Document preparation",
-    tagline: "Prepare legal documents for AI. Privately.",
+    tagline: "Use AI on client documents without sending client names.",
     pitch:
-      "Open PDFs, scans and Word files, pseudonymize sensitive details, and copy clean text into any AI tool. Everything runs locally on your Mac or PC.",
-    headline: "Prepare legal documents for AI. Privately.",
+      "Open PDFs, scans and Word files, replace client names with aliases, and paste the text into any AI chat. mdoc restores the real names in the reply. Everything runs on your Mac or PC.",
+    headline: "Use AI on client documents without sending client names.",
     maturity: !latestMdocRelease
       ? "In development"
       : latestMdocRelease.prerelease
@@ -61,9 +61,9 @@ export const tools = [
         : "Stable",
     availability: mdocAvailability,
     availabilityNote: latestMdocRelease
-      ? "For Apple Silicon Macs and Windows PCs."
+      ? "For Macs with Apple silicon and Windows PCs."
       : "Public installers are being prepared. Watch the repository for the first release.",
-    platforms: ["macOS (Apple Silicon)", "Windows"],
+    platforms: ["macOS (Apple silicon)", "Windows"],
     source: "https://github.com/lawkitt/mdoc",
     issues: "https://github.com/lawkitt/mdoc/issues",
     license: "GPL-3.0-or-later",
@@ -115,23 +115,23 @@ export const mdoc = tools[0]!;
 export const mdocFeatures: readonly Feature[] = [
   {
     title: "Opens what you have",
-    body: "PDF, Word, Excel, PowerPoint, OpenDocument, RTF, EPUB and CSV files become clean, editable text.",
+    body: "PDF, Word, Excel, PowerPoint, OpenDocument, RTF, EPUB and CSV files become editable text, with PDF and Word originals beside it. Your file is never changed.",
   },
   {
     title: "Reads scanned PDFs",
-    body: "Text recognition runs on your computer, in English or English and Russian. About 40 pages a minute.",
+    body: "Text recognition runs on your computer, in English or in English and Russian. About 40 pages a minute.",
   },
   {
-    title: "Original side by side",
-    body: "Check the converted text against the PDF or Word original while you edit. The original file is never changed.",
-  },
-  {
-    title: "Pseudonymize",
-    body: "Names, companies, emails, phone numbers, addresses and IDs are replaced with consistent aliases like PERSON_1. You approve each one.",
+    title: "Replaces names with aliases",
+    body: "People, companies, emails, phone numbers, addresses and bank details get consistent aliases such as PERSON_1. You review every one and add what was missed.",
   },
   {
     title: "Copy for AI",
-    body: "One click copies the prepared text as Markdown, ready to paste into ChatGPT or Claude.",
+    body: "One click copies the text as Markdown, with a short note asking the AI to keep every alias as written.",
+  },
+  {
+    title: "Restores the reply",
+    body: "Paste the AI’s answer back and mdoc puts the real names in, in a new tab. Saved cases keep the mapping, encrypted on this computer.",
   },
   {
     title: "Local and fast",
