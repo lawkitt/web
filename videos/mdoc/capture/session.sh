@@ -10,6 +10,7 @@
 # panel is driven. It never touches the user's own mdoc session or cases.
 set -euo pipefail
 dir="$(cd "$(dirname "$0")" && pwd)"
+source "$dir/ui.env"
 home=$1 theme=$2
 shift 2
 support="$home/Library/Application Support/mdoc"
@@ -49,8 +50,8 @@ cd - >/dev/null
 sleep 4
 pid=$(cat "$home/pid")
 osascript -e "tell application \"System Events\" to tell (first process whose unix id is $pid)
-  set position of window 1 to {120, 60}
-  set size of window 1 to {1440, 900}
+  set position of window 1 to {$WIN_X, $WIN_Y}
+  set size of window 1 to {$WIN_W, $WIN_H}
   set frontmost to true
 end tell" >/dev/null
 sleep 0.5
