@@ -34,6 +34,13 @@ open `/mdoc/` in the dev server.
 
 ## When mdoc's UI changes
 
+Running single steps needs the Swift helpers, built once (one `swiftc` per tool):
+
+```sh
+cd videos/mdoc && mkdir -p out/bin
+for tool in winid input rec; do swiftc -O "capture/$tool.swift" -o "out/bin/$tool"; done
+```
+
 1. **Moved controls:** run `capture/take.sh <profile> Dark start detect`, then
    `node capture/measure.mjs stills/review-dark.png` and read the new positions off
    `out/measure.png` (labels are window points). Update only the changed names in
