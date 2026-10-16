@@ -2,6 +2,7 @@
 out.mp4
 *.mp4
 !media/*.mp4
+!film/*.mp4
 frames/
 strip.png
 onion.png
@@ -11,3 +12,4 @@ test_render/
 _frame_snapshots/*.actual.png
 _frame_snapshots/*.diff.png
 out/
+stills/

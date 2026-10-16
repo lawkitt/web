@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import openai from "../assets/ai/openai.svg?raw";
 import claude from "../assets/ai/claude.svg?raw";
 import { mdoc } from "../lib/catalog";
@@ -36,7 +35,7 @@ import { mdoc } from "../lib/catalog";
           <i></i>
           <i></i>
         </span>
-        <Image src={mdoc.icon} alt="" width={36} height={36} format="webp" />
+        <img src={mdoc.icon.src} alt="" width="36" height="36" />
         <b>mdoc</b>
         <span class="status">
           <span class="st0">Share Purchase Agreement</span>

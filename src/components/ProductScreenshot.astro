@@ -9,6 +9,11 @@ const { compact = false, tool = mdoc } = Astro.props;
 const captures = compact
   ? tool.captures.filter((capture) => capture.id === "review")
   : tool.captures;
+// Open on Review, the richest view; the tabs keep the story order.
+const initial = Math.max(
+  captures.findIndex((capture) => capture.id === "review"),
+  0,
+);
 ---
 
 <figure class:list={["product-shot", { compact }]} data-product-shot>
@@ -20,7 +25,11 @@ const captures = compact
     ) : (
       <div class="views" role="group" aria-label="Product screenshots">
         {captures.map((capture, i) => (
-          <button type="button" data-view={capture.id} aria-pressed={i === 0}>
+          <button
+            type="button"
+            data-view={capture.id}
+            aria-pressed={i === initial}
+          >
             {capture.label}
           </button>
         ))}
@@ -42,7 +51,7 @@ const captures = compact
     aria-label={`${tool.name} screenshots; scroll horizontally on small screens to explore both panes`}
   >
     {captures.map((capture, i) => (
-      <div data-capture={capture.id} hidden={i !== 0}>
+      <div data-capture={capture.id} hidden={i !== initial}>
         {(["dark", "light"] as const).map((theme) => (
           <div data-appearance={theme} hidden={theme === "light"}>
             <Image
@@ -52,10 +61,10 @@ const captures = compact
               sizes="(max-width: 700px) 740px, 1100px"
               format="webp"
               loading={
-                compact || i !== 0 || theme === "light" ? "lazy" : "eager"
+                compact || i !== initial || theme === "light" ? "lazy" : "eager"
               }
               fetchpriority={
-                !compact && i === 0 && theme === "dark" ? "high" : "auto"
+                !compact && i === initial && theme === "dark" ? "high" : "auto"
               }
             />
           </div>
@@ -145,8 +154,11 @@ const captures = compact
     background: var(--fg);
     color: var(--bg);
   }
+  /* The captures keep the app window's transparent rounded corners, so the
+     window sits on the card with a margin instead of filling it edge to edge. */
   .shot-scroll {
     overflow-x: auto;
+    padding: 20px;
   }
   .shot-scroll:focus-visible {
     outline-offset: -3px;
@@ -169,6 +181,9 @@ const captures = compact
     display: none;
   }
   @media (max-width: 700px) {
+    .shot-scroll {
+      padding: 12px;
+    }
     .shot-scroll img {
       width: 740px;
       max-width: none;

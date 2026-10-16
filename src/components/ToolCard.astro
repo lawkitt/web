@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import ProductScreenshot from "./ProductScreenshot.astro";
 import Arrow from "./Arrow.astro";
 import { toolPath, type Tool } from "../lib/catalog";
@@ -16,7 +15,7 @@ const { tool } = Astro.props;
   <div class="tool-info">
     <p class="tool-category">{tool.category}</p>
     <a class="tool-name" href={toolPath(tool)}>
-      <Image src={tool.icon} alt="" width={48} height={48} format="webp" />
+      <img src={tool.icon.src} alt="" width="48" height="48" />
       <h3>{tool.name}</h3>
     </a>
     <p class="tool-pitch">{tool.pitch}</p>

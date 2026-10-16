@@ -1,7 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Arrow from "../../components/Arrow.astro";
-import { Image } from "astro:assets";
 import { mdoc } from "../../lib/catalog";
 import {
   latestMdocRelease,
@@ -25,7 +24,7 @@ import {
         <span aria-hidden="true">←</span> Back to mdoc
       </a>
       <div class="app-label">
-        <Image src={mdoc.icon} width={48} height={48} alt="" format="webp" />
+        <img src={mdoc.icon.src} alt="" width="48" height="48" />
         <span>mdoc</span>
       </div>
       <p class="eyebrow">Availability</p>
