@@ -1,5 +1,6 @@
 [package]
 name = "mdoc-videos"
+default-run = "mdoc-videos"
 version = "0.1.0"
 edition = "2024"
 publish = false
@@ -29,3 +30,6 @@ opt-level = 1
 [profile.dev.package."*"]
 opt-level = 3
 
+[[bin]]
+name = "mdoc-captures"
+path = "src/captures.rs"

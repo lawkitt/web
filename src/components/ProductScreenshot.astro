@@ -6,38 +6,102 @@ interface Props {
   tool?: Tool;
 }
 const { compact = false, tool = mdoc } = Astro.props;
+const captures = compact
+  ? tool.captures.filter((capture) => capture.id === "review")
+  : tool.captures;
 ---
 
-<figure class:list={["product-shot", { compact }]}>
+<figure class:list={["product-shot", { compact }]} data-product-shot>
   <div class="shot-bar">
-    <span class="shot-label">
-      {tool.name} / {tool.category.toLowerCase()}
-    </span>
-    <span class="shot-tag">Actual app capture</span>
+    {compact ? (
+      <span class="shot-label">
+        {tool.name} / {tool.category.toLowerCase()}
+      </span>
+    ) : (
+      <div class="views" role="group" aria-label="Product screenshots">
+        {captures.map((capture, i) => (
+          <button type="button" data-view={capture.id} aria-pressed={i === 0}>
+            {capture.label}
+          </button>
+        ))}
+      </div>
+    )}
+    <div class="themes" role="group" aria-label="Screenshot appearance">
+      <button type="button" data-theme="light" aria-pressed="false">
+        Light
+      </button>
+      <button type="button" data-theme="dark" aria-pressed="true">
+        Dark
+      </button>
+    </div>
   </div>
   <div
     class="shot-scroll"
     tabindex="0"
     role="region"
-    aria-label={`${tool.name} screenshot; scroll horizontally on small screens to compare both panes`}
+    aria-label={`${tool.name} screenshots; scroll horizontally on small screens to explore both panes`}
   >
-    <Image
-      src={tool.screenshot}
-      alt={tool.screenshotAlt}
-      widths={[1100, 1650, 2200]}
-      sizes="(max-width: 700px) 740px, 1100px"
-      format="webp"
-      loading={compact ? "lazy" : "eager"}
-      fetchpriority={compact ? "auto" : "high"}
-    />
+    {captures.map((capture, i) => (
+      <div data-capture={capture.id} hidden={i !== 0}>
+        {(["dark", "light"] as const).map((theme) => (
+          <div data-appearance={theme} hidden={theme === "light"}>
+            <Image
+              src={capture[theme]}
+              alt={`${capture.alt} ${theme === "light" ? "Light" : "Dark"} theme.`}
+              widths={[1100, 1650, 2200]}
+              sizes="(max-width: 700px) 740px, 1100px"
+              format="webp"
+              loading={
+                compact || i !== 0 || theme === "light" ? "lazy" : "eager"
+              }
+              fetchpriority={
+                !compact && i === 0 && theme === "dark" ? "high" : "auto"
+              }
+            />
+          </div>
+        ))}
+      </div>
+    ))}
   </div>
   <figcaption>
     <span>{tool.screenshotCaption}</span>
     <span class="mobile-hint">
-      Scroll to compare both panes <span aria-hidden="true">↔</span>
+      Scroll to explore <span aria-hidden="true">↔</span>
     </span>
   </figcaption>
 </figure>
+<script>
+  for (const shot of document.querySelectorAll<HTMLElement>(
+    "[data-product-shot]",
+  )) {
+    const themes = shot.querySelectorAll<HTMLButtonElement>("[data-theme]");
+    const views = shot.querySelectorAll<HTMLButtonElement>("[data-view]");
+    themes.forEach((button) =>
+      button.addEventListener("click", () => {
+        themes.forEach((item) =>
+          item.setAttribute("aria-pressed", String(item === button)),
+        );
+        shot
+          .querySelectorAll<HTMLElement>("[data-appearance]")
+          .forEach((image) => {
+            image.hidden = image.dataset.appearance !== button.dataset.theme;
+          });
+      }),
+    );
+    views.forEach((button) =>
+      button.addEventListener("click", () => {
+        views.forEach((item) =>
+          item.setAttribute("aria-pressed", String(item === button)),
+        );
+        shot
+          .querySelectorAll<HTMLElement>("[data-capture]")
+          .forEach((image) => {
+            image.hidden = image.dataset.capture !== button.dataset.view;
+          });
+      }),
+    );
+  }
+</script>
 <style>
   .product-shot {
     margin: 0;
@@ -53,14 +117,33 @@ const { compact = false, tool = mdoc } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
-    padding: 14px 20px;
+    padding: 12px 20px;
     border-bottom: 1px solid var(--border);
     font: 11px var(--mono);
     color: var(--muted);
   }
-  .shot-tag {
-    color: var(--accent);
+  .themes,
+  .views {
+    display: flex;
+    gap: 4px;
+    padding: 3px;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+  }
+  .shot-bar button {
+    border: 0;
+    border-radius: 5px;
+    padding: 7px 12px;
+    background: transparent;
+    color: var(--muted);
+    font: inherit;
+    cursor: pointer;
+  }
+  .shot-bar button[aria-pressed="true"] {
+    background: var(--fg);
+    color: var(--bg);
   }
   .shot-scroll {
     overflow-x: auto;
@@ -91,11 +174,15 @@ const { compact = false, tool = mdoc } = Astro.props;
       max-width: none;
     }
     .shot-bar {
-      padding: 12px 14px;
+      padding: 10px;
+      gap: 6px;
       font-size: 10px;
     }
-    .shot-tag {
-      display: none;
+    .shot-bar button {
+      padding: 7px 8px;
+    }
+    .shot-label {
+      max-width: 130px;
     }
     figcaption {
       padding: 12px 14px;

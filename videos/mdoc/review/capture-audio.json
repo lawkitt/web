@@ -1,0 +1,44 @@
+{
+  "missing_files": [],
+  "report": {
+    "clipped_samples": 0,
+    "duration_seconds": 21.0,
+    "integrated_lufs": null,
+    "loudness_range_lu": null,
+    "max_momentary_lufs": null,
+    "max_short_term_lufs": null,
+    "sample_peak_dbfs": null,
+    "sample_rate": 44100,
+    "sections": [
+      {
+        "end_seconds": 7.0,
+        "integrated_lufs": null,
+        "name": "Review",
+        "start_seconds": 0.0,
+        "true_peak_dbtp": null
+      },
+      {
+        "end_seconds": 14.0,
+        "integrated_lufs": null,
+        "name": "Compare",
+        "start_seconds": 7.0,
+        "true_peak_dbtp": null
+      },
+      {
+        "end_seconds": 21.0,
+        "integrated_lufs": null,
+        "name": "Share",
+        "start_seconds": 14.0,
+        "true_peak_dbtp": null
+      }
+    ],
+    "silent_ranges": [
+      [
+        0.0,
+        21.0
+      ]
+    ],
+    "true_peak_dbtp": null
+  },
+  "waveform": null
+}
