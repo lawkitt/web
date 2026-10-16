@@ -4,7 +4,6 @@ import Arrow from "../../components/Arrow.astro";
 import ProductScreenshot from "../../components/ProductScreenshot.astro";
 import WorkflowAnimation from "../../components/WorkflowAnimation.astro";
 import DemoVideos from "../../components/DemoVideos.astro";
-import { Image } from "astro:assets";
 import { mdoc, mdocFeatures, mdocMetricsNote } from "../../lib/catalog";
 import { mdocAvailability } from "../../lib/releases";
 import { Content } from "../../content/tools/mdoc.md";
@@ -20,13 +19,7 @@ import { Content } from "../../content/tools/mdoc.md";
       <div class="hero-grid">
         <div class="hero-copy">
           <div class="product-heading" data-rise>
-            <Image
-              src={mdoc.icon}
-              alt=""
-              width={48}
-              height={48}
-              format="webp"
-            />
+            <img src={mdoc.icon.src} alt="" width="48" height="48" />
             <span>mdoc</span>
             <span class="tag">Free · Open source</span>
           </div>
@@ -86,14 +79,15 @@ import { Content } from "../../content/tools/mdoc.md";
           <h2 id="demo-title">Review the names. Keep the meaning.</h2>
         </div>
         <p>
-          Actual captures from mdoc, in light and dark. Follow a fictional
-          agreement through identity review, comparison and Copy for AI.
+          Recorded in mdoc on a fictional letter before claim: find what
+          identifies people, fix what detection missed, share only aliases and
+          bring the AI's reply back with the real names.
         </p>
       </div>
       <DemoVideos />
       <p class="film-note">
-        Three short films from actual app captures. No audio.
-        <a href="/videos/mdoc/current.mp4">Play the full 21-second film ↗</a>
+        Screen recordings of mdoc 0.1.0-beta.11, no audio. Detection can miss
+        identifiers, so review before sharing.
       </p>
     </div>
   </section>
@@ -193,12 +187,6 @@ import { Content } from "../../content/tools/mdoc.md";
     color: var(--dim);
     font-size: 12px;
     margin-top: 16px;
-  }
-  .film-note a {
-    color: var(--muted);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    margin-left: 8px;
   }
   .metrics-note {
     color: var(--dim);

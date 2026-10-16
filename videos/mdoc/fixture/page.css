@@ -1,0 +1,25 @@
+@page { size: A4; margin: 0; }
+html, body { margin: 0; background: #fff; }
+body {
+  width: 1240px;
+  height: 1754px;
+  box-sizing: border-box;
+  padding: 120px 130px 110px;
+  font: 23px/1.5 "Times New Roman", Times, serif;
+  color: #111;
+  position: relative;
+}
+.firm { font: 600 34px/1.2 Georgia, serif; letter-spacing: 0.5px; }
+.addr { font-size: 20px; margin: 4px 0 0; }
+hr { border: 0; border-top: 1.5px solid #111; margin: 20px 0 26px; }
+.to { margin: 22px 0 30px; text-align: left; }
+h1 { font-size: 27px; margin: 34px 0 30px; text-transform: uppercase; letter-spacing: 0.6px; }
+h2 { font-size: 25px; margin: 38px 0 16px; }
+p { margin: 0 0 24px; text-align: left; }
+table { border-collapse: collapse; width: 100%; margin: 12px 0 18px; font-size: 21px; }
+td, th { border: 1px solid #222; padding: 6px 10px; text-align: left; }
+.sign { margin-top: 40px; }
+.foot {
+  position: absolute; left: 130px; right: 130px; bottom: 60px;
+  font-size: 16px; display: flex; justify-content: space-between; color: #333;
+}

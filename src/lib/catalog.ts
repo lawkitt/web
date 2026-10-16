@@ -1,11 +1,18 @@
 import type { ImageMetadata } from "astro";
-import mdocIcon from "../assets/mdoc-icon.png";
-import sourceDark from "../assets/mdoc-source-dark.jpg";
-import sourceLight from "../assets/mdoc-source-light.jpg";
-import reviewDark from "../assets/mdoc-review-dark.jpg";
-import reviewLight from "../assets/mdoc-review-light.jpg";
-import compareDark from "../assets/mdoc-compare-dark.jpg";
-import compareLight from "../assets/mdoc-compare-light.jpg";
+// Vector app icon, from lawkitt/mdoc build/appicon.svg (svgo).
+import mdocIcon from "../assets/mdoc-logo.svg";
+// Gallery captures of mdoc 0.1.0-beta.11 (videos/mdoc/capture/take.sh): PNG with
+// transparent window corners, in both app themes.
+import scanDark from "../assets/mdoc-scan-dark.png";
+import scanLight from "../assets/mdoc-scan-light.png";
+import reviewDark from "../assets/mdoc-review-dark.png";
+import reviewLight from "../assets/mdoc-review-light.png";
+import compareDark from "../assets/mdoc-compare-dark.png";
+import compareLight from "../assets/mdoc-compare-light.png";
+import copyDark from "../assets/mdoc-copy-dark.png";
+import copyLight from "../assets/mdoc-copy-light.png";
+import restoreDark from "../assets/mdoc-restore-dark.png";
+import restoreLight from "../assets/mdoc-restore-light.png";
 import { latestMdocRelease, mdocAvailability } from "./releases";
 
 export interface Tool {
@@ -63,28 +70,42 @@ export const tools = [
     icon: mdocIcon,
     captures: [
       {
-        id: "source",
-        label: "Convert",
-        dark: sourceDark,
-        light: sourceLight,
-        alt: "mdoc showing a fictional Word services agreement as editable Markdown beside its original document.",
+        id: "scan",
+        label: "Scan",
+        dark: scanDark,
+        light: scanLight,
+        alt: "mdoc opening a scanned letter before claim: it offers to recognize the two pages on this computer, with the scan beside it.",
       },
       {
         id: "review",
         label: "Review",
         dark: reviewDark,
         light: reviewLight,
-        alt: "mdoc reviewing highlighted names and proposed aliases in a fictional services agreement.",
+        alt: "mdoc reviewing a fictional letter before claim: people, companies, emails, a phone number, addresses and bank details are proposed for replacement, with one mention's alias open for editing.",
       },
       {
         id: "compare",
         label: "Compare",
         dark: compareDark,
         light: compareLight,
-        alt: "mdoc comparing original names with applied aliases, side by side.",
+        alt: "mdoc showing the original letter and its pseudonymized version side by side, names replaced by aliases such as PERSON_1 and ORG_1.",
+      },
+      {
+        id: "copy",
+        label: "Copy for AI",
+        dark: copyDark,
+        light: copyLight,
+        alt: "mdoc's Share panel after Copy for AI: 20 replaced, 1 kept, with options to paste the AI reply back or save a case.",
+      },
+      {
+        id: "restore",
+        label: "Restore",
+        dark: restoreDark,
+        light: restoreLight,
+        alt: "An AI reply pasted back into mdoc, with its aliases restored to the real names on this computer.",
       },
     ],
-    screenshotCaption: "Fictional agreement. Captured in mdoc 0.1.0-beta.10.",
+    screenshotCaption: "Fictional letter. Captured in mdoc 0.1.0-beta.11.",
   },
 ] satisfies Tool[];
 

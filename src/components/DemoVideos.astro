@@ -1,33 +1,43 @@
 ---
-// Three short films of actual mdoc captures (made in videos/mdoc with fframes) played
-// as one looping sequence. Muted, plays only while on screen; under reduced
-// motion nothing plays by itself. Native controls remain available in both modes.
-// Motion between captures is editorial, not a measure of processing speed.
-// Files: public/videos/mdoc/ (videos/mdoc/export-web.sh).
+// Four short films of mdoc 0.1.0-beta.11, cut from scripted screen recordings
+// (videos/mdoc: capture/take.sh records, src/scenes.rs is the scene library,
+// export-web.sh picks and orders the scenes). Played as one looping sequence,
+// muted, only while on screen; under reduced motion nothing plays by itself.
+// Native controls remain available in both modes. Files: public/videos/mdoc/.
 const steps = [
   {
-    id: "review",
-    tab: "Review identities",
+    id: "find",
+    tab: "Find",
     label:
-      "Actual mdoc captures in light and dark themes: review proposed names and their consistent aliases in a fictional agreement.",
+      "mdoc proposes the people, companies, addresses and bank details in a fictional letter before claim; hovering a name shows its alias, and clicking it opens every mention of that person.",
   },
   {
-    id: "compare",
-    tab: "Compare aliases",
+    id: "fix",
+    tab: "Fix",
     label:
-      "Actual mdoc captures: original names and applied aliases appear side by side, in dark and light themes.",
+      "A court name is unticked to keep it, and an address detection missed is selected, replaced and filed as an address.",
   },
   {
     id: "share",
-    tab: "Copy for AI",
+    tab: "Share",
     label:
-      "Actual mdoc captures: the Share panel offers Copy for AI, with the fictional agreement's names replaced by aliases.",
+      "Replacements are applied in one step, checked side by side with the original, and copied for AI with a note to keep every placeholder.",
+  },
+  {
+    id: "restore",
+    tab: "Restore",
+    label:
+      "An AI chat sees only aliases; its reply is pasted back into mdoc, which restores the real names on this computer.",
   },
 ];
 ---
 
 <div class="demo" data-demo>
-  <div class="tabs" role="tablist" aria-label="mdoc review and AI handoff">
+  <div
+    class="tabs"
+    role="tablist"
+    aria-label="mdoc, from review to restored reply"
+  >
     {steps.map((step, i) => (
       <button
         type="button"
@@ -154,7 +164,7 @@ const steps = [
   }
   .tabs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     border-bottom: 1px solid var(--border);
   }
   .tabs button {

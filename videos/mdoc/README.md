@@ -1,53 +1,75 @@
-# Current mdoc product films
+# mdoc product media
 
-The mdoc product page now uses **actual captures of installed mdoc 0.1.0-beta.10**,
-made on October 16, 2026. DM Sans, charcoal and sage, restrained title motion,
-and crossfades between light and dark captures. No reconstructed application UI.
+Screenshots and films for the mdoc product page, made from **scripted screen
+recordings of mdoc 0.1.0-beta.11** (ADR 0007). Everything shown is a fictional
+letter before claim; nothing is mocked except the neutral AI chat scene.
 
-| cut | subject | length |
+## Pipeline
+
+1. `fixture/build.sh` builds the letter as a scanned PDF (`claim-letter-scan.pdf`,
+   Chrome headless + sharp + PDFKit) and as Word (`Letter before claim.docx` and the
+   matching `.md`, `fixture/docx.py`). `fixture/ai-reply.md` is the AI reply that
+   only uses aliases.
+2. `capture/take.sh <profile-dir> Dark|Light <steps...>` runs one take in an
+   isolated mdoc profile (`capture/session.sh`: own `HOME`, links the installed
+   OCR and pseudonymization models, spelling and update checks off, tabs and theme
+   seeded through `session.json`, so the user's own session is never touched).
+   It drives the window with `out/bin/input` (CGEvent input that refuses to type
+   unless the capture process is frontmost), saves window stills with transparent
+   corners to `stills/` (ignored) and records ProRes clips with `out/bin/rec`
+   (ScreenCaptureKit, whole display cropped to the window, so macOS does not swap
+   the traffic lights for its capture indicator) into `out/clips/<theme>/`.
+   Build the helpers once:
+   `swiftc -O capture/{winid,input,rec}.swift -o out/bin/{winid,input,rec}` (one each).
+3. `capture/clips.sh` trims the recordings into `film/clip-<scene>-<theme>.mp4`
+   (1440 × 900, 30 fps). `film/` is the films' runtime media folder (the
+   compile-time media macro cannot hold MP4s).
+4. `src/scenes.rs` is the scene library; `export-web.sh` renders the page's films
+   from ordered scene lists into `public/videos/mdoc/`.
+
+The site's gallery PNGs in `src/assets/mdoc-{scan,review,compare,copy,restore}-{dark,light}.png`
+are copies of stills from a take.
+
+## Scene library
+
+| scene | shows | length |
 | --- | --- | --- |
-| `review` | names and consistent aliases in the Review panel | 7 s |
-| `compare` | original and pseudonymized text side by side | 7 s |
-| `share` | the Share panel and Copy for AI | 7 s |
-| `current` | all three, for standalone playback | 21 s |
+| `intro` | logo card | 3 s |
+| `scan` | a scan asks for text recognition (still) | 3 s |
+| `detect` | Pseudonymize: proposals by category | 6 s |
+| `tooltip` | hover tooltip with the alias | 3.4 s |
+| `popup` | a mention opens every mention of the identity | 3 s |
+| `alias` | "Same as…" alias dropdown | 2.5 s |
+| `keep` | untick a false positive to keep it | 3 s |
+| `address` | add a missed address, file it as Address | 8 s |
+| `apply` | apply all replacements | 3.3 s |
+| `compare` | side by side | 3.6 s |
+| `copy` | Copy for AI | 2.9 s |
+| `chat` | neutral chat that only sees aliases (composited) | 4.5 s |
+| `restore` | Paste AI reply restores the real names | 4.3 s |
 
-All four exports are 1920 × 1080, 30 fps, H.264/yuv420p, with fast-start MP4
-metadata and **no audio track**. Silence is intentional for the product page.
-Theme transitions and title motion are editorial; these are films of still captures,
-not screen recordings or processing-speed demonstrations. All agreement content is
-fictional. Detection can miss identifiers; the film retains a review reminder.
-
-The mdoc repository holds the original inputs and all eight screenshots under
-`docs/product-media/` and `docs/images/`. This project's `media/` holds the six
-unaltered review/comparison/Share images used by the films. Web screenshot assets
-in `src/assets/` additionally include Word conversion beside the source document.
-
-## Build, inspect and watch
+Page films (`export-web.sh`, dark): `find` = detect, tooltip, popup; `fix` = keep,
+address; `share` = apply, compare, copy; `restore` = chat, restore. Any ordered
+subset renders: `--cut keep,address`, `--theme light`.
 
 ```sh
-# From videos/mdoc; uses Skia on Metal, needs FFmpeg libraries and cwebp.
+# From videos/mdoc; Skia on Metal, FFmpeg libraries and cwebp.
 cargo build --release --locked --bin mdoc-captures
-cargo run --release --bin mdoc-captures -- timeline
-cargo run --release --bin mdoc-captures -- inspect --all-frames --fail-on warning
-cargo run --release --bin mdoc-captures -- strip all -n 12 -o review/capture-storyboard.png
-cargo run --release --bin mdoc-captures -- frame Review@2s,Compare@5s,Share@2s -o review/frames
-cargo run --release --bin mdoc-captures -- audio analyze
-cargo run --release --bin mdoc-captures -- preview
+B=target/release/mdoc-captures
+$B timeline                                  # the whole library
+$B --theme light --cut all inspect
+$B --cut keep,address strip all -n 12 -o review/fix.png
+$B --cut detect,tooltip preview
 ./export-web.sh
 ```
 
-`src/current.rs` defines the film; `src/captures.rs` exposes the CLI and GPU player.
-`--cut review|compare|share|current` selects a cut (default: `current`).
-`export-web.sh` writes the four MP4s and three WebP posters into `public/videos/mdoc/`.
-`review/capture-storyboard.png` and the JSON inspection/timeline/audio/export reports
-record validation. Website playback retains native controls, pauses off screen,
-and respects reduced motion. The complete film is also linked below the player.
+`review/library-dark.webp` is a contact sheet of the whole library.
 
 ## Earlier illustrated films (retained as editable sources)
 
 The following describes the earlier `mdoc-videos` binary. These cuts are no longer
-used on the current product page. `cargo run` still defaults to this legacy binary;
-use `--bin mdoc-captures` for the current films.
+used on the product page. `cargo run` still defaults to this legacy binary; use
+`--bin mdoc-captures` for the scene library.
 
 ### Earlier mdoc explainer videos
 
