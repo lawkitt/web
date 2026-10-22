@@ -35,6 +35,9 @@ import {
             Version {latestMdocRelease.version} — choose a verified installer
             for your platform.
           </p>
+          {latestMdocRelease.version === "0.1.0" && (
+            <p class="stable-note">The first stable release of mdoc.</p>
+          )}
           {latestMdocRelease.prerelease && (
             <p class="beta-note">
               <span class="tag tag-accent">Public beta</span> Try it with
@@ -141,8 +144,9 @@ import {
             later.
           </li>
           <li>
-            <strong>Windows PC</strong> (x64). Scanned-page recognition also
-            needs the free Microsoft Visual C++ Redistributable.
+            <strong>Windows PC</strong> (x64). The installer adds the Microsoft
+            Visual C++ runtime that scanned-page recognition needs, if it is
+            missing.
           </li>
           <li>
             <strong>One-time setup</strong> for scan recognition and
@@ -166,7 +170,8 @@ import {
   </section>
 </Layout>
 <style>
-  .beta-note {
+  .beta-note,
+  .stable-note {
     color: var(--muted);
     font-size: 14px;
     margin-top: 12px;
