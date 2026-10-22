@@ -38,3 +38,6 @@
   (Apple Silicon) and Windows x64.
 - **Umbrella hero**: The homepage hero carrying the Lawkitt brand line, which
   leads directly into mdoc while it is the only catalog entry.
+- **Stable release**: An mdoc release whose tag has no `-beta.N` / `-rc.N`
+  suffix (first: v0.1.0, 2026-10-19). The manifest lists stable releases only,
+  and the catalog then shows the "Stable" maturity (ADR 0008).

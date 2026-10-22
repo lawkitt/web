@@ -2,10 +2,9 @@
 
 <details>
 <summary>Can I download mdoc today?</summary>
-<p>Yes, as a public beta for Macs with Apple silicon and Windows PCs. Get it from the
-<a href="/mdoc/download/">download page</a>. Beta builds may still have rough edges, so
-try mdoc with made-up or non-confidential documents first. mdoc tells you when a
-newer version is out.</p>
+<p>Yes, for Macs with Apple silicon and Windows PCs. Get it from the
+<a href="/mdoc/download/">download page</a>. mdoc tells you when a newer version is
+out, and on a Mac it can download and install it for you.</p>
 </details>
 
 <details>
@@ -67,8 +66,8 @@ original. Recognition applies to PDFs; images inside Word files are not read.</p
 <details>
 <summary>Which computers does it run on?</summary>
 <p>mdoc is made for Macs with Apple silicon (M1 or later) and Windows PCs (x64).
-On Windows, scanned-page recognition also needs the free Microsoft Visual C++
-Redistributable. Developers can build mdoc for Intel Macs, Windows on ARM and Linux;
+On Windows, the installer adds the Microsoft Visual C++ runtime that scanned-page
+recognition needs, if it is missing. Developers can build mdoc for Intel Macs, Windows on ARM and Linux;
 there it reads documents with built-in text, but scan recognition and automatic
 pseudonymization are not available.</p>
 </details>

@@ -80,11 +80,13 @@ and [custom domains](https://developers.cloudflare.com/workers/configuration/rou
 - `src/layouts/Layout.astro`: shared navigation, metadata and footer.
 - `src/styles/global.css`: T3-inspired tokens and shared styles.
 
-mdoc's latest public release is **v0.1.0-beta.11**, published on 2026-10-16
-and checked on 2026-10-16. The manifest keeps the two newest releases, with
-installers for Apple Silicon Macs and Windows x64. The macOS app is signed and
-notarized; the Windows installer is unsigned. Since 2026-10-10 the pinned
-`lawkitt/anydoc` dependency is public, so source builds need no private access.
+mdoc's latest public release is **v0.1.0**, its first stable release, published
+on 2026-10-19 and checked on 2026-10-22. The manifest lists only stable releases
+(ADR 0008), with installers for Apple Silicon Macs (`.dmg`) and Windows x64 (the
+NSIS `.exe`, which installs the Visual C++ runtime; the `.msi` is not listed).
+The macOS app is signed and notarized; the Windows installer is unsigned. Since
+2026-10-10 the pinned `lawkitt/anydoc` dependency is public, so source builds
+need no private access.
 Neither build targets nor maturity indicate installer availability.
 
 Before adding a release: verify it on the public mdoc repository, confirm every
