@@ -80,8 +80,8 @@ and [custom domains](https://developers.cloudflare.com/workers/configuration/rou
 - `src/layouts/Layout.astro`: shared navigation, metadata and footer.
 - `src/styles/global.css`: T3-inspired tokens and shared styles.
 
-mdoc's latest public release is **v0.1.0**, its first stable release, published
-on 2026-10-19 and checked on 2026-10-22. The manifest lists only stable releases
+mdoc's latest public release is **v0.3.0**, published on 2026-11-01 and checked
+on 2026-11-02 (the first stable release was v0.1.0). The manifest lists only stable releases
 (ADR 0008), with installers for Apple Silicon Macs (`.dmg`) and Windows x64 (the
 NSIS `.exe`, which installs the Visual C++ runtime; the `.msi` is not listed).
 The macOS app is signed and notarized; the Windows installer is unsigned. Since
